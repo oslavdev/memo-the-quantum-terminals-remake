@@ -1,0 +1,8 @@
+#modules
+node_modules
+#production
+dist
+#cahce
+.cache
+#vscode
+.vscode
