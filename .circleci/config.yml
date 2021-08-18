@@ -1,6 +1,12 @@
     version: 2.1
     orbs:
       aws-s3: circleci/aws-s3@3.0.0
+    workflow:  
+      version: 2
+      build-deploy:
+        jobs:
+          - build
+
     jobs:
       build:
         docker:
