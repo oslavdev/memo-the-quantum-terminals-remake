@@ -72,7 +72,7 @@ export default function Loading() {
       <Box>
         <Text>
           <h3>
-            Loading... 
+            Loadingzzzz... 
           </h3>
       </Text>
       </Box>
