@@ -4,6 +4,11 @@ orbs:
   node: circleci/node@4.7.0
 jobs:
   build:
+    docker:
+       - image: circleci/node@4.7.0
+
+    working_directory: ~/repo
+    
     steps:
       - checkout
       - run: yarn install
