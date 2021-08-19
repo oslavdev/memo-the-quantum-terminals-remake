@@ -7,9 +7,9 @@ jobs:
       - image: "circleci/node@4.7.0"
     steps:
       - checkout
-      - run yarn install
-      - run yarn test
-      - run yarn build
+      - run: yarn install
+      - run: yarn test
+      - run: yarn build
       - aws-s3/sync:
           from: build
           to: "s3://memo-client/"
@@ -18,6 +18,6 @@ jobs:
             --cache-control "max-age=86400"
 
 workflows:
-  s3-amazon:
+  s3-example:
     jobs:
       - build
