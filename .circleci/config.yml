@@ -1,10 +1,9 @@
 version: 2.1
 orbs:
   aws-s3: circleci/aws-s3@3.0
+  node: circleci/node@4.7.0
 jobs:
   build:
-    docker:
-      - image: circleci/node@4.7.0
     steps:
       - checkout
       - run: yarn install
