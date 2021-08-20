@@ -13,7 +13,7 @@ const INITIAL_STATE = {
   password:""
 }
 
-export default function Login() {
+const Login =  () => {
 
   const history = useHistory();
   const [formData, setFormData] = useState(INITIAL_STATE);
@@ -24,7 +24,6 @@ export default function Login() {
   useEffect(() => {
     if (data && data.login) {
       if (data.login.user) {
-        console.log(data.login)
         history.push(pathLobby()) //activation sent page
         setFormData(INITIAL_STATE); //reset formdata
       }
@@ -83,3 +82,5 @@ export default function Login() {
     </LayoutMenu>
   )
 }
+
+export default Login;
