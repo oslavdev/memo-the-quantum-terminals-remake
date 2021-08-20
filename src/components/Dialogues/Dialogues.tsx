@@ -33,7 +33,6 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
   }
 
   const _nextLine = () => {
-    console.log('Next line')
     setIteration(iteration + 1)
   }
 
