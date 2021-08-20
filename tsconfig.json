@@ -35,6 +35,6 @@
     "jsx": "react",
     "typeRoots": ["src/*", "node_modules/@types"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "src/index.d.ts"],
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "src/index.d.ts", "__tests__/pages/Login.js"],
   "exclude": ["node_modules"]
 }
