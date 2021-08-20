@@ -1,111 +1,2766 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login page Integration test 1`] = `
-Object {
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "logTestingPlaygroundURL": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-}
-`;
-
-exports[`Login page Integration test 2`] = `
-Object {
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "logTestingPlaygroundURL": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-}
+exports[`Login page User is not authorized 1`] = `
+<Mount
+  dispatch={[MockFunction]}
+  mocks={
+    Array [
+      Object {
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "meQuery",
+                },
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "me",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "email",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "username",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "createdAt",
+                            },
+                            "selectionSet": undefined,
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 73,
+              "start": 0,
+            },
+          },
+        },
+        "result": Object {
+          "data": null,
+        },
+      },
+    ]
+  }
+  state={Object {}}
+>
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "cache": InMemoryCache {
+          "addTypename": true,
+          "config": Object {
+            "addTypename": true,
+            "dataIdFromObject": [Function],
+            "resultCaching": true,
+            "typePolicies": Object {},
+          },
+          "data": Root {
+            "canRead": [Function],
+            "data": Object {},
+            "getFieldValue": [Function],
+            "group": CacheGroup {
+              "caching": true,
+              "d": [Function],
+              "keyMaker": Trie {
+                "makeData": [Function],
+                "weakness": true,
+              },
+            },
+            "policies": Policies {
+              "cache": [Circular],
+              "config": Object {
+                "cache": [Circular],
+                "dataIdFromObject": [Function],
+                "possibleTypes": undefined,
+                "typePolicies": Object {},
+              },
+              "fuzzySubtypes": Map {},
+              "rootIdsByTypename": Object {
+                "Mutation": "ROOT_MUTATION",
+                "Query": "ROOT_QUERY",
+                "Subscription": "ROOT_SUBSCRIPTION",
+              },
+              "rootTypenamesById": Object {
+                "ROOT_MUTATION": "Mutation",
+                "ROOT_QUERY": "Query",
+                "ROOT_SUBSCRIPTION": "Subscription",
+              },
+              "supertypeMap": Map {},
+              "toBeAdded": Object {},
+              "typePolicies": Object {},
+              "usingPossibleTypes": false,
+            },
+            "refs": Object {},
+            "rootIds": Object {},
+            "sharedLayerGroup": CacheGroup {
+              "caching": true,
+              "d": [Function],
+              "keyMaker": Trie {
+                "makeData": [Function],
+                "weakness": true,
+              },
+            },
+            "storageTrie": Trie {
+              "makeData": [Function],
+              "weakness": true,
+            },
+            "toReference": [Function],
+          },
+          "getFragmentDoc": [Function],
+          "makeVar": [Function],
+          "maybeBroadcastWatch": [Function],
+          "optimisticData": Root {
+            "canRead": [Function],
+            "data": Object {},
+            "getFieldValue": [Function],
+            "group": CacheGroup {
+              "caching": true,
+              "d": [Function],
+              "keyMaker": Trie {
+                "makeData": [Function],
+                "weakness": true,
+              },
+            },
+            "policies": Policies {
+              "cache": [Circular],
+              "config": Object {
+                "cache": [Circular],
+                "dataIdFromObject": [Function],
+                "possibleTypes": undefined,
+                "typePolicies": Object {},
+              },
+              "fuzzySubtypes": Map {},
+              "rootIdsByTypename": Object {
+                "Mutation": "ROOT_MUTATION",
+                "Query": "ROOT_QUERY",
+                "Subscription": "ROOT_SUBSCRIPTION",
+              },
+              "rootTypenamesById": Object {
+                "ROOT_MUTATION": "Mutation",
+                "ROOT_QUERY": "Query",
+                "ROOT_SUBSCRIPTION": "Subscription",
+              },
+              "supertypeMap": Map {},
+              "toBeAdded": Object {},
+              "typePolicies": Object {},
+              "usingPossibleTypes": false,
+            },
+            "refs": Object {},
+            "rootIds": Object {},
+            "sharedLayerGroup": CacheGroup {
+              "caching": true,
+              "d": [Function],
+              "keyMaker": Trie {
+                "makeData": [Function],
+                "weakness": true,
+              },
+            },
+            "storageTrie": Trie {
+              "makeData": [Function],
+              "weakness": true,
+            },
+            "toReference": [Function],
+          },
+          "policies": Policies {
+            "cache": [Circular],
+            "config": Object {
+              "cache": [Circular],
+              "dataIdFromObject": [Function],
+              "possibleTypes": undefined,
+              "typePolicies": Object {},
+            },
+            "fuzzySubtypes": Map {},
+            "rootIdsByTypename": Object {
+              "Mutation": "ROOT_MUTATION",
+              "Query": "ROOT_QUERY",
+              "Subscription": "ROOT_SUBSCRIPTION",
+            },
+            "rootTypenamesById": Object {
+              "ROOT_MUTATION": "Mutation",
+              "ROOT_QUERY": "Query",
+              "ROOT_SUBSCRIPTION": "Subscription",
+            },
+            "supertypeMap": Map {},
+            "toBeAdded": Object {},
+            "typePolicies": Object {},
+            "usingPossibleTypes": false,
+          },
+          "storeReader": StoreReader {
+            "config": Object {
+              "addTypename": true,
+              "cache": [Circular],
+            },
+            "executeSelectionSet": [Function],
+            "executeSubSelectedArray": [Function],
+            "knownResults": WeakMap {},
+          },
+          "storeWriter": StoreWriter {
+            "cache": [Circular],
+            "reader": StoreReader {
+              "config": Object {
+                "addTypename": true,
+                "cache": [Circular],
+              },
+              "executeSelectionSet": [Function],
+              "executeSubSelectedArray": [Function],
+              "knownResults": WeakMap {},
+            },
+          },
+          "txCount": 0,
+          "typenameDocumentCache": Map {},
+          "watchDep": [Function],
+          "watches": Set {},
+        },
+        "clearStoreCallbacks": Array [],
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "localState": LocalState {
+          "cache": InMemoryCache {
+            "addTypename": true,
+            "config": Object {
+              "addTypename": true,
+              "dataIdFromObject": [Function],
+              "resultCaching": true,
+              "typePolicies": Object {},
+            },
+            "data": Root {
+              "canRead": [Function],
+              "data": Object {},
+              "getFieldValue": [Function],
+              "group": CacheGroup {
+                "caching": true,
+                "d": [Function],
+                "keyMaker": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+              },
+              "policies": Policies {
+                "cache": [Circular],
+                "config": Object {
+                  "cache": [Circular],
+                  "dataIdFromObject": [Function],
+                  "possibleTypes": undefined,
+                  "typePolicies": Object {},
+                },
+                "fuzzySubtypes": Map {},
+                "rootIdsByTypename": Object {
+                  "Mutation": "ROOT_MUTATION",
+                  "Query": "ROOT_QUERY",
+                  "Subscription": "ROOT_SUBSCRIPTION",
+                },
+                "rootTypenamesById": Object {
+                  "ROOT_MUTATION": "Mutation",
+                  "ROOT_QUERY": "Query",
+                  "ROOT_SUBSCRIPTION": "Subscription",
+                },
+                "supertypeMap": Map {},
+                "toBeAdded": Object {},
+                "typePolicies": Object {},
+                "usingPossibleTypes": false,
+              },
+              "refs": Object {},
+              "rootIds": Object {},
+              "sharedLayerGroup": CacheGroup {
+                "caching": true,
+                "d": [Function],
+                "keyMaker": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+              },
+              "storageTrie": Trie {
+                "makeData": [Function],
+                "weakness": true,
+              },
+              "toReference": [Function],
+            },
+            "getFragmentDoc": [Function],
+            "makeVar": [Function],
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": Root {
+              "canRead": [Function],
+              "data": Object {},
+              "getFieldValue": [Function],
+              "group": CacheGroup {
+                "caching": true,
+                "d": [Function],
+                "keyMaker": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+              },
+              "policies": Policies {
+                "cache": [Circular],
+                "config": Object {
+                  "cache": [Circular],
+                  "dataIdFromObject": [Function],
+                  "possibleTypes": undefined,
+                  "typePolicies": Object {},
+                },
+                "fuzzySubtypes": Map {},
+                "rootIdsByTypename": Object {
+                  "Mutation": "ROOT_MUTATION",
+                  "Query": "ROOT_QUERY",
+                  "Subscription": "ROOT_SUBSCRIPTION",
+                },
+                "rootTypenamesById": Object {
+                  "ROOT_MUTATION": "Mutation",
+                  "ROOT_QUERY": "Query",
+                  "ROOT_SUBSCRIPTION": "Subscription",
+                },
+                "supertypeMap": Map {},
+                "toBeAdded": Object {},
+                "typePolicies": Object {},
+                "usingPossibleTypes": false,
+              },
+              "refs": Object {},
+              "rootIds": Object {},
+              "sharedLayerGroup": CacheGroup {
+                "caching": true,
+                "d": [Function],
+                "keyMaker": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+              },
+              "storageTrie": Trie {
+                "makeData": [Function],
+                "weakness": true,
+              },
+              "toReference": [Function],
+            },
+            "policies": Policies {
+              "cache": [Circular],
+              "config": Object {
+                "cache": [Circular],
+                "dataIdFromObject": [Function],
+                "possibleTypes": undefined,
+                "typePolicies": Object {},
+              },
+              "fuzzySubtypes": Map {},
+              "rootIdsByTypename": Object {
+                "Mutation": "ROOT_MUTATION",
+                "Query": "ROOT_QUERY",
+                "Subscription": "ROOT_SUBSCRIPTION",
+              },
+              "rootTypenamesById": Object {
+                "ROOT_MUTATION": "Mutation",
+                "ROOT_QUERY": "Query",
+                "ROOT_SUBSCRIPTION": "Subscription",
+              },
+              "supertypeMap": Map {},
+              "toBeAdded": Object {},
+              "typePolicies": Object {},
+              "usingPossibleTypes": false,
+            },
+            "storeReader": StoreReader {
+              "config": Object {
+                "addTypename": true,
+                "cache": [Circular],
+              },
+              "executeSelectionSet": [Function],
+              "executeSubSelectedArray": [Function],
+              "knownResults": WeakMap {},
+            },
+            "storeWriter": StoreWriter {
+              "cache": [Circular],
+              "reader": StoreReader {
+                "config": Object {
+                  "addTypename": true,
+                  "cache": [Circular],
+                },
+                "executeSelectionSet": [Function],
+                "executeSubSelectedArray": [Function],
+                "knownResults": WeakMap {},
+              },
+            },
+            "txCount": 0,
+            "typenameDocumentCache": Map {},
+            "watchDep": [Function],
+            "watches": Set {},
+          },
+          "client": [Circular],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "queryManager": QueryManager {
+          "assumeImmutableResults": false,
+          "cache": InMemoryCache {
+            "addTypename": true,
+            "config": Object {
+              "addTypename": true,
+              "dataIdFromObject": [Function],
+              "resultCaching": true,
+              "typePolicies": Object {},
+            },
+            "data": Root {
+              "canRead": [Function],
+              "data": Object {},
+              "getFieldValue": [Function],
+              "group": CacheGroup {
+                "caching": true,
+                "d": [Function],
+                "keyMaker": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+              },
+              "policies": Policies {
+                "cache": [Circular],
+                "config": Object {
+                  "cache": [Circular],
+                  "dataIdFromObject": [Function],
+                  "possibleTypes": undefined,
+                  "typePolicies": Object {},
+                },
+                "fuzzySubtypes": Map {},
+                "rootIdsByTypename": Object {
+                  "Mutation": "ROOT_MUTATION",
+                  "Query": "ROOT_QUERY",
+                  "Subscription": "ROOT_SUBSCRIPTION",
+                },
+                "rootTypenamesById": Object {
+                  "ROOT_MUTATION": "Mutation",
+                  "ROOT_QUERY": "Query",
+                  "ROOT_SUBSCRIPTION": "Subscription",
+                },
+                "supertypeMap": Map {},
+                "toBeAdded": Object {},
+                "typePolicies": Object {},
+                "usingPossibleTypes": false,
+              },
+              "refs": Object {},
+              "rootIds": Object {},
+              "sharedLayerGroup": CacheGroup {
+                "caching": true,
+                "d": [Function],
+                "keyMaker": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+              },
+              "storageTrie": Trie {
+                "makeData": [Function],
+                "weakness": true,
+              },
+              "toReference": [Function],
+            },
+            "getFragmentDoc": [Function],
+            "makeVar": [Function],
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": Root {
+              "canRead": [Function],
+              "data": Object {},
+              "getFieldValue": [Function],
+              "group": CacheGroup {
+                "caching": true,
+                "d": [Function],
+                "keyMaker": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+              },
+              "policies": Policies {
+                "cache": [Circular],
+                "config": Object {
+                  "cache": [Circular],
+                  "dataIdFromObject": [Function],
+                  "possibleTypes": undefined,
+                  "typePolicies": Object {},
+                },
+                "fuzzySubtypes": Map {},
+                "rootIdsByTypename": Object {
+                  "Mutation": "ROOT_MUTATION",
+                  "Query": "ROOT_QUERY",
+                  "Subscription": "ROOT_SUBSCRIPTION",
+                },
+                "rootTypenamesById": Object {
+                  "ROOT_MUTATION": "Mutation",
+                  "ROOT_QUERY": "Query",
+                  "ROOT_SUBSCRIPTION": "Subscription",
+                },
+                "supertypeMap": Map {},
+                "toBeAdded": Object {},
+                "typePolicies": Object {},
+                "usingPossibleTypes": false,
+              },
+              "refs": Object {},
+              "rootIds": Object {},
+              "sharedLayerGroup": CacheGroup {
+                "caching": true,
+                "d": [Function],
+                "keyMaker": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+              },
+              "storageTrie": Trie {
+                "makeData": [Function],
+                "weakness": true,
+              },
+              "toReference": [Function],
+            },
+            "policies": Policies {
+              "cache": [Circular],
+              "config": Object {
+                "cache": [Circular],
+                "dataIdFromObject": [Function],
+                "possibleTypes": undefined,
+                "typePolicies": Object {},
+              },
+              "fuzzySubtypes": Map {},
+              "rootIdsByTypename": Object {
+                "Mutation": "ROOT_MUTATION",
+                "Query": "ROOT_QUERY",
+                "Subscription": "ROOT_SUBSCRIPTION",
+              },
+              "rootTypenamesById": Object {
+                "ROOT_MUTATION": "Mutation",
+                "ROOT_QUERY": "Query",
+                "ROOT_SUBSCRIPTION": "Subscription",
+              },
+              "supertypeMap": Map {},
+              "toBeAdded": Object {},
+              "typePolicies": Object {},
+              "usingPossibleTypes": false,
+            },
+            "storeReader": StoreReader {
+              "config": Object {
+                "addTypename": true,
+                "cache": [Circular],
+              },
+              "executeSelectionSet": [Function],
+              "executeSubSelectedArray": [Function],
+              "knownResults": WeakMap {},
+            },
+            "storeWriter": StoreWriter {
+              "cache": [Circular],
+              "reader": StoreReader {
+                "config": Object {
+                  "addTypename": true,
+                  "cache": [Circular],
+                },
+                "executeSelectionSet": [Function],
+                "executeSubSelectedArray": [Function],
+                "knownResults": WeakMap {},
+              },
+            },
+            "txCount": 0,
+            "typenameDocumentCache": Map {},
+            "watchDep": [Function],
+            "watches": Set {},
+          },
+          "clientAwareness": Object {
+            "name": undefined,
+            "version": undefined,
+          },
+          "fetchCancelFns": Map {},
+          "inFlightLinkObservables": Map {},
+          "link": ApolloLink {
+            "request": [Function],
+          },
+          "localState": LocalState {
+            "cache": InMemoryCache {
+              "addTypename": true,
+              "config": Object {
+                "addTypename": true,
+                "dataIdFromObject": [Function],
+                "resultCaching": true,
+                "typePolicies": Object {},
+              },
+              "data": Root {
+                "canRead": [Function],
+                "data": Object {},
+                "getFieldValue": [Function],
+                "group": CacheGroup {
+                  "caching": true,
+                  "d": [Function],
+                  "keyMaker": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                },
+                "policies": Policies {
+                  "cache": [Circular],
+                  "config": Object {
+                    "cache": [Circular],
+                    "dataIdFromObject": [Function],
+                    "possibleTypes": undefined,
+                    "typePolicies": Object {},
+                  },
+                  "fuzzySubtypes": Map {},
+                  "rootIdsByTypename": Object {
+                    "Mutation": "ROOT_MUTATION",
+                    "Query": "ROOT_QUERY",
+                    "Subscription": "ROOT_SUBSCRIPTION",
+                  },
+                  "rootTypenamesById": Object {
+                    "ROOT_MUTATION": "Mutation",
+                    "ROOT_QUERY": "Query",
+                    "ROOT_SUBSCRIPTION": "Subscription",
+                  },
+                  "supertypeMap": Map {},
+                  "toBeAdded": Object {},
+                  "typePolicies": Object {},
+                  "usingPossibleTypes": false,
+                },
+                "refs": Object {},
+                "rootIds": Object {},
+                "sharedLayerGroup": CacheGroup {
+                  "caching": true,
+                  "d": [Function],
+                  "keyMaker": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                },
+                "storageTrie": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+                "toReference": [Function],
+              },
+              "getFragmentDoc": [Function],
+              "makeVar": [Function],
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": Root {
+                "canRead": [Function],
+                "data": Object {},
+                "getFieldValue": [Function],
+                "group": CacheGroup {
+                  "caching": true,
+                  "d": [Function],
+                  "keyMaker": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                },
+                "policies": Policies {
+                  "cache": [Circular],
+                  "config": Object {
+                    "cache": [Circular],
+                    "dataIdFromObject": [Function],
+                    "possibleTypes": undefined,
+                    "typePolicies": Object {},
+                  },
+                  "fuzzySubtypes": Map {},
+                  "rootIdsByTypename": Object {
+                    "Mutation": "ROOT_MUTATION",
+                    "Query": "ROOT_QUERY",
+                    "Subscription": "ROOT_SUBSCRIPTION",
+                  },
+                  "rootTypenamesById": Object {
+                    "ROOT_MUTATION": "Mutation",
+                    "ROOT_QUERY": "Query",
+                    "ROOT_SUBSCRIPTION": "Subscription",
+                  },
+                  "supertypeMap": Map {},
+                  "toBeAdded": Object {},
+                  "typePolicies": Object {},
+                  "usingPossibleTypes": false,
+                },
+                "refs": Object {},
+                "rootIds": Object {},
+                "sharedLayerGroup": CacheGroup {
+                  "caching": true,
+                  "d": [Function],
+                  "keyMaker": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                },
+                "storageTrie": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+                "toReference": [Function],
+              },
+              "policies": Policies {
+                "cache": [Circular],
+                "config": Object {
+                  "cache": [Circular],
+                  "dataIdFromObject": [Function],
+                  "possibleTypes": undefined,
+                  "typePolicies": Object {},
+                },
+                "fuzzySubtypes": Map {},
+                "rootIdsByTypename": Object {
+                  "Mutation": "ROOT_MUTATION",
+                  "Query": "ROOT_QUERY",
+                  "Subscription": "ROOT_SUBSCRIPTION",
+                },
+                "rootTypenamesById": Object {
+                  "ROOT_MUTATION": "Mutation",
+                  "ROOT_QUERY": "Query",
+                  "ROOT_SUBSCRIPTION": "Subscription",
+                },
+                "supertypeMap": Map {},
+                "toBeAdded": Object {},
+                "typePolicies": Object {},
+                "usingPossibleTypes": false,
+              },
+              "storeReader": StoreReader {
+                "config": Object {
+                  "addTypename": true,
+                  "cache": [Circular],
+                },
+                "executeSelectionSet": [Function],
+                "executeSubSelectedArray": [Function],
+                "knownResults": WeakMap {},
+              },
+              "storeWriter": StoreWriter {
+                "cache": [Circular],
+                "reader": StoreReader {
+                  "config": Object {
+                    "addTypename": true,
+                    "cache": [Circular],
+                  },
+                  "executeSelectionSet": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "knownResults": WeakMap {},
+                },
+              },
+              "txCount": 0,
+              "typenameDocumentCache": Map {},
+              "watchDep": [Function],
+              "watches": Set {},
+            },
+            "client": [Circular],
+          },
+          "mutationIdCounter": 1,
+          "mutationStore": Object {},
+          "onBroadcast": [Function],
+          "queries": Map {},
+          "queryDeduplication": true,
+          "queryIdCounter": 1,
+          "requestIdCounter": 1,
+          "ssrMode": false,
+          "transformCache": WeakMap {},
+        },
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "typeDefs": undefined,
+        "version": "3.3.11",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <MockedProvider
+      addTypename={false}
+      mocks={
+        Array [
+          Object {
+            "request": Object {
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "meQuery",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "me",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "email",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "username",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "createdAt",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 73,
+                  "start": 0,
+                },
+              },
+            },
+            "result": Object {
+              "data": null,
+            },
+          },
+        ]
+      }
+    >
+      <ApolloProvider
+        client={
+          ApolloClient {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "resultCaching": true,
+                "typePolicies": Object {},
+              },
+              "data": Root {
+                "canRead": [Function],
+                "data": Object {},
+                "getFieldValue": [Function],
+                "group": CacheGroup {
+                  "caching": true,
+                  "d": [Function],
+                  "keyMaker": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                  "parent": null,
+                },
+                "policies": Policies {
+                  "cache": [Circular],
+                  "config": Object {
+                    "cache": [Circular],
+                    "dataIdFromObject": [Function],
+                    "possibleTypes": undefined,
+                    "typePolicies": Object {},
+                  },
+                  "fuzzySubtypes": Map {},
+                  "rootIdsByTypename": Object {
+                    "Mutation": "ROOT_MUTATION",
+                    "Query": "ROOT_QUERY",
+                    "Subscription": "ROOT_SUBSCRIPTION",
+                  },
+                  "rootTypenamesById": Object {
+                    "ROOT_MUTATION": "Mutation",
+                    "ROOT_QUERY": "Query",
+                    "ROOT_SUBSCRIPTION": "Subscription",
+                  },
+                  "supertypeMap": Map {},
+                  "toBeAdded": Object {},
+                  "typePolicies": Object {},
+                  "usingPossibleTypes": false,
+                },
+                "refs": Object {},
+                "rootIds": Object {},
+                "storageTrie": Trie {
+                  "makeData": [Function],
+                  "weakness": true,
+                },
+                "stump": Stump {
+                  "canRead": [Function],
+                  "data": Object {},
+                  "getFieldValue": [Function],
+                  "group": CacheGroup {
+                    "caching": true,
+                    "d": [Function],
+                    "keyMaker": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "parent": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": null,
+                    },
+                  },
+                  "id": "EntityStore.Stump",
+                  "parent": [Circular],
+                  "policies": Policies {
+                    "cache": [Circular],
+                    "config": Object {
+                      "cache": [Circular],
+                      "dataIdFromObject": [Function],
+                      "possibleTypes": undefined,
+                      "typePolicies": Object {},
+                    },
+                    "fuzzySubtypes": Map {},
+                    "rootIdsByTypename": Object {
+                      "Mutation": "ROOT_MUTATION",
+                      "Query": "ROOT_QUERY",
+                      "Subscription": "ROOT_SUBSCRIPTION",
+                    },
+                    "rootTypenamesById": Object {
+                      "ROOT_MUTATION": "Mutation",
+                      "ROOT_QUERY": "Query",
+                      "ROOT_SUBSCRIPTION": "Subscription",
+                    },
+                    "supertypeMap": Map {},
+                    "toBeAdded": Object {},
+                    "typePolicies": Object {},
+                    "usingPossibleTypes": false,
+                  },
+                  "refs": Object {},
+                  "replay": [Function],
+                  "rootIds": Object {},
+                  "toReference": [Function],
+                },
+                "toReference": [Function],
+              },
+              "getFragmentDoc": [Function],
+              "makeVar": [Function],
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": Stump {
+                "canRead": [Function],
+                "data": Object {},
+                "getFieldValue": [Function],
+                "group": CacheGroup {
+                  "caching": true,
+                  "d": [Function],
+                  "keyMaker": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                  "parent": CacheGroup {
+                    "caching": true,
+                    "d": [Function],
+                    "keyMaker": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "parent": null,
+                  },
+                },
+                "id": "EntityStore.Stump",
+                "parent": Root {
+                  "canRead": [Function],
+                  "data": Object {},
+                  "getFieldValue": [Function],
+                  "group": CacheGroup {
+                    "caching": true,
+                    "d": [Function],
+                    "keyMaker": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "parent": null,
+                  },
+                  "policies": Policies {
+                    "cache": [Circular],
+                    "config": Object {
+                      "cache": [Circular],
+                      "dataIdFromObject": [Function],
+                      "possibleTypes": undefined,
+                      "typePolicies": Object {},
+                    },
+                    "fuzzySubtypes": Map {},
+                    "rootIdsByTypename": Object {
+                      "Mutation": "ROOT_MUTATION",
+                      "Query": "ROOT_QUERY",
+                      "Subscription": "ROOT_SUBSCRIPTION",
+                    },
+                    "rootTypenamesById": Object {
+                      "ROOT_MUTATION": "Mutation",
+                      "ROOT_QUERY": "Query",
+                      "ROOT_SUBSCRIPTION": "Subscription",
+                    },
+                    "supertypeMap": Map {},
+                    "toBeAdded": Object {},
+                    "typePolicies": Object {},
+                    "usingPossibleTypes": false,
+                  },
+                  "refs": Object {},
+                  "rootIds": Object {},
+                  "storageTrie": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                  "stump": [Circular],
+                  "toReference": [Function],
+                },
+                "policies": Policies {
+                  "cache": [Circular],
+                  "config": Object {
+                    "cache": [Circular],
+                    "dataIdFromObject": [Function],
+                    "possibleTypes": undefined,
+                    "typePolicies": Object {},
+                  },
+                  "fuzzySubtypes": Map {},
+                  "rootIdsByTypename": Object {
+                    "Mutation": "ROOT_MUTATION",
+                    "Query": "ROOT_QUERY",
+                    "Subscription": "ROOT_SUBSCRIPTION",
+                  },
+                  "rootTypenamesById": Object {
+                    "ROOT_MUTATION": "Mutation",
+                    "ROOT_QUERY": "Query",
+                    "ROOT_SUBSCRIPTION": "Subscription",
+                  },
+                  "supertypeMap": Map {},
+                  "toBeAdded": Object {},
+                  "typePolicies": Object {},
+                  "usingPossibleTypes": false,
+                },
+                "refs": Object {},
+                "replay": [Function],
+                "rootIds": Object {},
+                "toReference": [Function],
+              },
+              "policies": Policies {
+                "cache": [Circular],
+                "config": Object {
+                  "cache": [Circular],
+                  "dataIdFromObject": [Function],
+                  "possibleTypes": undefined,
+                  "typePolicies": Object {},
+                },
+                "fuzzySubtypes": Map {},
+                "rootIdsByTypename": Object {
+                  "Mutation": "ROOT_MUTATION",
+                  "Query": "ROOT_QUERY",
+                  "Subscription": "ROOT_SUBSCRIPTION",
+                },
+                "rootTypenamesById": Object {
+                  "ROOT_MUTATION": "Mutation",
+                  "ROOT_QUERY": "Query",
+                  "ROOT_SUBSCRIPTION": "Subscription",
+                },
+                "supertypeMap": Map {},
+                "toBeAdded": Object {},
+                "typePolicies": Object {},
+                "usingPossibleTypes": false,
+              },
+              "storeReader": StoreReader {
+                "canon": ObjectCanon {
+                  "empty": Object {},
+                  "keysByJSON": Map {
+                    "[]" => Object {
+                      "json": "[]",
+                      "sorted": Array [],
+                    },
+                  },
+                  "known": WeakSet {},
+                  "passes": WeakMap {},
+                  "pool": Trie {
+                    "data": Object {
+                      "keys": Object {
+                        "json": "[]",
+                        "sorted": Array [],
+                      },
+                    },
+                    "makeData": [Function],
+                    "weak": WeakMap {},
+                    "weakness": true,
+                  },
+                },
+                "config": Object {
+                  "addTypename": false,
+                  "cache": [Circular],
+                  "canon": undefined,
+                  "resultCacheMaxSize": undefined,
+                },
+                "executeSelectionSet": [Function],
+                "executeSubSelectedArray": [Function],
+                "knownResults": WeakMap {},
+              },
+              "storeWriter": StoreWriter {
+                "cache": [Circular],
+                "reader": StoreReader {
+                  "canon": ObjectCanon {
+                    "empty": Object {},
+                    "keysByJSON": Map {
+                      "[]" => Object {
+                        "json": "[]",
+                        "sorted": Array [],
+                      },
+                    },
+                    "known": WeakSet {},
+                    "passes": WeakMap {},
+                    "pool": Trie {
+                      "data": Object {
+                        "keys": Object {
+                          "json": "[]",
+                          "sorted": Array [],
+                        },
+                      },
+                      "makeData": [Function],
+                      "weak": WeakMap {},
+                      "weakness": true,
+                    },
+                  },
+                  "config": Object {
+                    "addTypename": false,
+                    "cache": [Circular],
+                    "canon": undefined,
+                    "resultCacheMaxSize": undefined,
+                  },
+                  "executeSelectionSet": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "knownResults": WeakMap {},
+                },
+              },
+              "txCount": 0,
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+            "clearStoreCallbacks": Array [],
+            "defaultOptions": Object {},
+            "disableNetworkFetches": false,
+            "link": MockLink {
+              "addTypename": false,
+              "mockedResponsesByKey": Object {
+                "{\\"query\\":\\"query meQuery {\\\\n  me {\\\\n    id\\\\n    email\\\\n    username\\\\n    createdAt\\\\n  }\\\\n}\\\\n\\"}": Array [
+                  Object {
+                    "request": Object {
+                      "query": Object {
+                        "definitions": Array [
+                          Object {
+                            "directives": Array [],
+                            "kind": "OperationDefinition",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "meQuery",
+                            },
+                            "operation": "query",
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "me",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "email",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "username",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "createdAt",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                            "variableDefinitions": Array [],
+                          },
+                        ],
+                        "kind": "Document",
+                        "loc": Object {
+                          "end": 73,
+                          "start": 0,
+                        },
+                      },
+                    },
+                    "result": Object {
+                      "data": null,
+                    },
+                  },
+                ],
+              },
+            },
+            "localState": LocalState {
+              "cache": InMemoryCache {
+                "addTypename": false,
+                "config": Object {
+                  "addTypename": false,
+                  "dataIdFromObject": [Function],
+                  "resultCaching": true,
+                  "typePolicies": Object {},
+                },
+                "data": Root {
+                  "canRead": [Function],
+                  "data": Object {},
+                  "getFieldValue": [Function],
+                  "group": CacheGroup {
+                    "caching": true,
+                    "d": [Function],
+                    "keyMaker": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "parent": null,
+                  },
+                  "policies": Policies {
+                    "cache": [Circular],
+                    "config": Object {
+                      "cache": [Circular],
+                      "dataIdFromObject": [Function],
+                      "possibleTypes": undefined,
+                      "typePolicies": Object {},
+                    },
+                    "fuzzySubtypes": Map {},
+                    "rootIdsByTypename": Object {
+                      "Mutation": "ROOT_MUTATION",
+                      "Query": "ROOT_QUERY",
+                      "Subscription": "ROOT_SUBSCRIPTION",
+                    },
+                    "rootTypenamesById": Object {
+                      "ROOT_MUTATION": "Mutation",
+                      "ROOT_QUERY": "Query",
+                      "ROOT_SUBSCRIPTION": "Subscription",
+                    },
+                    "supertypeMap": Map {},
+                    "toBeAdded": Object {},
+                    "typePolicies": Object {},
+                    "usingPossibleTypes": false,
+                  },
+                  "refs": Object {},
+                  "rootIds": Object {},
+                  "storageTrie": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                  "stump": Stump {
+                    "canRead": [Function],
+                    "data": Object {},
+                    "getFieldValue": [Function],
+                    "group": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": CacheGroup {
+                        "caching": true,
+                        "d": [Function],
+                        "keyMaker": Trie {
+                          "makeData": [Function],
+                          "weakness": true,
+                        },
+                        "parent": null,
+                      },
+                    },
+                    "id": "EntityStore.Stump",
+                    "parent": [Circular],
+                    "policies": Policies {
+                      "cache": [Circular],
+                      "config": Object {
+                        "cache": [Circular],
+                        "dataIdFromObject": [Function],
+                        "possibleTypes": undefined,
+                        "typePolicies": Object {},
+                      },
+                      "fuzzySubtypes": Map {},
+                      "rootIdsByTypename": Object {
+                        "Mutation": "ROOT_MUTATION",
+                        "Query": "ROOT_QUERY",
+                        "Subscription": "ROOT_SUBSCRIPTION",
+                      },
+                      "rootTypenamesById": Object {
+                        "ROOT_MUTATION": "Mutation",
+                        "ROOT_QUERY": "Query",
+                        "ROOT_SUBSCRIPTION": "Subscription",
+                      },
+                      "supertypeMap": Map {},
+                      "toBeAdded": Object {},
+                      "typePolicies": Object {},
+                      "usingPossibleTypes": false,
+                    },
+                    "refs": Object {},
+                    "replay": [Function],
+                    "rootIds": Object {},
+                    "toReference": [Function],
+                  },
+                  "toReference": [Function],
+                },
+                "getFragmentDoc": [Function],
+                "makeVar": [Function],
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": Stump {
+                  "canRead": [Function],
+                  "data": Object {},
+                  "getFieldValue": [Function],
+                  "group": CacheGroup {
+                    "caching": true,
+                    "d": [Function],
+                    "keyMaker": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "parent": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": null,
+                    },
+                  },
+                  "id": "EntityStore.Stump",
+                  "parent": Root {
+                    "canRead": [Function],
+                    "data": Object {},
+                    "getFieldValue": [Function],
+                    "group": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": null,
+                    },
+                    "policies": Policies {
+                      "cache": [Circular],
+                      "config": Object {
+                        "cache": [Circular],
+                        "dataIdFromObject": [Function],
+                        "possibleTypes": undefined,
+                        "typePolicies": Object {},
+                      },
+                      "fuzzySubtypes": Map {},
+                      "rootIdsByTypename": Object {
+                        "Mutation": "ROOT_MUTATION",
+                        "Query": "ROOT_QUERY",
+                        "Subscription": "ROOT_SUBSCRIPTION",
+                      },
+                      "rootTypenamesById": Object {
+                        "ROOT_MUTATION": "Mutation",
+                        "ROOT_QUERY": "Query",
+                        "ROOT_SUBSCRIPTION": "Subscription",
+                      },
+                      "supertypeMap": Map {},
+                      "toBeAdded": Object {},
+                      "typePolicies": Object {},
+                      "usingPossibleTypes": false,
+                    },
+                    "refs": Object {},
+                    "rootIds": Object {},
+                    "storageTrie": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "stump": [Circular],
+                    "toReference": [Function],
+                  },
+                  "policies": Policies {
+                    "cache": [Circular],
+                    "config": Object {
+                      "cache": [Circular],
+                      "dataIdFromObject": [Function],
+                      "possibleTypes": undefined,
+                      "typePolicies": Object {},
+                    },
+                    "fuzzySubtypes": Map {},
+                    "rootIdsByTypename": Object {
+                      "Mutation": "ROOT_MUTATION",
+                      "Query": "ROOT_QUERY",
+                      "Subscription": "ROOT_SUBSCRIPTION",
+                    },
+                    "rootTypenamesById": Object {
+                      "ROOT_MUTATION": "Mutation",
+                      "ROOT_QUERY": "Query",
+                      "ROOT_SUBSCRIPTION": "Subscription",
+                    },
+                    "supertypeMap": Map {},
+                    "toBeAdded": Object {},
+                    "typePolicies": Object {},
+                    "usingPossibleTypes": false,
+                  },
+                  "refs": Object {},
+                  "replay": [Function],
+                  "rootIds": Object {},
+                  "toReference": [Function],
+                },
+                "policies": Policies {
+                  "cache": [Circular],
+                  "config": Object {
+                    "cache": [Circular],
+                    "dataIdFromObject": [Function],
+                    "possibleTypes": undefined,
+                    "typePolicies": Object {},
+                  },
+                  "fuzzySubtypes": Map {},
+                  "rootIdsByTypename": Object {
+                    "Mutation": "ROOT_MUTATION",
+                    "Query": "ROOT_QUERY",
+                    "Subscription": "ROOT_SUBSCRIPTION",
+                  },
+                  "rootTypenamesById": Object {
+                    "ROOT_MUTATION": "Mutation",
+                    "ROOT_QUERY": "Query",
+                    "ROOT_SUBSCRIPTION": "Subscription",
+                  },
+                  "supertypeMap": Map {},
+                  "toBeAdded": Object {},
+                  "typePolicies": Object {},
+                  "usingPossibleTypes": false,
+                },
+                "storeReader": StoreReader {
+                  "canon": ObjectCanon {
+                    "empty": Object {},
+                    "keysByJSON": Map {
+                      "[]" => Object {
+                        "json": "[]",
+                        "sorted": Array [],
+                      },
+                    },
+                    "known": WeakSet {},
+                    "passes": WeakMap {},
+                    "pool": Trie {
+                      "data": Object {
+                        "keys": Object {
+                          "json": "[]",
+                          "sorted": Array [],
+                        },
+                      },
+                      "makeData": [Function],
+                      "weak": WeakMap {},
+                      "weakness": true,
+                    },
+                  },
+                  "config": Object {
+                    "addTypename": false,
+                    "cache": [Circular],
+                    "canon": undefined,
+                    "resultCacheMaxSize": undefined,
+                  },
+                  "executeSelectionSet": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "knownResults": WeakMap {},
+                },
+                "storeWriter": StoreWriter {
+                  "cache": [Circular],
+                  "reader": StoreReader {
+                    "canon": ObjectCanon {
+                      "empty": Object {},
+                      "keysByJSON": Map {
+                        "[]" => Object {
+                          "json": "[]",
+                          "sorted": Array [],
+                        },
+                      },
+                      "known": WeakSet {},
+                      "passes": WeakMap {},
+                      "pool": Trie {
+                        "data": Object {
+                          "keys": Object {
+                            "json": "[]",
+                            "sorted": Array [],
+                          },
+                        },
+                        "makeData": [Function],
+                        "weak": WeakMap {},
+                        "weakness": true,
+                      },
+                    },
+                    "config": Object {
+                      "addTypename": false,
+                      "cache": [Circular],
+                      "canon": undefined,
+                      "resultCacheMaxSize": undefined,
+                    },
+                    "executeSelectionSet": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "knownResults": WeakMap {},
+                  },
+                },
+                "txCount": 0,
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+              "client": [Circular],
+            },
+            "mutate": [Function],
+            "query": [Function],
+            "queryDeduplication": true,
+            "queryManager": QueryManager {
+              "assumeImmutableResults": false,
+              "cache": InMemoryCache {
+                "addTypename": false,
+                "config": Object {
+                  "addTypename": false,
+                  "dataIdFromObject": [Function],
+                  "resultCaching": true,
+                  "typePolicies": Object {},
+                },
+                "data": Root {
+                  "canRead": [Function],
+                  "data": Object {},
+                  "getFieldValue": [Function],
+                  "group": CacheGroup {
+                    "caching": true,
+                    "d": [Function],
+                    "keyMaker": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "parent": null,
+                  },
+                  "policies": Policies {
+                    "cache": [Circular],
+                    "config": Object {
+                      "cache": [Circular],
+                      "dataIdFromObject": [Function],
+                      "possibleTypes": undefined,
+                      "typePolicies": Object {},
+                    },
+                    "fuzzySubtypes": Map {},
+                    "rootIdsByTypename": Object {
+                      "Mutation": "ROOT_MUTATION",
+                      "Query": "ROOT_QUERY",
+                      "Subscription": "ROOT_SUBSCRIPTION",
+                    },
+                    "rootTypenamesById": Object {
+                      "ROOT_MUTATION": "Mutation",
+                      "ROOT_QUERY": "Query",
+                      "ROOT_SUBSCRIPTION": "Subscription",
+                    },
+                    "supertypeMap": Map {},
+                    "toBeAdded": Object {},
+                    "typePolicies": Object {},
+                    "usingPossibleTypes": false,
+                  },
+                  "refs": Object {},
+                  "rootIds": Object {},
+                  "storageTrie": Trie {
+                    "makeData": [Function],
+                    "weakness": true,
+                  },
+                  "stump": Stump {
+                    "canRead": [Function],
+                    "data": Object {},
+                    "getFieldValue": [Function],
+                    "group": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": CacheGroup {
+                        "caching": true,
+                        "d": [Function],
+                        "keyMaker": Trie {
+                          "makeData": [Function],
+                          "weakness": true,
+                        },
+                        "parent": null,
+                      },
+                    },
+                    "id": "EntityStore.Stump",
+                    "parent": [Circular],
+                    "policies": Policies {
+                      "cache": [Circular],
+                      "config": Object {
+                        "cache": [Circular],
+                        "dataIdFromObject": [Function],
+                        "possibleTypes": undefined,
+                        "typePolicies": Object {},
+                      },
+                      "fuzzySubtypes": Map {},
+                      "rootIdsByTypename": Object {
+                        "Mutation": "ROOT_MUTATION",
+                        "Query": "ROOT_QUERY",
+                        "Subscription": "ROOT_SUBSCRIPTION",
+                      },
+                      "rootTypenamesById": Object {
+                        "ROOT_MUTATION": "Mutation",
+                        "ROOT_QUERY": "Query",
+                        "ROOT_SUBSCRIPTION": "Subscription",
+                      },
+                      "supertypeMap": Map {},
+                      "toBeAdded": Object {},
+                      "typePolicies": Object {},
+                      "usingPossibleTypes": false,
+                    },
+                    "refs": Object {},
+                    "replay": [Function],
+                    "rootIds": Object {},
+                    "toReference": [Function],
+                  },
+                  "toReference": [Function],
+                },
+                "getFragmentDoc": [Function],
+                "makeVar": [Function],
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": Stump {
+                  "canRead": [Function],
+                  "data": Object {},
+                  "getFieldValue": [Function],
+                  "group": CacheGroup {
+                    "caching": true,
+                    "d": [Function],
+                    "keyMaker": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "parent": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": null,
+                    },
+                  },
+                  "id": "EntityStore.Stump",
+                  "parent": Root {
+                    "canRead": [Function],
+                    "data": Object {},
+                    "getFieldValue": [Function],
+                    "group": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": null,
+                    },
+                    "policies": Policies {
+                      "cache": [Circular],
+                      "config": Object {
+                        "cache": [Circular],
+                        "dataIdFromObject": [Function],
+                        "possibleTypes": undefined,
+                        "typePolicies": Object {},
+                      },
+                      "fuzzySubtypes": Map {},
+                      "rootIdsByTypename": Object {
+                        "Mutation": "ROOT_MUTATION",
+                        "Query": "ROOT_QUERY",
+                        "Subscription": "ROOT_SUBSCRIPTION",
+                      },
+                      "rootTypenamesById": Object {
+                        "ROOT_MUTATION": "Mutation",
+                        "ROOT_QUERY": "Query",
+                        "ROOT_SUBSCRIPTION": "Subscription",
+                      },
+                      "supertypeMap": Map {},
+                      "toBeAdded": Object {},
+                      "typePolicies": Object {},
+                      "usingPossibleTypes": false,
+                    },
+                    "refs": Object {},
+                    "rootIds": Object {},
+                    "storageTrie": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "stump": [Circular],
+                    "toReference": [Function],
+                  },
+                  "policies": Policies {
+                    "cache": [Circular],
+                    "config": Object {
+                      "cache": [Circular],
+                      "dataIdFromObject": [Function],
+                      "possibleTypes": undefined,
+                      "typePolicies": Object {},
+                    },
+                    "fuzzySubtypes": Map {},
+                    "rootIdsByTypename": Object {
+                      "Mutation": "ROOT_MUTATION",
+                      "Query": "ROOT_QUERY",
+                      "Subscription": "ROOT_SUBSCRIPTION",
+                    },
+                    "rootTypenamesById": Object {
+                      "ROOT_MUTATION": "Mutation",
+                      "ROOT_QUERY": "Query",
+                      "ROOT_SUBSCRIPTION": "Subscription",
+                    },
+                    "supertypeMap": Map {},
+                    "toBeAdded": Object {},
+                    "typePolicies": Object {},
+                    "usingPossibleTypes": false,
+                  },
+                  "refs": Object {},
+                  "replay": [Function],
+                  "rootIds": Object {},
+                  "toReference": [Function],
+                },
+                "policies": Policies {
+                  "cache": [Circular],
+                  "config": Object {
+                    "cache": [Circular],
+                    "dataIdFromObject": [Function],
+                    "possibleTypes": undefined,
+                    "typePolicies": Object {},
+                  },
+                  "fuzzySubtypes": Map {},
+                  "rootIdsByTypename": Object {
+                    "Mutation": "ROOT_MUTATION",
+                    "Query": "ROOT_QUERY",
+                    "Subscription": "ROOT_SUBSCRIPTION",
+                  },
+                  "rootTypenamesById": Object {
+                    "ROOT_MUTATION": "Mutation",
+                    "ROOT_QUERY": "Query",
+                    "ROOT_SUBSCRIPTION": "Subscription",
+                  },
+                  "supertypeMap": Map {},
+                  "toBeAdded": Object {},
+                  "typePolicies": Object {},
+                  "usingPossibleTypes": false,
+                },
+                "storeReader": StoreReader {
+                  "canon": ObjectCanon {
+                    "empty": Object {},
+                    "keysByJSON": Map {
+                      "[]" => Object {
+                        "json": "[]",
+                        "sorted": Array [],
+                      },
+                    },
+                    "known": WeakSet {},
+                    "passes": WeakMap {},
+                    "pool": Trie {
+                      "data": Object {
+                        "keys": Object {
+                          "json": "[]",
+                          "sorted": Array [],
+                        },
+                      },
+                      "makeData": [Function],
+                      "weak": WeakMap {},
+                      "weakness": true,
+                    },
+                  },
+                  "config": Object {
+                    "addTypename": false,
+                    "cache": [Circular],
+                    "canon": undefined,
+                    "resultCacheMaxSize": undefined,
+                  },
+                  "executeSelectionSet": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "knownResults": WeakMap {},
+                },
+                "storeWriter": StoreWriter {
+                  "cache": [Circular],
+                  "reader": StoreReader {
+                    "canon": ObjectCanon {
+                      "empty": Object {},
+                      "keysByJSON": Map {
+                        "[]" => Object {
+                          "json": "[]",
+                          "sorted": Array [],
+                        },
+                      },
+                      "known": WeakSet {},
+                      "passes": WeakMap {},
+                      "pool": Trie {
+                        "data": Object {
+                          "keys": Object {
+                            "json": "[]",
+                            "sorted": Array [],
+                          },
+                        },
+                        "makeData": [Function],
+                        "weak": WeakMap {},
+                        "weakness": true,
+                      },
+                    },
+                    "config": Object {
+                      "addTypename": false,
+                      "cache": [Circular],
+                      "canon": undefined,
+                      "resultCacheMaxSize": undefined,
+                    },
+                    "executeSelectionSet": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "knownResults": WeakMap {},
+                  },
+                },
+                "txCount": 0,
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+              "clientAwareness": Object {
+                "name": undefined,
+                "version": undefined,
+              },
+              "fetchCancelFns": Map {},
+              "inFlightLinkObservables": Map {},
+              "link": MockLink {
+                "addTypename": false,
+                "mockedResponsesByKey": Object {
+                  "{\\"query\\":\\"query meQuery {\\\\n  me {\\\\n    id\\\\n    email\\\\n    username\\\\n    createdAt\\\\n  }\\\\n}\\\\n\\"}": Array [
+                    Object {
+                      "request": Object {
+                        "query": Object {
+                          "definitions": Array [
+                            Object {
+                              "directives": Array [],
+                              "kind": "OperationDefinition",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "meQuery",
+                              },
+                              "operation": "query",
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "me",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "email",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "username",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "createdAt",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                              "variableDefinitions": Array [],
+                            },
+                          ],
+                          "kind": "Document",
+                          "loc": Object {
+                            "end": 73,
+                            "start": 0,
+                          },
+                        },
+                      },
+                      "result": Object {
+                        "data": null,
+                      },
+                    },
+                  ],
+                },
+              },
+              "localState": LocalState {
+                "cache": InMemoryCache {
+                  "addTypename": false,
+                  "config": Object {
+                    "addTypename": false,
+                    "dataIdFromObject": [Function],
+                    "resultCaching": true,
+                    "typePolicies": Object {},
+                  },
+                  "data": Root {
+                    "canRead": [Function],
+                    "data": Object {},
+                    "getFieldValue": [Function],
+                    "group": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": null,
+                    },
+                    "policies": Policies {
+                      "cache": [Circular],
+                      "config": Object {
+                        "cache": [Circular],
+                        "dataIdFromObject": [Function],
+                        "possibleTypes": undefined,
+                        "typePolicies": Object {},
+                      },
+                      "fuzzySubtypes": Map {},
+                      "rootIdsByTypename": Object {
+                        "Mutation": "ROOT_MUTATION",
+                        "Query": "ROOT_QUERY",
+                        "Subscription": "ROOT_SUBSCRIPTION",
+                      },
+                      "rootTypenamesById": Object {
+                        "ROOT_MUTATION": "Mutation",
+                        "ROOT_QUERY": "Query",
+                        "ROOT_SUBSCRIPTION": "Subscription",
+                      },
+                      "supertypeMap": Map {},
+                      "toBeAdded": Object {},
+                      "typePolicies": Object {},
+                      "usingPossibleTypes": false,
+                    },
+                    "refs": Object {},
+                    "rootIds": Object {},
+                    "storageTrie": Trie {
+                      "makeData": [Function],
+                      "weakness": true,
+                    },
+                    "stump": Stump {
+                      "canRead": [Function],
+                      "data": Object {},
+                      "getFieldValue": [Function],
+                      "group": CacheGroup {
+                        "caching": true,
+                        "d": [Function],
+                        "keyMaker": Trie {
+                          "makeData": [Function],
+                          "weakness": true,
+                        },
+                        "parent": CacheGroup {
+                          "caching": true,
+                          "d": [Function],
+                          "keyMaker": Trie {
+                            "makeData": [Function],
+                            "weakness": true,
+                          },
+                          "parent": null,
+                        },
+                      },
+                      "id": "EntityStore.Stump",
+                      "parent": [Circular],
+                      "policies": Policies {
+                        "cache": [Circular],
+                        "config": Object {
+                          "cache": [Circular],
+                          "dataIdFromObject": [Function],
+                          "possibleTypes": undefined,
+                          "typePolicies": Object {},
+                        },
+                        "fuzzySubtypes": Map {},
+                        "rootIdsByTypename": Object {
+                          "Mutation": "ROOT_MUTATION",
+                          "Query": "ROOT_QUERY",
+                          "Subscription": "ROOT_SUBSCRIPTION",
+                        },
+                        "rootTypenamesById": Object {
+                          "ROOT_MUTATION": "Mutation",
+                          "ROOT_QUERY": "Query",
+                          "ROOT_SUBSCRIPTION": "Subscription",
+                        },
+                        "supertypeMap": Map {},
+                        "toBeAdded": Object {},
+                        "typePolicies": Object {},
+                        "usingPossibleTypes": false,
+                      },
+                      "refs": Object {},
+                      "replay": [Function],
+                      "rootIds": Object {},
+                      "toReference": [Function],
+                    },
+                    "toReference": [Function],
+                  },
+                  "getFragmentDoc": [Function],
+                  "makeVar": [Function],
+                  "maybeBroadcastWatch": [Function],
+                  "optimisticData": Stump {
+                    "canRead": [Function],
+                    "data": Object {},
+                    "getFieldValue": [Function],
+                    "group": CacheGroup {
+                      "caching": true,
+                      "d": [Function],
+                      "keyMaker": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "parent": CacheGroup {
+                        "caching": true,
+                        "d": [Function],
+                        "keyMaker": Trie {
+                          "makeData": [Function],
+                          "weakness": true,
+                        },
+                        "parent": null,
+                      },
+                    },
+                    "id": "EntityStore.Stump",
+                    "parent": Root {
+                      "canRead": [Function],
+                      "data": Object {},
+                      "getFieldValue": [Function],
+                      "group": CacheGroup {
+                        "caching": true,
+                        "d": [Function],
+                        "keyMaker": Trie {
+                          "makeData": [Function],
+                          "weakness": true,
+                        },
+                        "parent": null,
+                      },
+                      "policies": Policies {
+                        "cache": [Circular],
+                        "config": Object {
+                          "cache": [Circular],
+                          "dataIdFromObject": [Function],
+                          "possibleTypes": undefined,
+                          "typePolicies": Object {},
+                        },
+                        "fuzzySubtypes": Map {},
+                        "rootIdsByTypename": Object {
+                          "Mutation": "ROOT_MUTATION",
+                          "Query": "ROOT_QUERY",
+                          "Subscription": "ROOT_SUBSCRIPTION",
+                        },
+                        "rootTypenamesById": Object {
+                          "ROOT_MUTATION": "Mutation",
+                          "ROOT_QUERY": "Query",
+                          "ROOT_SUBSCRIPTION": "Subscription",
+                        },
+                        "supertypeMap": Map {},
+                        "toBeAdded": Object {},
+                        "typePolicies": Object {},
+                        "usingPossibleTypes": false,
+                      },
+                      "refs": Object {},
+                      "rootIds": Object {},
+                      "storageTrie": Trie {
+                        "makeData": [Function],
+                        "weakness": true,
+                      },
+                      "stump": [Circular],
+                      "toReference": [Function],
+                    },
+                    "policies": Policies {
+                      "cache": [Circular],
+                      "config": Object {
+                        "cache": [Circular],
+                        "dataIdFromObject": [Function],
+                        "possibleTypes": undefined,
+                        "typePolicies": Object {},
+                      },
+                      "fuzzySubtypes": Map {},
+                      "rootIdsByTypename": Object {
+                        "Mutation": "ROOT_MUTATION",
+                        "Query": "ROOT_QUERY",
+                        "Subscription": "ROOT_SUBSCRIPTION",
+                      },
+                      "rootTypenamesById": Object {
+                        "ROOT_MUTATION": "Mutation",
+                        "ROOT_QUERY": "Query",
+                        "ROOT_SUBSCRIPTION": "Subscription",
+                      },
+                      "supertypeMap": Map {},
+                      "toBeAdded": Object {},
+                      "typePolicies": Object {},
+                      "usingPossibleTypes": false,
+                    },
+                    "refs": Object {},
+                    "replay": [Function],
+                    "rootIds": Object {},
+                    "toReference": [Function],
+                  },
+                  "policies": Policies {
+                    "cache": [Circular],
+                    "config": Object {
+                      "cache": [Circular],
+                      "dataIdFromObject": [Function],
+                      "possibleTypes": undefined,
+                      "typePolicies": Object {},
+                    },
+                    "fuzzySubtypes": Map {},
+                    "rootIdsByTypename": Object {
+                      "Mutation": "ROOT_MUTATION",
+                      "Query": "ROOT_QUERY",
+                      "Subscription": "ROOT_SUBSCRIPTION",
+                    },
+                    "rootTypenamesById": Object {
+                      "ROOT_MUTATION": "Mutation",
+                      "ROOT_QUERY": "Query",
+                      "ROOT_SUBSCRIPTION": "Subscription",
+                    },
+                    "supertypeMap": Map {},
+                    "toBeAdded": Object {},
+                    "typePolicies": Object {},
+                    "usingPossibleTypes": false,
+                  },
+                  "storeReader": StoreReader {
+                    "canon": ObjectCanon {
+                      "empty": Object {},
+                      "keysByJSON": Map {
+                        "[]" => Object {
+                          "json": "[]",
+                          "sorted": Array [],
+                        },
+                      },
+                      "known": WeakSet {},
+                      "passes": WeakMap {},
+                      "pool": Trie {
+                        "data": Object {
+                          "keys": Object {
+                            "json": "[]",
+                            "sorted": Array [],
+                          },
+                        },
+                        "makeData": [Function],
+                        "weak": WeakMap {},
+                        "weakness": true,
+                      },
+                    },
+                    "config": Object {
+                      "addTypename": false,
+                      "cache": [Circular],
+                      "canon": undefined,
+                      "resultCacheMaxSize": undefined,
+                    },
+                    "executeSelectionSet": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "knownResults": WeakMap {},
+                  },
+                  "storeWriter": StoreWriter {
+                    "cache": [Circular],
+                    "reader": StoreReader {
+                      "canon": ObjectCanon {
+                        "empty": Object {},
+                        "keysByJSON": Map {
+                          "[]" => Object {
+                            "json": "[]",
+                            "sorted": Array [],
+                          },
+                        },
+                        "known": WeakSet {},
+                        "passes": WeakMap {},
+                        "pool": Trie {
+                          "data": Object {
+                            "keys": Object {
+                              "json": "[]",
+                              "sorted": Array [],
+                            },
+                          },
+                          "makeData": [Function],
+                          "weak": WeakMap {},
+                          "weakness": true,
+                        },
+                      },
+                      "config": Object {
+                        "addTypename": false,
+                        "cache": [Circular],
+                        "canon": undefined,
+                        "resultCacheMaxSize": undefined,
+                      },
+                      "executeSelectionSet": [Function],
+                      "executeSubSelectedArray": [Function],
+                      "knownResults": WeakMap {},
+                    },
+                  },
+                  "txCount": 0,
+                  "typenameDocumentCache": Map {},
+                  "watches": Set {},
+                },
+                "client": [Circular],
+              },
+              "mutationIdCounter": 1,
+              "onBroadcast": undefined,
+              "queries": Map {},
+              "queryDeduplication": true,
+              "queryIdCounter": 1,
+              "requestIdCounter": 1,
+              "ssrMode": false,
+              "transformCache": WeakMap {},
+            },
+            "reFetchObservableQueries": [Function],
+            "resetStore": [Function],
+            "resetStoreCallbacks": Array [],
+            "typeDefs": undefined,
+            "version": "3.4.8",
+            "watchQuery": [Function],
+          }
+        }
+      >
+        <BrowserRouter>
+          <Router
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+          >
+            <Component
+              theme={
+                Object {
+                  "breakpoints": Object {},
+                  "colors": Object {
+                    "background": "#dbe0e0",
+                    "boardGame": "#333131",
+                    "borderBoardgame": "#dbe0e01f",
+                    "borders": "#333131",
+                    "buttonDialogue": "#988670",
+                    "eq": "#999797",
+                    "font": Object {
+                      "fade": "#6d6d6d",
+                      "primary": "#333131",
+                    },
+                    "social": Object {
+                      "email": "#7C7C7C",
+                      "facebook": "#3B5998",
+                      "linkedin": "#0077B5",
+                      "twitter": "#1DA1F2",
+                    },
+                    "timer": Object {
+                      "finish": "red",
+                      "idle": "green",
+                      "normal": "#333131",
+                    },
+                  },
+                  "fontSizes": Object {
+                    "bg": "2.2rem",
+                    "md": "1.8rem",
+                    "sm": "1.4rem",
+                  },
+                  "fonts": Array [],
+                }
+              }
+            >
+              <ModalProvider>
+                <ErrorhandleProvider>
+                  <StartGameProvider>
+                    <MusicManagerContextProvider>
+                      <Modals>
+                        <Suspense
+                          fallback={
+                            <div>
+                              loading...
+                            </div>
+                          }
+                        >
+                          <Login>
+                            <LayoutMenu
+                              logo={true}
+                            >
+                              <styled.div
+                                backgroundPosition="center"
+                                backgroundRepeat="no-repeat"
+                                backgroundSize="cover"
+                                backgroundSrc="/public/images/menu/bg_big.jpg"
+                                h="100%"
+                                position="fixed"
+                                w="100%"
+                              >
+                                <div
+                                  className="sc-bdfBwQ kFIysx"
+                                >
+                                  <styled.div
+                                    ai="center"
+                                    disp="flex"
+                                    fd="column"
+                                    h="100%"
+                                    jc="center"
+                                    margin="0 auto"
+                                    overflow="hidden"
+                                    w="450px"
+                                    zIndex={10}
+                                  >
+                                    <div
+                                      className="sc-bdfBwQ iiYlrx"
+                                      overflow="hidden"
+                                    >
+                                      <Logo>
+                                        <styled.div
+                                          ai="center"
+                                          disp="flex"
+                                          h="150px"
+                                          id="logo"
+                                          jc="center"
+                                          w="100%"
+                                        >
+                                          <div
+                                            className="sc-bdfBwQ eyYUOi"
+                                            id="logo"
+                                          >
+                                            <styled.div
+                                              h="150px"
+                                              mr={30}
+                                              position="absolute"
+                                              w="300px"
+                                            >
+                                              <div
+                                                className="sc-bdfBwQ bzmcxS"
+                                              >
+                                                <LazyImage
+                                                  alt="Logo"
+                                                  src="/public/images/menu/Logo-1.png"
+                                                >
+                                                  <LazyLoad
+                                                    className=""
+                                                    classNamePrefix="lazyload"
+                                                    offset={0}
+                                                    once={false}
+                                                    overflow={false}
+                                                    resize={false}
+                                                    scroll={true}
+                                                    unmountIfInvisible={false}
+                                                  >
+                                                    <div
+                                                      className="lazyload-wrapper "
+                                                    >
+                                                      <div
+                                                        className="lazyload-placeholder"
+                                                        style={
+                                                          Object {
+                                                            "height": undefined,
+                                                          }
+                                                        }
+                                                      />
+                                                    </div>
+                                                  </LazyLoad>
+                                                </LazyImage>
+                                              </div>
+                                            </styled.div>
+                                            <styled.div
+                                              h="150px"
+                                              mr={30}
+                                              position="absolute"
+                                              w="300px"
+                                            >
+                                              <div
+                                                className="sc-bdfBwQ bzmcxS"
+                                              >
+                                                <LazyImage
+                                                  alt="Logo"
+                                                  src="/public/images/menu/Logo-2.png"
+                                                >
+                                                  <LazyLoad
+                                                    className=""
+                                                    classNamePrefix="lazyload"
+                                                    offset={0}
+                                                    once={false}
+                                                    overflow={false}
+                                                    resize={false}
+                                                    scroll={true}
+                                                    unmountIfInvisible={false}
+                                                  >
+                                                    <div
+                                                      className="lazyload-wrapper "
+                                                    >
+                                                      <div
+                                                        className="lazyload-placeholder"
+                                                        style={
+                                                          Object {
+                                                            "height": undefined,
+                                                          }
+                                                        }
+                                                      />
+                                                    </div>
+                                                  </LazyLoad>
+                                                </LazyImage>
+                                              </div>
+                                            </styled.div>
+                                          </div>
+                                        </styled.div>
+                                      </Logo>
+                                      <Auth
+                                        inputs={
+                                          Array [
+                                            Object {
+                                              "id": 1,
+                                              "label": "E-mail",
+                                              "name": "email",
+                                              "placeholder": "E-mail",
+                                              "value": "",
+                                            },
+                                            Object {
+                                              "id": 2,
+                                              "label": "Password",
+                                              "name": "password",
+                                              "placeholder": "Password",
+                                              "value": "",
+                                            },
+                                          ]
+                                        }
+                                        loading={false}
+                                        onChange={[Function]}
+                                        onSubmit={[Function]}
+                                        type="Login"
+                                      >
+                                        <form>
+                                          <styled.div
+                                            key="1"
+                                            mb={25}
+                                          >
+                                            <div
+                                              className="sc-bdfBwQ eTPpWW"
+                                            >
+                                              <styled.div
+                                                mb={10}
+                                              >
+                                                <div
+                                                  className="sc-bdfBwQ cBLPdA"
+                                                >
+                                                  <styled.label>
+                                                    <label
+                                                      className="sc-jSgupP IeVsJ"
+                                                    >
+                                                      E-mail
+                                                    </label>
+                                                  </styled.label>
+                                                </div>
+                                              </styled.div>
+                                              <styled.input
+                                                key="1"
+                                                name="email"
+                                                onChange={[Function]}
+                                                placeholder="E-mail"
+                                                value=""
+                                              >
+                                                <input
+                                                  className="sc-eCssSg gsTOYP"
+                                                  name="email"
+                                                  onChange={[Function]}
+                                                  placeholder="E-mail"
+                                                  value=""
+                                                />
+                                              </styled.input>
+                                            </div>
+                                          </styled.div>
+                                          <styled.div
+                                            key="2"
+                                            mb={25}
+                                          >
+                                            <div
+                                              className="sc-bdfBwQ eTPpWW"
+                                            >
+                                              <styled.div
+                                                mb={10}
+                                              >
+                                                <div
+                                                  className="sc-bdfBwQ cBLPdA"
+                                                >
+                                                  <styled.label>
+                                                    <label
+                                                      className="sc-jSgupP IeVsJ"
+                                                    >
+                                                      Password
+                                                    </label>
+                                                  </styled.label>
+                                                </div>
+                                              </styled.div>
+                                              <styled.input
+                                                key="2"
+                                                name="password"
+                                                onChange={[Function]}
+                                                placeholder="Password"
+                                                value=""
+                                              >
+                                                <input
+                                                  className="sc-eCssSg gsTOYP"
+                                                  name="password"
+                                                  onChange={[Function]}
+                                                  placeholder="Password"
+                                                  value=""
+                                                />
+                                              </styled.input>
+                                            </div>
+                                          </styled.div>
+                                          <styled.div
+                                            mt={40}
+                                          >
+                                            <div
+                                              className="sc-bdfBwQ cUMgjZ"
+                                            >
+                                              <Button
+                                                onClick={[Function]}
+                                                text="Login"
+                                              >
+                                                <styled.div
+                                                  onClick={[Function]}
+                                                >
+                                                  <div
+                                                    className="sc-jrAGrp cDAQFg"
+                                                    onClick={[Function]}
+                                                  >
+                                                    <styled.p>
+                                                      <p
+                                                        className="sc-gKsewC crXBEd"
+                                                      >
+                                                        Login
+                                                      </p>
+                                                    </styled.p>
+                                                    <Styled(styled.div)
+                                                      background="/public/images/menu/dots.png"
+                                                    >
+                                                      <div
+                                                        className="sc-iBPRYJ sc-fubCfw dhomzg iNjALY"
+                                                      />
+                                                    </Styled(styled.div)>
+                                                    <Styled(styled.div)
+                                                      background="/public/images/menu/dots.png"
+                                                    >
+                                                      <div
+                                                        className="sc-iBPRYJ sc-pFZIQ dhomzg dqEucF"
+                                                      />
+                                                    </Styled(styled.div)>
+                                                  </div>
+                                                </styled.div>
+                                              </Button>
+                                            </div>
+                                          </styled.div>
+                                        </form>
+                                      </Auth>
+                                    </div>
+                                  </styled.div>
+                                  <Snow>
+                                    <styled.div>
+                                      <div
+                                        className="sc-gsTCUz doCbq"
+                                      >
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                        <styled.i>
+                                          <i
+                                            className="sc-dlfnbm eGfYSs"
+                                          />
+                                        </styled.i>
+                                      </div>
+                                    </styled.div>
+                                  </Snow>
+                                </div>
+                              </styled.div>
+                            </LayoutMenu>
+                          </Login>
+                        </Suspense>
+                      </Modals>
+                    </MusicManagerContextProvider>
+                  </StartGameProvider>
+                </ErrorhandleProvider>
+              </ModalProvider>
+            </Component>
+          </Router>
+        </BrowserRouter>
+      </ApolloProvider>
+    </MockedProvider>
+  </ApolloProvider>
+</Mount>
 `;
