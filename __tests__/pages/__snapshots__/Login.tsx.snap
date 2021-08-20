@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login page User is not authorized 1`] = `
+exports[`Login page User is not authorized, should stay on page 1`] = `
 <Mount
   dispatch={[MockFunction]}
   mocks={
