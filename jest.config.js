@@ -12,6 +12,6 @@ module.exports = {
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|less|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
   },
-  snapshotSerializers: ['jest-serializer-html'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
   cacheDirectory: '.cache/jest',
 }
