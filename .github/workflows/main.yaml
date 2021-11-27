@@ -26,9 +26,6 @@ jobs:
           key: v202101131145-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --ignore-scripts
-
-      - name: Run post-install scripts
         run: yarn install
 
       - name: Test sources and collect coverage
