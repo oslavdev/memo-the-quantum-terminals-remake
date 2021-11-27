@@ -1,18 +1,35 @@
+name: "main"
+
 on:
   push:
-    branches: [master]
+    branches:
+      - master
   pull_request:
-    branches: [master]
+    branches:
+      - master
+
 
 jobs:
   test:
-    name: Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
-      - name: Installing dependencies
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: Restore Node modules from caches
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: v202101131145-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --ignore-scripts
+
+      - name: Run post-install scripts
         run: yarn install
 
-      - name: Running Test
-        run: yarn test
+      - name: Test sources and collect coverage
+        run: yarn test --coverage
