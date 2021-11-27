@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="0" errors="0" time="3.98">
-  <testsuite name="test paths" errors="0" failures="0" skipped="0" timestamp="2021-08-20T14:09:34" time="1.98" tests="5">
+<testsuites name="jest tests" tests="8" failures="0" errors="0" time="2.356">
+  <testsuite name="test paths" errors="0" failures="0" skipped="0" timestamp="2021-11-27T19:33:02" time="1.156" tests="5">
     <testcase classname="test paths Path home" name="test paths Path home" time="0.001">
     </testcase>
     <testcase classname="test paths Path menu" name="test paths Path menu" time="0">
@@ -12,14 +12,14 @@
     <testcase classname="test paths Path Register" name="test paths Path Register" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="Test tile position" errors="0" failures="0" skipped="0" timestamp="2021-08-20T14:09:34" time="2.125" tests="2">
+  <testsuite name="Test tile position" errors="0" failures="0" skipped="0" timestamp="2021-11-27T19:33:02" time="1.167" tests="2">
     <testcase classname="Test tile position Start" name="Test tile position Start" time="0.002">
     </testcase>
     <testcase classname="Test tile position End" name="Test tile position End" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="Login page" errors="0" failures="0" skipped="0" timestamp="2021-08-20T14:09:34" time="2.926" tests="1">
-    <testcase classname="Login page User is not authorized, should stay on page" name="Login page User is not authorized, should stay on page" time="0.194">
+  <testsuite name="Login page" errors="0" failures="0" skipped="0" timestamp="2021-11-27T19:33:02" time="1.663" tests="1">
+    <testcase classname="Login page User is not authorized, should stay on page" name="Login page User is not authorized, should stay on page" time="0.196">
     </testcase>
   </testsuite>
 </testsuites>
