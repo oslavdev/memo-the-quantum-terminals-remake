@@ -1,5 +1,3 @@
-name: Deploy quantum terminals
-
 on:
   push:
     branches: [master]
@@ -8,12 +6,13 @@ on:
 
 jobs:
   test:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
+    name: Tests
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
 
-    - name: Installing dependencies
-      run: yarn install --frozen-lockfile --ignore-scripts
+      - name: Installing dependencies
+        run: yarn install
 
-    - name: Running Test
-      run: yarn test
+      - name: Running Test
+        run: yarn test
