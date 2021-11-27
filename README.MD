@@ -12,22 +12,15 @@ Server side: https://github.com/oslavdev/memo-the-quantum-terminals-server
 - Apollo
 - TypeScript
 - GraphQL
-- Node.js
-- Express
-- PostgreSQL
-- TypeORM
-- Docker
-- Jest
-- Cypress
 
-### Run
+### Run in development mode
 
 ```
 docker-compose up
 
 or
 
-yarn
+yarn install
 
 yarn dev
 
