@@ -3,9 +3,9 @@ FROM node:12-alpine
 WORKDIR /usr/src/app
 
 COPY ./package.json ./
-COPY ./package-lock.json ./
+COPY ./yarn.lock ./
 
-RUN npm i 
+RUN yarn install --frozen-lockfile
 
 COPY . .
 
