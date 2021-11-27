@@ -4,7 +4,7 @@ Server side: https://github.com/oslavdev/memo-the-quantum-terminals-server
 
 (In progress...) This is a remake of my old simple 2D procedurally generated puzzle game **The Quantum Terminals**. In this build I migrated project to **GraphQL** with **TypeScript**.
 
-![Alt text](readme/cover.jpg?raw=true "Cover")
+![Alt text](readme/cover.jpg?raw=true 'Cover')
 
 ### Technologies
 
@@ -23,10 +23,11 @@ Server side: https://github.com/oslavdev/memo-the-quantum-terminals-server
 ### Run
 
 ```
-# in server directory
 docker-compose up
 
-# in a separate terminal, inside client folder
+or
+
+yarn
 
 yarn dev
 
