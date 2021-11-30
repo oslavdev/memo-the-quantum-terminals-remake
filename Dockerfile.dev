@@ -1,0 +1,15 @@
+FROM node:12-alpine
+
+WORKDIR /app
+
+COPY ./package.json .
+COPY ./yarn.lock .
+
+RUN yarn install
+
+COPY . .
+
+EXPOSE 8080
+
+# Run in development mode
+CMD ["yarn", "run", "dev"]

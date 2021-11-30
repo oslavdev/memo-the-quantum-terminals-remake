@@ -28,14 +28,15 @@ import { MusicManagerContextProvider } from '@/context/music'
 
 /* Fragments */
 import Modals from '@/fragments/Modals'
-import Terminals from './pages/Terminals'
+
+/** Pages */
+import Terminals from '@/pages/Terminals'
 
 const App = () => {
   const initialState = useContext(State)
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <>
       <ThemeProvider theme={theme}>
         <State.Provider value={{ state, dispatch }}>
           <ModalProvider>
@@ -93,7 +94,6 @@ const App = () => {
           </ModalProvider>
         </State.Provider>
       </ThemeProvider>
-    </>
   )
 }
 
