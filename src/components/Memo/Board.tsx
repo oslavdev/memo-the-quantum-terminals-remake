@@ -36,7 +36,6 @@ const CellGen = () => {
 }
 
 export default function GameBoard({ dialogueStatus, gameStatus, level }) {
-  console.log(level)
 
   return (
     <Box blur={dialogueStatus} mt={20}>

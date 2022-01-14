@@ -9,7 +9,6 @@ type ModalChildrenProps = {
 
 export default function Modals({ children }: ModalChildrenProps) {
   const modalState = useModalState()
-  console.log(modalState)
 
   return (
     <>
