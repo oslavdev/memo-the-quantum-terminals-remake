@@ -12,34 +12,38 @@ Server side: https://github.com/oslavdev/memo-the-quantum-terminals-server
 - Apollo
 - TypeScript
 - GraphQL
-- Node.js
-- Express
-- PostgreSQL
-- TypeORM
-- Docker
-- Jest
-- Cypress
 
-### Run
+### Run in development mode
 
-```
+With Docker 
+
+```sh
 docker-compose up
+```
 
-or
+Without docker 
 
-yarn
+```sh
+
+yarn install
 
 yarn dev
 
 ```
 
+(!) By default the application makes requests to the hosted backend.
+If you want to run backend locally, you need to add *SERVER_API_URL* environment in .env file
+
 **CLIENT HOST:** http://localhost:8080/
+
 
 ### Environments
 
-| NAME           |     DESCRIPTION      |
-| -------------- | :------------------: |
-| SERVER_API_URL | <server_graphql_url> |
+
+| NAME           |     DESCRIPTION      |       REQUIRED       |
+| -------------- | :------------------: | :------------------: |
+| SERVER_API_URL | <server_graphql_url> |        false         |
+
 
 ### Testing
 

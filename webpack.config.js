@@ -15,11 +15,11 @@ module.exports = {
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    contentBase: path.resolve(__dirname, './build'),
     hot: true,
   },
   module: {

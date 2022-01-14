@@ -1,19 +1,44 @@
-name: Deploy quantum terminals
+name: "main"
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
   pull_request:
-    branches: [main]
+    branches:
+      - master
 
 jobs:
   test:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
 
-    - name: Installing dependencies
-      run: yarn install --frozen-lockfile --ignore-scripts
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
 
-    - name: Running Test
-      run: yarn test
+      - name: Restore Node modules from caches
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: v202101131145-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Test sources and collect coverage
+        run: yarn test --coverage
+
+      - uses: codecov/codecov-action@v2
+        with:
+          fail_ci_if_error: true
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
