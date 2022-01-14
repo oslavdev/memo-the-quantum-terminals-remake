@@ -6,3 +6,5 @@ dist
 .cache
 #vscode
 .vscode
+#test units
+junit.xml

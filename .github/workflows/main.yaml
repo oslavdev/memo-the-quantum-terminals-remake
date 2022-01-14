@@ -37,6 +37,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+  semantic-release:
+    runs-on: ubuntu-latest
+    steps:
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
         env:
