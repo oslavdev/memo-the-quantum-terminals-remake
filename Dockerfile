@@ -1,17 +1,19 @@
-FROM node:12-alpine
+#Build
+FROM node:lts-alpine as build 
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY ./package.json ./
-COPY ./yarn.lock ./
+COPY package.json .
+COPY yarn.lock . 
 
-RUN yarn install --frozen-lockfile
+RUN yarn install 
 
 COPY . .
 
-RUN ls
+RUN NODE_ENV=production yarn run build
 
-EXPOSE 8080
+# Production
+FROM nginx
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf 
 
-# Run in development mode
-CMD ["npm", "run", "dev"]
+COPY --from=build /app/build /usr/share/nginx/html 
