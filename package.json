@@ -57,6 +57,7 @@
     "@imaginary-cloud/prettier-config": "^1.0.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/github": "^8.0.2",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@testing-library/react-hooks": "^7.0.1",
     "@testing-library/user-event": "^13.2.1",
@@ -106,6 +107,13 @@
       "pre-commit": "pretty-quick --staged --verbose",
       "post-commit": "release"
     }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
   },
   "eslintConfig": {
     "extends": "@imaginary-cloud/react"
