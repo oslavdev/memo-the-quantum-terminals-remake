@@ -8,3 +8,5 @@ dist
 .vscode
 #test units
 junit.xml
+# ogs
+*.log
