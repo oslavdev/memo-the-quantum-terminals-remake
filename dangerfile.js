@@ -8,6 +8,8 @@ const pr = danger.github.pr
 const created_files = danger.git.created_files
 const danger_commits = danger.git.commits
 
+console.log(danger.github)
+console.log(danger.git)
 
 /** No ENV files */
 const env_files = created_files.find((file) => 
