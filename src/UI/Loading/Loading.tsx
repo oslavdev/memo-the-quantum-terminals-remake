@@ -32,7 +32,7 @@ export const Wrapper = styled.div`
 
 interface SquareProps{
   delay?: string;
-};
+}
 
 export const Square = styled.div<SquareProps>`
     width: 40px;

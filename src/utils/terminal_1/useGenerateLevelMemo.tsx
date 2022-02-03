@@ -1,7 +1,7 @@
 import { rules } from '@/utils/terminal_1/rules/rule'
 import { getRandomIntInclusive } from '@/utils/random'
 
-const size: number = 30
+const size = 30
 
 export const isStartOfTheRow = (number: number): boolean => {
   return (number - 1) % 5 === 0
@@ -11,7 +11,7 @@ export const isEndOfTheRow = (number: number): boolean => {
 }
 
 export const getPossibilities = (number: number): number[] => {
-  let possibilities = []
+  const possibilities = []
   if (isStartOfTheRow(number)) {
     possibilities.push(
       number + 1,
@@ -66,9 +66,9 @@ export const generateNext = (number: number, avoid: number[]): number => {
 const generateLevelMemo = (player_level: number | string) => {
   /* Variables */
   const current_rule = rules.find((el) => el.level === player_level)
-  let level_arr: number[] = []
-  let avoid: number[] = []
-  let number_of_tiles: number = current_rule.level
+  const level_arr: number[] = []
+  const avoid: number[] = []
+  const number_of_tiles: number = current_rule.level
 
   /** @LevelGenerator */
 
@@ -76,7 +76,7 @@ const generateLevelMemo = (player_level: number | string) => {
   let previous_step: number | null = null
 
   /* Get First Tile */
-  let first_tile = getRandomIntInclusive(1, 30)
+  const first_tile = getRandomIntInclusive(1, 30)
   level_arr.push(first_tile)
   avoid.push(first_tile)
   previous_step = first_tile

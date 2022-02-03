@@ -1,0 +1,13 @@
+node_modules
+dist
+__tests__
+__tests__coverage
+.husky
+.cache
+public
+readme
+dangerfile.js
+estupTests.js
+webpack.dev.js
+webpack.config.js
+jest.config.js

@@ -6,7 +6,7 @@ import { Header3, Paragraph } from '@/UI/Text/Text'
 import { ConfirmButton, DeclineButton, ButtonText } from '@/UI/Buttons/Modal'
 import { pathLobby } from '@/app/config/paths'
 import { useStartGameDispatch } from '@/context/startGame'
-import { useModalState, useModalDispatch } from '@/context/confirmModal'
+import { useModalDispatch } from '@/context/confirmModal'
 
 interface ConfirmModalState {
   state: any
@@ -17,7 +17,6 @@ const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
   const dispatchConfirmModal = useModalDispatch()
 
   if (!state) {
-    console.error('Something went wrong')
     return null
   }
 

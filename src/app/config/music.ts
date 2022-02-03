@@ -1,5 +1,5 @@
-export const MUSIC_FOLDER: string = '/public/music'
-export const MENU_MUSIC_PATH: string = `${MUSIC_FOLDER}/intro.mp3`
+export const MUSIC_FOLDER = '/public/music'
+export const MENU_MUSIC_PATH = `${MUSIC_FOLDER}/intro.mp3`
 
 export const Music: Music[] = [
   {

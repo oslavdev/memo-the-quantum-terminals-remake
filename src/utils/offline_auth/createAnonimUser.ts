@@ -3,10 +3,7 @@ import { UserType } from '@/types/user'
 
 /** Create user without registration */
 
-export default function createAnonimUser(
-  ip: string,
-  username: string = 'anonim',
-) {
+export default function createAnonimUser(ip: string, username = 'anonim') {
   const today = new Date()
 
   const User: UserType = {

@@ -12,9 +12,13 @@ import { Paragraph } from '@/UI/Text/Text'
 export default function Lobby() {
   
   const history = useHistory()
-  const { loading, data, error } = useCustomQuery(ME_QUERY, meQuery)
+  const { loading } = useCustomQuery(ME_QUERY, meQuery)
 
   const mockedGame = JSON.parse(localStorage.getItem('game'))
+
+  function handleLogout(){
+    alert("Logout")
+  }
 
   if (loading || !mockedGame) {
     return (
@@ -57,7 +61,7 @@ export default function Lobby() {
           />
         </Box>
         <Box>
-          <Button text="Logout" onClick={() => {}} />
+          <Button text="Logout" onClick={handleLogout} />
         </Box>
       </Box>
     </LayoutMenu>
