@@ -1,8 +1,9 @@
 import React from 'react'
+import * as ReactRouter from 'react-router-dom'
+
 import LayoutMenu from '@/components/Layout/Layout_menu'
 import { Box } from '@/UI/Boxes/Box'
 import { Button } from '@/UI/Buttons/Primary'
-import { useHistory } from 'react-router-dom'
 import { pathRegister, pathTerminals } from '@/app/config/paths'
 import { meQuery, ME_QUERY } from '@/app/graphql/user'
 import { useCustomQuery } from '@/app/hooks/graphql/query'
@@ -11,7 +12,7 @@ import { Paragraph } from '@/UI/Text/Text'
 
 export default function Lobby() {
   
-  const history = useHistory()
+  const navigate = ReactRouter.useNavigate()
   const { loading } = useCustomQuery(ME_QUERY, meQuery)
 
   const mockedGame = JSON.parse(localStorage.getItem('game'))
@@ -51,13 +52,13 @@ export default function Lobby() {
         <Box mb={20}>
           <Button
             text="Terminals"
-            onClick={() => history.push(pathTerminals())}
+            onClick={() => navigate(pathTerminals())}
           />
         </Box>
         <Box mb={20}>
           <Button
             text="Champions"
-            onClick={() => history.push(pathRegister())}
+            onClick={() => navigate(pathRegister())}
           />
         </Box>
         <Box>

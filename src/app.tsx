@@ -1,6 +1,6 @@
-import React, { useContext, useReducer } from 'react'
-import { Switch, withRouter, Route } from 'react-router'
-import { ThemeProvider } from 'styled-components'
+import React, { Suspense, useContext, useReducer } from 'react'
+import {Routes, Route} from 'react-router-dom'
+import {ThemeProvider} from 'styled-components'
 import PrivateRoute from '@/HOC/Routes/PrivateRoute'
 import PublicRoute from '@/HOC/Routes/PublicRoute'
 import * as path from '@/app/config/paths'
@@ -25,76 +25,86 @@ import { ModalProvider } from '@/context/confirmModal'
 import { ErrorhandleProvider } from '@/context/error'
 import { StartGameProvider } from '@/context/startGame'
 import { MusicManagerContextProvider } from '@/context/music'
-
+import Loading from '@/UI/Loading/Loading'
+import LayoutMenu from '@/components/Layout/Layout_menu'
+import { Box } from '@/UI/Boxes/Box'
 /* Fragments */
 import Modals from '@/fragments/Modals'
 
 /** Pages */
 import Terminals from '@/pages/Terminals'
+import Wrong from './components/Wrong'
+
+function LoadingFallback(){
+  return(
+    <LayoutMenu logo={false}>
+    <Box position="absolute" top="50%" center>
+      <Loading />
+    </Box>
+  </LayoutMenu>
+  )
+}
 
 const App = () => {
   const initialState = useContext(State)
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+    <Suspense fallback={<LoadingFallback/>}>
         <State.Provider value={{ state, dispatch }}>
           <ModalProvider>
             <ErrorhandleProvider>
               <StartGameProvider>
                 <MusicManagerContextProvider>
                 <Modals>
-                  <Switch>
-                    <PrivateRoute
-                      exact
-                      path={path.pathLobby()}
-                      component={Lobby}
-                    />
-                    <PrivateRoute
-                      exact
-                      path={path.pathTerminals()}
-                      component={Terminals}
-                    />
-                    <PrivateRoute
-                      exact
-                      path={path.pathTerminal('memo')}
-                      component={Memo}
-                    />
-                    <PublicRoute
-                      exact
-                      path={path.pathRegister()}
-                      component={Register}
-                    />
-                    <PublicRoute
-                      exact
-                      path={path.pathLogin()}
-                      component={Login}
-                    />
-                    <PublicRoute
-                      exact
-                      path={path.pathHome()}
-                      component={Menu}
-                    />
-                    <PublicRoute
-                      exact
-                      path={path.pathActivationSent()}
-                      component={ActivationSent}
-                    />
-                    <PublicRoute
-                      exact
-                      path={path.pathActivation()}
-                      component={Activation}
-                    />
-                    <Route path="*" component={NotFoundPage} />
-                  </Switch>
+                  <Routes>
+
+                  <Route path={path.pathLobby()} element={<PrivateRoute/>}>
+                        <Route element={<Lobby/>}/>
+                  </Route>
+
+                  <Route path={path.pathTerminals()} element={<PrivateRoute/>}>
+                        <Route element={<Terminals/>}/>
+                  </Route>
+
+                  <Route path={path.pathTerminal('memo')} element={<PrivateRoute/>}>
+                        <Route element={<Memo/>}/>
+                  </Route>
+
+                  <Route path={path.pathRegister()} element={<PublicRoute/>}>
+                        <Route element={<Register/>}/>
+                  </Route>
+
+                  <Route path={path.pathLogin()} element={<PublicRoute/>}>
+                        <Route element={<Login/>}/>
+                  </Route>
+
+                  <Route path={path.pathHome()} element={<PublicRoute/>}>
+                        <Route element={<Menu/>}/>
+                  </Route>
+
+                  <Route path={path.pathActivationSent()} element={<PublicRoute/>}>
+                        <Route element={<ActivationSent/>}/>
+                  </Route>
+
+                  <Route path={path.pathActivation()} element={<PublicRoute/>}>
+                        <Route element={<Activation/>}/>
+                  </Route>
+
+                     <Route path={'/unknown-error'} element={<Wrong/>}/>
+                    <Route path={'/not-found'} element={<NotFoundPage/>}/>
+                    <Route path="*" element={<NotFoundPage/>} />
+                  </Routes>
                 </Modals>
                 </MusicManagerContextProvider>
               </StartGameProvider>
             </ErrorhandleProvider>
           </ModalProvider>
         </State.Provider>
-      </ThemeProvider>
+      </Suspense>
+     </ThemeProvider>
   )
 }
 
-export default withRouter(App)
+export default App

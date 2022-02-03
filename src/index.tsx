@@ -1,4 +1,4 @@
-import * as ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom'
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { ApolloProvider } from '@apollo/client'
@@ -14,5 +14,6 @@ const component = (
   </ApolloProvider>
 )
 
-ReactDOM.render(component, rootNode)
+
+ReactDOM.render(component, rootNode);
 rootNode.dispatchEvent(new Event('rendered'))

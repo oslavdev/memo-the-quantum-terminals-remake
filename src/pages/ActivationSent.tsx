@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import * as ReactRouter from 'react-router-dom'
 import LayoutMenu from '@/components/Layout/Layout_menu'
 import { Header2, Paragraph } from '@/UI/Text/Text'
 import { Box } from '@/UI/Boxes/Box'
@@ -7,7 +7,7 @@ import { Button } from '@/UI/Buttons/Primary'
 import { pathLogin } from '@/app/config/paths'
 
 export default function ActivationSent() {
-  const history = useHistory()
+  const navigate = ReactRouter.useNavigate()
 
   return (
     <LayoutMenu logo>
@@ -17,7 +17,7 @@ export default function ActivationSent() {
           <Paragraph>Activation code was sent to your email.</Paragraph>
         </Box>
         <Box mt={40}>
-          <Button text="Login" onClick={() => history.push(pathLogin())} />
+          <Button text="Login" onClick={() => navigate(pathLogin())} />
         </Box>
       </Box>
     </LayoutMenu>
