@@ -8,9 +8,6 @@ const { pr } = danger.github
 const { created_files } = danger.git
 const danger_commits = danger.git.commits
 
-console.log(danger.git)
-console.log("github", danger.github)
-
 /** No ENV files */
 const env_files = created_files.find((file) => file.startsWith('.env'))
 if (env_files) {

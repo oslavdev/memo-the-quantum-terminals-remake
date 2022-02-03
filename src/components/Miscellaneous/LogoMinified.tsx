@@ -7,12 +7,12 @@ export default function LogoMinified() {
   const ref2 = React.createRef() as React.MutableRefObject<HTMLInputElement>
 
   useEffect(() => {
-    var wrapper = document.querySelector('body') as any
-    var layerOne = ref.current
-    var layerTwo = ref2.current
+    const wrapper = document.querySelector('body') as any
+    const layerOne = ref.current
+    const layerTwo = ref2.current
 
     wrapper.addEventListener('mousemove', function (e: MouseEvent) {
-      var pageX = e.clientX,
+      const pageX = e.clientX,
         pageY = e.clientY
 
       layerOne.style.transform =

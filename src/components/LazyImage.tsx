@@ -23,7 +23,7 @@ interface LazyProps {
   src: string | string[],
   alt: string,
   parentRef?: any
-};
+}
 
 const LazyImage: React.FC<LazyProps> = ({
   src,

@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom'
-import React, { useContext, useReducer } from 'react'
+import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { ApolloProvider } from '@apollo/client'
 import App from '@/app'

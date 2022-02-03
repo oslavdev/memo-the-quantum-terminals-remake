@@ -10,12 +10,12 @@ export default function Logo() {
     
   useEffect(() => {
 
-    var wrapper = document.querySelector('body') as any;
-    var layerOne = ref.current;
-    var layerTwo = ref2.current;
+    const wrapper = document.querySelector('body') as any;
+    const layerOne = ref.current;
+    const layerTwo = ref2.current;
 
     wrapper.addEventListener('mousemove', function (e: MouseEvent) {
-      var pageX = e.clientX,
+      const pageX = e.clientX,
         pageY = e.clientY;
 
       layerOne.style.transform = 'translateX(' + pageX/100 + '%) translateY(' + pageY/100 + '%)';

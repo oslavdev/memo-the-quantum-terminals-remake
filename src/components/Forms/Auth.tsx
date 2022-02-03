@@ -2,7 +2,6 @@ import React from 'react'
 import { Input, Label } from '@/UI/Inputs/FormInput'
 import { Button } from '@/UI/Buttons/Primary'
 import { Box } from '@/UI/Boxes/Box'
-import { ErrorText } from '@/UI/Inputs/Error'
 
 interface inputProps {
   label: string

@@ -63,13 +63,7 @@ const Memo = () => {
   const stateConfirmModal = useModalState()
   const dispatchConfirmModal = useModalDispatch()
 
-  console.warn('State confirm modal')
-  console.log(stateConfirmModal)
-
   const stateStartGame = useStartGameState()
-
-  console.warn('State start game')
-  console.log(stateStartGame)
 
   useEffect(() => {
     if (stateStartGame) {
@@ -106,7 +100,6 @@ const Memo = () => {
       if (dialogue) {
         setDialogueStatus(dialogue)
         setLoading(false)
-        console.log(dialogue)
       }
     }
   }, [])
