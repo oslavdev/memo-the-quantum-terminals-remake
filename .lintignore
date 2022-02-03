@@ -1,0 +1,12 @@
+__test__
+__test__coverage
+cache
+.github
+.husky
+nginx
+node_modules
+public
+readme
+dangerfile.js
+webpack.config.js
+webpack.dev.js
