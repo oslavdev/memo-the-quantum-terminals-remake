@@ -47,35 +47,27 @@ const App = () => {
                 <MusicManagerContextProvider>
                 <Modals>
                   <Routes>
-
-                  <Route path={path.pathLobby()} element={<PrivateRoute/>}>
-                        <Route path={path.pathLobby()} element={<Lobby/>}/>
-                  </Route>
-
-                  <Route path={path.pathMemo()} element={<PrivateRoute/>}>
-                        <Route path={path.pathMemo()} element={<Memo/>}/>
-                  </Route>
-
-                  <Route path={path.pathRegister()} element={<PublicRoute/>}>
-                        <Route path={path.pathRegister()} element={<Register/>}/>
-                  </Route>
-
-                  <Route path={path.pathLogin()} element={<PublicRoute/>}>
-                        <Route path={path.pathLogin()} element={<Login/>}/>
-                  </Route>
-
-                  <Route path={path.pathHome()} element={<PublicRoute/>}>
-                        <Route path={path.pathHome()} element={<Menu/>}/>
-                  </Route>
-
-                  <Route path={path.pathActivationSent()} element={<PublicRoute/>}>
-                        <Route path={path.pathActivationSent()} element={<ActivationSent/>}/>
-                  </Route>
-
-                  <Route path={path.pathActivation()} element={<PublicRoute/>}>
-                        <Route path={path.pathActivation()} element={<Activation/>}/>
-                  </Route>
-
+                    <Route path={path.pathLobby()} element={<PrivateRoute/>}>
+                          <Route path={path.pathLobby()} element={<Lobby/>}/>
+                    </Route>
+                    <Route path={path.pathMemo()} element={<PrivateRoute/>}>
+                          <Route path={path.pathMemo()} element={<Memo/>}/>
+                    </Route>
+                    <Route path={path.pathRegister()} element={<PublicRoute/>}>
+                          <Route path={path.pathRegister()} element={<Register/>}/>
+                    </Route>
+                    <Route path={path.pathLogin()} element={<PublicRoute/>}>
+                          <Route path={path.pathLogin()} element={<Login/>}/>
+                    </Route>
+                    <Route path={path.pathHome()} element={<PublicRoute/>}>
+                          <Route path={path.pathHome()} element={<Menu/>}/>
+                    </Route>
+                    <Route path={path.pathActivationSent()} element={<PublicRoute/>}>
+                          <Route path={path.pathActivationSent()} element={<ActivationSent/>}/>
+                    </Route>
+                    <Route path={path.pathActivation()} element={<PublicRoute/>}>
+                          <Route path={path.pathActivation()} element={<Activation/>}/>
+                    </Route>
                     <Route path={'/unknown-error'} element={<Wrong/>}/>
                     <Route path={'/not-found'} element={<NotFoundPage/>}/>
                     <Route path="*" element={<NotFoundPage/>} />
