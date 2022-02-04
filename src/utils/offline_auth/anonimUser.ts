@@ -19,7 +19,7 @@ type UserType = {
 }
 
 /** Create local user without registration */
-export default function createAnonimUser(ip: string, username = 'anonim') {
+export function createAnonimUser(ip: string, username = 'anonim') {
   const today = new Date()
 
   const User: UserType = {
@@ -41,4 +41,8 @@ export default function createAnonimUser(ip: string, username = 'anonim') {
 
   localStorage.setItem('user', JSON.stringify(User))
   localStorage.setItem('game', JSON.stringify(Game))
+}
+
+export function deleteAnonimUser() {
+  localStorage.clear()
 }

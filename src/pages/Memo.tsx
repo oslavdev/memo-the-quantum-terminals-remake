@@ -67,8 +67,6 @@ const Memo = () => {
 
   const stateStartGame = useStartGameState()
 
-  console.log(mockedGame)
-
   useEffect(() => {
     if (stateStartGame && mockedGame) {
       setGameStatus('stand by')
