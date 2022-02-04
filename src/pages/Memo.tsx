@@ -67,17 +67,16 @@ const Memo = () => {
 
   const stateStartGame = useStartGameState()
 
+  console.log(mockedGame)
+
   useEffect(() => {
-    if (stateStartGame && mockedGame && mockedGame.length > 0) {
+    if (stateStartGame && mockedGame) {
       setGameStatus('stand by')
       /* Generate level */
       let result = [undefined]
-      const currentGame = mockedGame.find(
-        (game) => game.title === CURRENT__GAME,
-      )
 
       do {
-        const level_get = useGenerateLevelMemo(currentGame.level)
+        const level_get = useGenerateLevelMemo(mockedGame.level)
         result = [...level_get]
 
         if (!level_get.includes(undefined)) {
@@ -89,15 +88,11 @@ const Memo = () => {
   }, [stateStartGame])
 
   useEffect(() => {
-    if (mockedGame && mockedGame.length > 0) {
-      /* Get anonim user level */
-      const currentGame = mockedGame.find(
-        (game) => game.title === CURRENT__GAME,
-      )
-
+    if (mockedGame) {
+      
       /* Get anonim user dialogue */
       const dialogue: Dialogue = DialoguesMemo.find(
-        (dial) => dial.level === currentGame.level,
+        (dial) => dial.level === mockedGame.level,
       )
       if (dialogue) {
         setDialogueStatus(dialogue)

@@ -1,8 +1,24 @@
-import { GameMemoType } from '@/types/game'
-import { UserType } from '@/types/user'
+type GameMemoType = {
+  score: number
+  strike: number
+  mistakes: number
+  userId: string
+  id: string
+  level: number
+  totalScore: number
+}
 
-/** Create user without registration */
+type UserType = {
+  id: string
+  username: string
+  email: string
+  created_at: Date
+  firstName?: string
+  secondName?: string
+  password?: string
+}
 
+/** Create local user without registration */
 export default function createAnonimUser(ip: string, username = 'anonim') {
   const today = new Date()
 
@@ -10,15 +26,17 @@ export default function createAnonimUser(ip: string, username = 'anonim') {
     id: '1',
     username,
     created_at: today,
-    email: 'info@info.com',
+    email: 'anonim@memo.com',
   }
 
   const Game: GameMemoType = {
     score: 0,
+    totalScore: 0,
     mistakes: 0,
     strike: 0,
     userId: '1',
     id: '1',
+    level: 1,
   }
 
   localStorage.setItem('user', JSON.stringify(User))
