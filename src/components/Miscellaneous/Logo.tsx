@@ -1,6 +1,6 @@
 import React, {useEffect,  MouseEvent} from 'react'
 import { Box } from "@/UI/Boxes/Box";
-import LazyImage from "@/components/LazyImage";
+import LazyImage from "@/components/lazy-image";
 
 export default function Logo() {
 
