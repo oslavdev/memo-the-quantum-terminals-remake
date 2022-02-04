@@ -13,7 +13,7 @@ const INITIAL_STATE = {
   password:""
 }
 
-const Login =  () => {
+function Login() {
 
   const navigate = ReactRouter.useNavigate();
   const [formData, setFormData] = React.useState(INITIAL_STATE);

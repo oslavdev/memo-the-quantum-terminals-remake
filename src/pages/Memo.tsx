@@ -13,6 +13,7 @@ import GameBoard from '@/components/Memo/Board'
 
 import { useModalState, useModalDispatch } from '@/context/confirmModal'
 import { useStartGameState } from '@/context/startGame'
+import { LoadingFallback } from '@/components/loading-fallback'
 
 type Dialogue = {
   level: number
@@ -20,6 +21,7 @@ type Dialogue = {
   character: string
 }
 
+// TODO: keep dialogues on the back end side
 const DialoguesMemo: Dialogue[] = [
   {
     level: 1,
@@ -66,7 +68,7 @@ const Memo = () => {
   const stateStartGame = useStartGameState()
 
   useEffect(() => {
-    if (stateStartGame) {
+    if (stateStartGame && mockedGame && mockedGame.length > 0) {
       setGameStatus('stand by')
       /* Generate level */
       let result = [undefined]
@@ -87,7 +89,7 @@ const Memo = () => {
   }, [stateStartGame])
 
   useEffect(() => {
-    if (mockedGame) {
+    if (mockedGame && mockedGame.length > 0) {
       /* Get anonim user level */
       const currentGame = mockedGame.find(
         (game) => game.title === CURRENT__GAME,
@@ -115,7 +117,7 @@ const Memo = () => {
   }
 
   if (loading) {
-    return <div>Loading ...</div>
+    return <LoadingFallback/>
   }
 
   return (

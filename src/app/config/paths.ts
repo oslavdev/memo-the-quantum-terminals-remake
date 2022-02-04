@@ -1,48 +1,43 @@
 export const pathHome = (): string => {
-  return `/`;
-};
+  return `/`
+}
 
 export const pathMenu = (): string => {
   return `/menu`
-};
+}
 
 export const pathLobby = (): string => {
   return `/lobby`
-};
+}
 
 export const pathLogin = (): string => {
-  return `/login`;
-};
+  return `/login`
+}
 
 export const pathRegister = (): string => {
-  return `/register`;
-};
+  return `/register`
+}
 
 export const pathError = (): string => {
-  return `/error`;
-};
+  return `/error`
+}
 
 export const pathLeaderboard = (): string => {
-  return `/leaderboard`;
-};
+  return `/leaderboard`
+}
 
-export const pathTerminals = (): string => {
-  return `/terminals`;
-};
-
-export const pathTerminal = (id: string): string => {
-  return `/terminals/${id}`;
-};
-
+export const pathMemo = () => {
+  return '/memo'
+}
 
 export const pathCredits = (): string => {
-  return `/credits`;
-};
+  return `/credits`
+}
 
 export const pathActivationSent = (): string => {
-  return `/activation-sent`;
-};
+  return `/activation-sent`
+}
 
 export const pathActivation = (): string => {
-  return `/user/confirm`;
-};
+  return `/user/confirm`
+}

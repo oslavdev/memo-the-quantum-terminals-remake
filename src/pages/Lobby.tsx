@@ -4,7 +4,7 @@ import * as ReactRouter from 'react-router-dom'
 import LayoutMenu from '@/components/Layout/Layout_menu'
 import { Box } from '@/UI/Boxes/Box'
 import { Button } from '@/UI/Buttons/Primary'
-import { pathRegister, pathTerminals } from '@/app/config/paths'
+import { pathRegister, pathMemo } from '@/app/config/paths'
 import { meQuery, ME_QUERY } from '@/app/graphql/user'
 import { useCustomQuery } from '@/app/hooks/graphql/query'
 import Loading from '@/UI/Loading/Loading'
@@ -33,14 +33,14 @@ export default function Lobby() {
 
   return (
     <LayoutMenu logo>
-      {mockedGame ? (
+      {mockedGame && (
         <Box w="290px" center position="absolute" bottom="9%">
           <Paragraph center fade size="1.4rem">
             [Attention] You are playing as anonimous user. If you want to save
             you progress and participate in leaderboards please register.
           </Paragraph>
         </Box>
-      ) : null}
+      )}
       <Box disp="flex" fd="column">
         <Box mb={20}>
           {/* <Button
@@ -51,8 +51,8 @@ export default function Lobby() {
         </Box>
         <Box mb={20}>
           <Button
-            text="Terminals"
-            onClick={() => navigate(pathTerminals())}
+            text="Memo"
+            onClick={() => navigate(pathMemo())}
           />
         </Box>
         <Box mb={20}>
