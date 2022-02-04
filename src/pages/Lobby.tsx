@@ -19,7 +19,10 @@ export default function Lobby() {
   const mockedGame = JSON.parse(localStorage.getItem('game'))
 
   function handleLogout(){
+    alert("You will be logged out")
     deleteAnonimUser()
+
+    navigate('/')
   }
 
   if (loading || !mockedGame) {

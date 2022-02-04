@@ -87,7 +87,6 @@ const Memo = () => {
 
   useEffect(() => {
     if (mockedGame) {
-      
       /* Get anonim user dialogue */
       const dialogue: Dialogue = DialoguesMemo.find(
         (dial) => dial.level === mockedGame.level,
@@ -121,13 +120,13 @@ const Memo = () => {
         gameStatus={gameStatus}
         level={level}
       />
-      {dialogueStatus ? (
+      {dialogueStatus && (
         <Dialogues
           dialogue={dialogueStatus.text}
           character={dialogueStatus.character}
           _finishDialogue={_finishDialogue}
         />
-      ) : null}
+      )}
     </LayoutTerminalOne>
   )
 }
