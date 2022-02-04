@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
-import { useMutation } from '@apollo/client'
+import React from 'react'
+import * as ReactRouter from 'react-router-dom';
+import * as Apollo from '@apollo/client'
 import LayoutMenu from '@/components/Layout/Layout_menu'
 import { Header2, Paragraph } from '@/UI/Text/Text'
 import { Box } from '@/UI/Boxes/Box'
@@ -9,13 +9,13 @@ import { pathLogin } from '@/app/config/paths'
 import { confirmQuery } from '@/app/graphql/mutations/confirm'
 
 export default function Activation() {
-  const [activated, setActivated] = useState<boolean>(false)
-  const [confirmUser, { data }] = useMutation(confirmQuery)
+  const [activated, setActivated] = React.useState<boolean>(false)
+  const [confirmUser, { data }] = Apollo.useMutation(confirmQuery)
 
-  const history = useHistory()
-  const location = useLocation()
+  const navigate = ReactRouter.useNavigate()
+  const location = ReactRouter.useLocation()
 
-  useEffect(() => {
+  React.useEffect(() => {
     const { search } = location
     if (search != '') {
       const code = search.substring(1)
@@ -27,7 +27,7 @@ export default function Activation() {
     }
   }, [])
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (data && data?.confirmUser) {
       setActivated(true)
     }
@@ -49,7 +49,7 @@ export default function Activation() {
             <Paragraph>Your account has been activated</Paragraph>
           </Box>
           <Box mt={30}>
-            <Button text="Login" onClick={() => history.push(pathLogin())} />
+            <Button text="Login" onClick={() => navigate(pathLogin())} />
           </Box>
         </Box>
       ) : (

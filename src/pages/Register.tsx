@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { useHistory } from 'react-router-dom';
+import React from 'react'
+import * as ReactRouter from 'react-router-dom';
+import * as Apollo from "@apollo/client";
+
 import LayoutMenu from "@/components/Layout/Layout_menu";
 import { inputs } from "@/components/Forms/inputs/register";
 import Auth from '@/components/Forms/Auth';
 import { registerMutation } from "@/app/graphql/mutations/register";
 import { INITIAL_REGISTER_FORM_STATE } from "./types";
-import { useMutation } from "@apollo/client";
 import State from '@/app/context/state/State';
 import { QUERY_ERROR } from '@/app/reducers/root';
 import { Box } from '@/UI/Boxes/Box';
@@ -21,16 +22,15 @@ const INITIAL_STATE = {
 
 export default function Register() {
   
-  const history = useHistory();
-  const {state, dispatch} = useContext(State);
+  const {_, dispatch} = React.useContext(State);
+  const [formData, setFormData] = React.useState<INITIAL_REGISTER_FORM_STATE>(INITIAL_STATE);
+  const [register, { loading, data }] = Apollo.useMutation(registerMutation);
+  const navigate = ReactRouter.useNavigate();
 
-  const [formData, setFormData] = useState<INITIAL_REGISTER_FORM_STATE>(INITIAL_STATE);
-  const [register, { loading, data }] = useMutation(registerMutation);
-
-  useEffect(() => {
+  React.useEffect(() => {
     if (data && data.register) {
       if (data.register.user) {
-        history.push(pathActivationSent()) //activation sent page
+        navigate(pathActivationSent()) //activation sent page
         setFormData(INITIAL_STATE); //reset formdata
       }
       else if (data.register.error) {
@@ -45,7 +45,7 @@ export default function Register() {
   }, [data])
 
   /* Submit register from */
-  const onSubmit = async (): Promise<any> => {
+  const onSubmit =  ():void => {
     register({
       variables: {
         ...formData

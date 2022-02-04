@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React from 'react'
 import { useMutation } from "@apollo/client";
-import { useHistory } from 'react-router-dom';
+import * as ReactRouter from 'react-router-dom';
 import LayoutMenu from "@/components/Layout/Layout_menu";
 import Auth from '@/components/Forms/Auth';
 import State from "@/app/context/state/State";
@@ -15,16 +15,16 @@ const INITIAL_STATE = {
 
 const Login =  () => {
 
-  const history = useHistory();
-  const [formData, setFormData] = useState(INITIAL_STATE);
-  const { state, dispatch } = useContext(State);
+  const navigate = ReactRouter.useNavigate();
+  const [formData, setFormData] = React.useState(INITIAL_STATE);
+  const { _, dispatch } = React.useContext(State);
   
   const [login, { loading, data }] = useMutation(loginMutation);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (data && data.login) {
       if (data.login.user) {
-        history.push(pathLobby()) //activation sent page
+        navigate(pathLobby()) //activation sent page
         setFormData(INITIAL_STATE); //reset formdata
       }
       else if (data.login.error) {

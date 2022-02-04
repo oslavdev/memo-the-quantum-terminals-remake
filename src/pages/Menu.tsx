@@ -1,8 +1,9 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
+import * as ReactRouter from 'react-router-dom';
+
 import LayoutMenu from '@/components/Layout/Layout_menu'
 import { Box } from '@/UI/Boxes/Box'
 import { Button } from '@/UI/Buttons/Primary'
-import { useHistory } from 'react-router-dom'
 import { pathLogin, pathRegister, pathLobby } from '@/app/config/paths'
 import Loading from '@/UI/Loading/Loading'
 import createAnonimUser from '@/utils/offline_auth/createAnonimUser'
@@ -12,12 +13,12 @@ import State from "@/app/context/state/State";
 
 export default function Menu() {
 
-  const { dispatch } = useContext(State);
-  const history = useHistory()
+  const { dispatch } = React.useContext(State);
+  const navigate = ReactRouter.useNavigate()
 
-  const [loggin, setLoggin] = useState<boolean>(false)
-  const [anonim, setAnonim] = useState<boolean>(false);
-  const [userName, setUserName] = useState<string>("anonim");
+  const [loggin, setLoggin] = React.useState<boolean>(false)
+  const [anonim, setAnonim] = React.useState<boolean>(false);
+  const [userName, setUserName] = React.useState<string>("anonim");
 
   const loginAsAnonimUser = () => {
     setLoggin(true)
@@ -26,7 +27,7 @@ export default function Menu() {
     dispatch({ type:"ADD_ERROR",  payload: "User created" })
 
     setTimeout(() => {
-      history.push(pathLobby())
+      navigate(pathLobby())
     }, 1000)
   }
 
@@ -58,12 +59,12 @@ export default function Menu() {
     <LayoutMenu logo>
       <Box disp="flex" fd="column">
         <Box mb={20}>
-          <Button text="Login" onClick={() => history.push(pathLogin())} />
+          <Button text="Login" onClick={() => navigate(pathLogin())} />
         </Box>
         <Box mb={20}>
           <Button
             text="Register"
-            onClick={() => history.push(pathRegister())}
+            onClick={() => navigate(pathRegister())}
           />
         </Box>
         <Box>

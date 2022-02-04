@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import * as ReactRouter from 'react-router-dom';
 import { Box } from '@/UI/Boxes/Box'
 import { ModalWrapper, Modal } from '@/UI/Modals/ConfirmModal'
 import { Header3, Paragraph } from '@/UI/Text/Text'
@@ -12,7 +12,7 @@ interface ConfirmModalState {
   state: any
 }
 const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
-  const history = useHistory()
+  const navigate = ReactRouter.useNavigate()
   const dispatchStartGame = useStartGameDispatch()
   const dispatchConfirmModal = useModalDispatch()
 
@@ -36,7 +36,7 @@ const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
 
   const declineAction = () => {
     clear()
-    history.push(pathLobby())
+    navigate(pathLobby())
   }
 
   return (
