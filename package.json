@@ -28,7 +28,7 @@
     ]
   },
   "lint-staged": {
-    "*.{ts, tsx, js}": [
+    "*.tsx": [
       "yarn run lint -- --fix",
       "import-sort --write",
       "prettier --write"
