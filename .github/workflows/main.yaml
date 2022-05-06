@@ -13,8 +13,8 @@ jobs:
     name: Setup
     runs-on: ubuntu-latest
     outputs:
-      NPM_TOKEN: ${{ steps.step1.outputs.test }}
-      NPM_REGISTRY: ${{ steps.registry.outputs.registry }}
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.registry.outputs.registry }}
     steps:
       - id: step1
         run: echo "::set-output name=test::hello"
@@ -36,9 +36,11 @@ jobs:
 
       - name: Echo the exported variable 2
         run: | 
-          echo ${{needs.setup.outputs.output2}} \
-          echo $NPM_TOKEN \
-          echo $NPM_REGISTRY
+          echo ${{needs.setup.outputs.output2}} 
+
+      - name: Echo the exported variable 1
+        run: | 
+          echo ${{needs.setup.outputs.output1}} 
 
 
 
