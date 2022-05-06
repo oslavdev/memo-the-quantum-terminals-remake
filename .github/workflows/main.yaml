@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       NPM_TOKEN: ${{ steps.step1.outputs.test }}
+      NPM_REGISTRY: ${{ steps.registry.outputs.registry }}
     steps:
       - id: step1
         run: echo "::set-output name=test::hello"
@@ -30,6 +31,9 @@ jobs:
           path: "**/node_modules"
           key: v202101131145-${{ hashFiles('yarn.lock') }}
 
+      - id: registry
+        run: echo "::set-output name=registry::$(npm config get registry)"
+
 
 
   test:
@@ -40,6 +44,12 @@ jobs:
       # Test exported variable
       - name: Echo the exported variable
         run: echo ${{needs.setup.outputs.output1}}
+
+      - name: Echo the exported variable 2
+        run: | 
+          echo ${{needs.setup.outputs.output2}} \
+          echo $NPM_TOKEN \
+          echo $NPM_REGISTRY
 
       - uses: actions/checkout@v1
 
