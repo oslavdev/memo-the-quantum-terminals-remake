@@ -50,6 +50,9 @@ jobs:
           path: "**/node_modules"
           key: v202101131145-${{ hashFiles('yarn.lock') }}
 
+      - name: Install
+        run: yarn install
+
       - id: registry
         run: echo "::set-output name=registry::$(npm config get registry)"
 
