@@ -15,8 +15,7 @@ jobs:
     outputs:
       NPM_TOKEN: ${{ steps.step1.outputs.test }}
     steps:
-      - name: Export variable
-        id: step1
+      - id: step1
         run: echo "::set-output name=test::hello"
 
       - uses: actions/checkout@v1
