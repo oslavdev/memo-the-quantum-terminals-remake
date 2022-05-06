@@ -10,6 +10,7 @@ on:
 
 jobs:
   test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -36,6 +37,28 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: Restore Node modules from caches
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: v202101131145-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Test sources and collect coverage
+        run: yarn run lint
 
   publish_release:
     runs-on: ubuntu-latest
