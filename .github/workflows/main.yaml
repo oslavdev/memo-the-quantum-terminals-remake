@@ -79,7 +79,7 @@ jobs:
 
       - name: Echo the exported variable 1
         run: | 
-          echo ${{needs.setup.outputs.output1}} 
+          echo ${{needs.setup.outputs.output2}} 
           
       - name: Install
         run: yarn install
