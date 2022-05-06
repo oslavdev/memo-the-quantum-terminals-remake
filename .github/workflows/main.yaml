@@ -9,10 +9,39 @@ on:
       - master
 
 jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    outputs:
+      NPM_TOKEN: ${{ steps.step1.outputs.test }}
+    steps:
+      - name: Export variable
+        id: step1
+        run: echo "::set-output name=test::hello"
+
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: Restore Node modules from caches
+        uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: v202101131145-${{ hashFiles('yarn.lock') }}
+
+
+
   test:
     name: Test
+    needs: setup
     runs-on: ubuntu-latest
     steps:
+      # Test exported variable
+      - name: Echo the exported variable
+        run: echo ${{needs.setup.outputs.output1}}
+
       - uses: actions/checkout@v1
 
       - uses: actions/setup-node@v1
@@ -40,6 +69,7 @@ jobs:
 
   lint:
     name: Lint
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
