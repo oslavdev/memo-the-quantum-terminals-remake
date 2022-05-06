@@ -29,7 +29,6 @@ jobs:
       - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
 
   setup:
-    id: setup
     name: Setup
     runs-on: ubuntu-latest
     outputs:
