@@ -83,9 +83,6 @@ jobs:
       - name: Echo the exported variable 1
         run: | 
           echo ${{needs.setup.outputs.output2}} 
-          
-      - name: Install
-        run: yarn install
 
       - name: Test sources and collect coverage
         run: yarn test --coverage
@@ -114,9 +111,6 @@ jobs:
           path: "**/node_modules"
           key: v202101131145-${{ hashFiles('yarn.lock') }}
           
-      - name: Install
-        run: yarn install
-
       - name: Test sources and collect coverage
         run: yarn run lint
 
