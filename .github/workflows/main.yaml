@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     # Map a step output to a job output
     outputs:
-      output1: ${{ steps.step1.outputs.test }}
-      output2: ${{ steps.step2.outputs.test }}
+      output1: ${{ steps.step1.outputs.token }}
+      output2: ${{ steps.step2.outputs.registry }}
     steps:
-      - id: step1
-        run: echo "::set-output name=test::hello"
-      - id: step2
-        run: echo "::set-output name=test::world"
+      - id: token
+        run: echo "::set-output name=token::hello"
+      - id: registry
+        run: echo "::set-output name=registry::world"
 
   job2:
     runs-on: ubuntu-latest
@@ -38,6 +38,10 @@ jobs:
       - id: step1
         run: echo "::set-output name=test::hello"
 
+      - name: Export registry
+        id: registry
+        run: echo "::set-output name=registry::$(npm config get registry)"
+
       - uses: actions/checkout@v1
 
       - uses: actions/setup-node@v1
@@ -52,14 +56,6 @@ jobs:
 
       - name: Install
         run: yarn install
-
-      - id: registry
-        run: echo "::set-output name=registry::$(npm config get registry)"
-
-      - name: Echo the exported variable 2
-        run: | 
-          echo ${{needs.setup.outputs.output2}} 
-
 
 
   test:
@@ -94,9 +90,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Echo the exported variable 2
+        run: | 
+          echo ${{needs.setup.outputs.output2}}
+
   lint:
     name: Lint
-    needs: setup
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -113,6 +113,7 @@ jobs:
           
       - name: Test sources and collect coverage
         run: yarn run lint
+
 
   publish_release:
     runs-on: ubuntu-latest
