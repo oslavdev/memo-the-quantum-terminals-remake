@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-/* Utilities */
 import useGenerateLevelMemo from '@/utils/terminal_1/useGenerateLevelMemo'
 
-/* UI */
 import LayoutTerminalOne from '@/components/Layout/Terminal__1'
 
-/* Components */
 import Dialogues from '@/components/Dialogues/Dialogues'
 import Header from '@/components/Memo/Header'
 import GameBoard from '@/components/Memo/Board'
 
-import { useModalState, useModalDispatch } from '@/context/confirmModal'
+import { useModalDispatch } from '@/context/confirmModal'
 import { useStartGameState } from '@/context/startGame'
 import { LoadingFallback } from '@/components/loading-fallback'
 
@@ -55,19 +52,18 @@ const DialoguesMemo: Dialogue[] = [
 const Memo = () => {
   const CURRENT__GAME = 'memo'
 
-  const [loading, setLoading] = useState<boolean>(true) // page loading
-  const [level, setLevel] = useState(null) // generated level
-  const [gameStatus, setGameStatus] = useState<string>('offline') // start game | offline | stand by | play |
-  const [dialogueStatus, setDialogueStatus] = useState<null | Dialogue>(null)
+  const [loading, setLoading] = React.useState<boolean>(true) // page loading
+  const [level, setLevel] = React.useState(null) // generated level
+  const [gameStatus, setGameStatus] = React.useState<string>('offline') // start game | offline | stand by | play |
+  const [dialogueStatus, setDialogueStatus] = React.useState<null | Dialogue>(null)
 
   const mockedGame = JSON.parse(localStorage.getItem('game'))
 
-  const stateConfirmModal = useModalState()
   const dispatchConfirmModal = useModalDispatch()
 
   const stateStartGame = useStartGameState()
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (stateStartGame && mockedGame && mockedGame.length > 0) {
       setGameStatus('stand by')
       /* Generate level */
@@ -88,7 +84,7 @@ const Memo = () => {
     }
   }, [stateStartGame])
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (mockedGame && mockedGame.length > 0) {
       /* Get anonim user level */
       const currentGame = mockedGame.find(
