@@ -1,17 +1,17 @@
-import React, { useEffect, MouseEvent } from 'react'
-import { Box } from '@/UI/Boxes/Box'
+import React from 'react'
+import * as UI from '@/UI/Boxes/Box'
 import LazyImage from '@/components/lazy-image'
 
 export default function LogoMinified() {
   const ref = React.createRef() as React.MutableRefObject<HTMLInputElement>
   const ref2 = React.createRef() as React.MutableRefObject<HTMLInputElement>
 
-  useEffect(() => {
+  React.useEffect(() => {
     const wrapper = document.querySelector('body') as any
     const layerOne = ref.current
     const layerTwo = ref2.current
 
-    wrapper.addEventListener('mousemove', function (e: MouseEvent) {
+    wrapper.addEventListener('mousemove', function (e: React.MouseEvent) {
       const pageX = e.clientX,
         pageY = e.clientY
 
@@ -24,7 +24,7 @@ export default function LogoMinified() {
   }, [])
 
   return (
-    <Box
+    <UI.Box
       position="fixed"
       top="0%"
       left="8%"
@@ -34,12 +34,12 @@ export default function LogoMinified() {
       jc="center"
       ai="center"
     >
-      <Box ref={ref} position="absolute" w="150px" h="70px" mr={30}>
+      <UI.Box ref={ref} position="absolute" w="150px" h="70px" mr={30}>
         <LazyImage src="/public/images/menu/Logo-1.png" alt="Logo" />
-      </Box>
-      <Box ref={ref2} position="absolute" w="150px" h="70px" mr={30}>
+      </UI.Box>
+      <UI.Box ref={ref2} position="absolute" w="150px" h="70px" mr={30}>
         <LazyImage src="/public/images/menu/Logo-2.png" alt="Logo" />
-      </Box>
-    </Box>
+      </UI.Box>
+    </UI.Box>
   )
 }

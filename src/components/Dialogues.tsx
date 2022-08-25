@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Typewriter from 'typewriter-effect'
 import {
   DialogueLasleyCharacter,
@@ -7,17 +7,16 @@ import {
   DialogueName,
   DialogueText,
 } from '@/UI/Terminals/Shared/Dialogues'
-import { Box } from '@/UI/Boxes/Box'
+import * as UI from '@/UI/Boxes/Box'
 
 export default function Dialogues({ dialogue, character, _finishDialogue }) {
-  const [start, setStart] = useState<boolean>(false)
-  const [iteration, setIteration] = useState<number>(0)
-  const [finishedTyping, setFinished] = useState<boolean>(false)
-  const [currentLine, setCurrentLine] = useState<string | null>(null)
+  const [start, setStart] = React.useState<boolean>(false)
+  const [iteration, setIteration] = React.useState<number>(0)
+  const [finishedTyping, setFinished] = React.useState<boolean>(false)
+  const [currentLine, setCurrentLine] = React.useState<string | null>(null)
 
-  // const currentLine: string = dialogue[iteration];
 
-  useEffect(() => {
+  React.useEffect(() => {
     setCurrentLine(null)
     setTimeout(() => {
       setCurrentLine(dialogue[iteration])
@@ -37,7 +36,7 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
   }
 
   return (
-    <Box
+    <UI.Box
       transform="translate(-50%, -50%)"
       center
       disp="flex"
@@ -86,6 +85,6 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
           </DialogueButton>
         ) : null}
       </DialoguePlaceholder>
-    </Box>
+    </UI.Box>
   )
 }

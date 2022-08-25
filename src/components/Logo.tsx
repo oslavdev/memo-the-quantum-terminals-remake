@@ -1,14 +1,13 @@
-import React, {useEffect,  MouseEvent} from 'react'
-import { Box } from "@/UI/Boxes/Box";
+import React from 'react'
+import * as UI from "@/UI/Boxes/Box";
 import LazyImage from "@/components/lazy-image";
 
 export default function Logo() {
 
-
   const ref = React.createRef()  as React.MutableRefObject<HTMLInputElement>;
   const ref2 = React.createRef() as React.MutableRefObject<HTMLInputElement>;
     
-  useEffect(() => {
+  React.useEffect(() => {
 
     const wrapper = document.querySelector('body') as any;
     const layerOne = ref.current;
@@ -25,13 +24,13 @@ export default function Logo() {
   }, [])
 
   return (
-    <Box w="100%" h="150px" id="logo" disp="flex" jc="center" ai='center'>
-      <Box ref={ref} position="absolute" w="300px" h="150px" mr={30}>
+    <UI.Box w="100%" h="150px" id="logo" disp="flex" jc="center" ai='center'>
+      <UI.Box ref={ref} position="absolute" w="300px" h="150px" mr={30}>
        <LazyImage  src="/public/images/menu/Logo-1.png" alt="Logo"  />
-      </Box>
-      <Box ref={ref2} position="absolute" w="300px" h="150px" mr={30}>
+      </UI.Box>
+      <UI.Box ref={ref2} position="absolute" w="300px" h="150px" mr={30}>
         <LazyImage  src="/public/images/menu/Logo-2.png" alt="Logo" />
-     </Box>
-    </Box>
+     </UI.Box>
+    </UI.Box>
   )
 }
