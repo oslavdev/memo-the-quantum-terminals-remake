@@ -4,9 +4,9 @@ import useGenerateLevelMemo from '@/utils/terminal_1/useGenerateLevelMemo'
 
 import LayoutTerminalOne from '@/components/Layout/Terminal__1'
 
-import Dialogues from '@/components/Dialogues/Dialogues'
-import Header from '@/components/Memo/Header'
-import GameBoard from '@/components/Memo/Board'
+import Dialogues from '@/components/Dialogues'
+import Header from '@/components/Header'
+import GameBoard from '@/components/Board'
 
 import { useModalDispatch } from '@/context/confirmModal'
 import { useStartGameState } from '@/context/startGame'
@@ -71,7 +71,7 @@ const Memo = () => {
       const currentGame = mockedGame.find(
         (game) => game.title === CURRENT__GAME,
       )
-
+        // TODO: Refactor this to a hook?
       do {
         const level_get = useGenerateLevelMemo(currentGame.level)
         result = [...level_get]
@@ -85,16 +85,14 @@ const Memo = () => {
   }, [stateStartGame])
 
   React.useEffect(() => {
-    if (mockedGame && mockedGame.length > 0) {
-      /* Get anonim user level */
-      const currentGame = mockedGame.find(
-        (game) => game.title === CURRENT__GAME,
-      )
 
+    if (mockedGame?.id) {
+      
       /* Get anonim user dialogue */
       const dialogue: Dialogue = DialoguesMemo.find(
-        (dial) => dial.level === currentGame.level,
+        (dial) => dial.level === mockedGame.level,
       )
+
       if (dialogue) {
         setDialogueStatus(dialogue)
         setLoading(false)
@@ -116,21 +114,23 @@ const Memo = () => {
     return <LoadingFallback/>
   }
 
+
   return (
     <LayoutTerminalOne logo>
       <Header dialogueStatus={dialogueStatus} time="00:00:00" />
       <GameBoard
         dialogueStatus={dialogueStatus}
         gameStatus={gameStatus}
+        stateStartGame={stateStartGame}
         level={level}
       />
-      {dialogueStatus ? (
+      {dialogueStatus && (
         <Dialogues
           dialogue={dialogueStatus.text}
           character={dialogueStatus.character}
           _finishDialogue={_finishDialogue}
         />
-      ) : null}
+      )}
     </LayoutTerminalOne>
   )
 }

@@ -13,8 +13,8 @@ import {
 } from '@/UI/Terminals/Terminal_1/Board'
 
 /* Components */
-import StandBy from '@/components/Miscellaneous/StandBy'
-import Offline from '@/components/Miscellaneous/Offline'
+import StandBy from '@/components/StandBy'
+import Offline from '@/components/Offline'
 
 const size = 30 // size of the map
 
@@ -35,14 +35,14 @@ const CellGen = () => {
   return components
 }
 
-export default function GameBoard({ dialogueStatus, gameStatus, level }) {
+export default function GameBoard({ dialogueStatus, gameStatus, stateStartGame, level }) {
 
   return (
     <Box blur={dialogueStatus} mt={20}>
       <Board>
         {gameStatus === 'offline' ? <Offline /> : null}
         {gameStatus === 'stand by' ? <StandBy /> : null}
-        {CellGen().map((el) => el)}
+        {CellGen()}
       </Board>
     </Box>
   )

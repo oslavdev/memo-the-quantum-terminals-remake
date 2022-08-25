@@ -17,6 +17,7 @@ export default function createAnonimUser(ip: string, username = 'anonim') {
     score: 0,
     mistakes: 0,
     strike: 0,
+    level: 1,
     userId: '1',
     id: '1',
   }

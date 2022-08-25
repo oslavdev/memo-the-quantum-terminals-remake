@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@/UI/Boxes/Box'
-import Snow from '@/components/Miscellaneous/Snow'
-import Logo from '@/components/Miscellaneous/Logo'
+import Snow from '@/components/Snow'
+import Logo from '@/components/Logo'
 
 export default function LayoutMenu({
   children,

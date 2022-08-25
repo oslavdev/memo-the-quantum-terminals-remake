@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useModalState } from '@/context/confirmModal'
-import ConfirmModal from '@/components/Modals/ConfirmModal'
+import ConfirmModal from '@/components/ConfirmModal'
 
 type ModalChildrenProps = {
   children: React.ReactNode
