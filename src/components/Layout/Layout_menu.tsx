@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@/UI/Boxes/Box'
+import { Box } from '@/UI/Boxes'
 import Snow from '@/components/Snow'
 import Logo from '@/components/Logo'
 

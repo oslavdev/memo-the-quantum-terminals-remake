@@ -21,13 +21,10 @@ import ActivationSent from '@/pages/ActivationSent'
 import Activation from '@/pages/Activate'
 
 /* Context */
-import { ModalProvider } from '@/context/confirmModal'
 import { ErrorhandleProvider } from '@/context/error'
 import { StartGameProvider } from '@/context/startGame'
 import { MusicManagerContextProvider } from '@/context/music'
 
-/* Fragments */
-import Modals from '@/fragments/Modals'
 
 /** Pages */
 import Wrong from '@/components/something-wrong'
@@ -41,11 +38,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
     <Suspense fallback={<LoadingFallback/>}>
         <State.Provider value={{ state, dispatch }}>
-          <ModalProvider>
             <ErrorhandleProvider>
               <StartGameProvider>
                 <MusicManagerContextProvider>
-                <Modals>
                   <Routes>
                     <Route path={path.pathLobby()} element={<PrivateRoute/>}>
                           <Route path={path.pathLobby()} element={<Lobby/>}/>
@@ -72,11 +67,9 @@ const App = () => {
                     <Route path={'/not-found'} element={<NotFoundPage/>}/>
                     <Route path="*" element={<NotFoundPage/>} />
                   </Routes>
-                </Modals>
                 </MusicManagerContextProvider>
               </StartGameProvider>
             </ErrorhandleProvider>
-          </ModalProvider>
         </State.Provider>
       </Suspense>
      </ThemeProvider>

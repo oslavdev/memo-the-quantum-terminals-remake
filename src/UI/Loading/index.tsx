@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Box } from "@/UI/Boxes/Box";
+import { Box } from "@/UI/Boxes";
 
 export const loading = keyframes`
   0%{

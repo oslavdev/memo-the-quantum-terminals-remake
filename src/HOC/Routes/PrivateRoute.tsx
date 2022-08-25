@@ -2,7 +2,7 @@ import React from 'react'
 import {Outlet, Navigate} from 'react-router-dom'
 
 import { meQuery, ME_QUERY } from '@/app/graphql/user'
-import { useCustomQuery } from '@/app/hooks/graphql/query'
+import { useCustomQuery } from '@/useQuery'
 import { pathHome } from '@/app/config/paths'
 
 const PrivateRoute = () => {

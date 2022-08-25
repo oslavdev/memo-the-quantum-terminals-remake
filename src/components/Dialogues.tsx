@@ -7,9 +7,9 @@ import {
   DialogueName,
   DialogueText,
 } from '@/UI/Terminals/Shared/Dialogues'
-import * as UI from '@/UI/Boxes/Box'
+import * as UI from '@/UI/Boxes'
 
-export default function Dialogues({ dialogue, character, _finishDialogue }) {
+export default function Dialogues(props) {
   const [start, setStart] = React.useState<boolean>(false)
   const [iteration, setIteration] = React.useState<number>(0)
   const [finishedTyping, setFinished] = React.useState<boolean>(false)
@@ -19,7 +19,7 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
   React.useEffect(() => {
     setCurrentLine(null)
     setTimeout(() => {
-      setCurrentLine(dialogue[iteration])
+      setCurrentLine(props.dialogue[iteration])
     }, 300)
   }, [iteration])
 
@@ -52,8 +52,8 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
     >
       <DialogueLasleyCharacter />
       <DialoguePlaceholder>
-        <DialogueName>{character}</DialogueName>
-        {currentLine ? (
+        <DialogueName>{props.character}</DialogueName>
+        {currentLine && (
           <DialogueText>
             <Typewriter
               onInit={(typewriter) => {
@@ -72,12 +72,12 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
               }}
             />
           </DialogueText>
-        ) : null}
+        )}
         {finishedTyping ? (
           <DialogueButton
             onClick={() =>
-              iteration === dialogue.length - 1
-                ? _finishDialogue()
+              iteration === props.dialogue.length - 1
+                ? props.onFinishDialogue()
                 : _nextLine()
             }
           >

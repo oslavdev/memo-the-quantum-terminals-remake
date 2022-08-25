@@ -2,7 +2,7 @@ import React from 'react'
 import * as ReactRouter from 'react-router-dom'
 import LayoutMenu from '@/components/Layout/Layout_menu'
 import { Header2, Paragraph } from '@/UI/Text/Text'
-import { Box } from '@/UI/Boxes/Box'
+import { Box } from '@/UI/Boxes'
 import { Button } from '@/UI/Buttons/Primary'
 import { pathLogin } from '@/app/config/paths'
 

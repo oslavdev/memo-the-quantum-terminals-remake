@@ -1,7 +1,7 @@
 import React from 'react'
 import { Input, Label } from '@/UI/Inputs/FormInput'
 import { Button } from '@/UI/Buttons/Primary'
-import { Box } from '@/UI/Boxes/Box'
+import { Box } from '@/UI/Boxes'
 
 interface inputProps {
   label: string

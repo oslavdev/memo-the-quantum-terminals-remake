@@ -9,7 +9,7 @@ import { registerMutation } from "@/app/graphql/mutations/register";
 import { INITIAL_REGISTER_FORM_STATE } from "./types";
 import State from '@/app/context/state/State';
 import { QUERY_ERROR } from '@/app/reducers/root';
-import { Box } from '@/UI/Boxes/Box';
+import { Box } from '@/UI/Boxes';
 import { Paragraph } from '@/UI/Text/Text';
 import { pathActivationSent } from '@/app/config/paths';
 

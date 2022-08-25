@@ -1,5 +1,5 @@
 import React from 'react'
-import * as UI from "@/UI/Boxes/Box";
+import * as UI from "@/UI/Boxes";
 import LazyImage from "@/components/lazy-image";
 
 export default function Logo() {

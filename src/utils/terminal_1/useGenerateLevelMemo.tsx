@@ -1,5 +1,5 @@
 import { rules } from '@/utils/terminal_1/rules/rule'
-import { getRandomIntInclusive } from '@/utils/random'
+import { getRandomIntInclusive } from '@/utils/getRandomIntInclusive'
 
 const size = 30
 

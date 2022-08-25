@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@/UI/Boxes/Box'
+import { Box } from '@/UI/Boxes'
 import { Circle } from '@/UI/Terminals/Terminal_1/StandBy'
 
 export default function Offile() {

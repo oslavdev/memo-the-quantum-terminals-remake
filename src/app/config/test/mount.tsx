@@ -6,9 +6,7 @@ import { theme } from '@/UI/config/theme'
 import { ModalProvider } from '@/context/confirmModal'
 import { ErrorhandleProvider } from '@/context/error'
 import { StartGameProvider } from '@/context/startGame'
-import { MusicManagerContextProvider } from '@/context/music'
 import State from '@/app/context/state/State'
-import Modals from '@/fragments/Modals'
 import { MockedProvider } from '@apollo/react-testing'
 
 interface MountProps {
@@ -28,9 +26,7 @@ const Mount: React.FC<MountProps> = ({ children, state, dispatch, mocks }) => {
               <ModalProvider>
                 <ErrorhandleProvider>
                   <StartGameProvider>
-                    <MusicManagerContextProvider>
-                      <Modals>{children}</Modals>
-                    </MusicManagerContextProvider>
+                      {children}
                   </StartGameProvider>
                 </ErrorhandleProvider>
               </ModalProvider>

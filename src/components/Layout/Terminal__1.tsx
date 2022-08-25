@@ -1,7 +1,7 @@
 import React from 'react'
-import { Box } from '@/UI/Boxes/Box'
-import Snow from '@/components/Miscellaneous/Snow'
-import LogoMinified from '@/components/Miscellaneous/LogoMinified'
+import { Box } from '@/UI/Boxes'
+import Snow from '@/components/Snow'
+import LogoMinified from '@/components/LogoMinified'
 
 export default function TerminalOne({
   children,

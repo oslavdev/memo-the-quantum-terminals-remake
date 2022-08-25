@@ -1,7 +1,6 @@
 import React from 'react'
 
-/* UI */
-import { Box } from '@/UI/Boxes/Box'
+import { Box } from '@/UI/Boxes'
 import {
   Board,
   Cell,
@@ -12,11 +11,11 @@ import {
   DecoratorCenter,
 } from '@/UI/Terminals/Terminal_1/Board'
 
-/* Components */
 import StandBy from '@/components/StandBy'
 import Offline from '@/components/Offline'
 
-const size = 30 // size of the map
+// TODO: size of the map depends on the level of game type
+const size = 30 
 
 const CellGen = () => {
   let components = []
@@ -35,13 +34,13 @@ const CellGen = () => {
   return components
 }
 
-export default function GameBoard({ dialogueStatus, gameStatus, stateStartGame, level }) {
+export default function GameBoard(props) {
 
   return (
-    <Box blur={dialogueStatus} mt={20}>
+    <Box blur={props.blur} mt={20}>
       <Board>
-        {gameStatus === 'offline' ? <Offline /> : null}
-        {gameStatus === 'stand by' ? <StandBy /> : null}
+        {props.gameStatus === 'offline' ? <Offline /> : null}
+        {props.gameStatus === 'stand by' ? <StandBy /> : null}
         {CellGen()}
       </Board>
     </Box>

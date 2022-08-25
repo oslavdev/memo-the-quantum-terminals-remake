@@ -2,10 +2,10 @@ import React from 'react'
 import * as ReactRouter from 'react-router-dom';
 
 import LayoutMenu from '@/components/Layout/Layout_menu'
-import { Box } from '@/UI/Boxes/Box'
+import { Box } from '@/UI/Boxes'
 import { Button } from '@/UI/Buttons/Primary'
 import { pathLogin, pathRegister, pathLobby } from '@/app/config/paths'
-import Loading from '@/UI/Loading/Loading'
+import Loading from '@/UI/Loading'
 import createAnonimUser from '@/utils/offline_auth/createAnonimUser'
 import { Header } from '@/UI/Text/Text'
 import { Input } from '@/UI/Inputs/FormInput'

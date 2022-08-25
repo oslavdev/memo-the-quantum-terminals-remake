@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Loading from '@/UI/Loading/Loading'
+import Loading from '@/UI/Loading'
 import LayoutMenu from '@/components/Layout/Layout_menu'
-import { Box } from '@/UI/Boxes/Box'
+import { Box } from '@/UI/Boxes'
 
 export function LoadingFallback(){
     return(

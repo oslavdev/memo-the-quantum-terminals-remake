@@ -1,63 +1,36 @@
 import React from 'react'
-import * as ReactRouter from 'react-router-dom';
-import { Box } from '@/UI/Boxes/Box'
+import { Box } from '@/UI/Boxes'
 import { ModalWrapper, Modal } from '@/UI/Modals/ConfirmModal'
 import { Header3, Paragraph } from '@/UI/Text/Text'
 import { ConfirmButton, DeclineButton, ButtonText } from '@/UI/Buttons/Modal'
-import { pathLobby } from '@/app/config/paths'
-import { useStartGameDispatch } from '@/context/startGame'
-import { useModalDispatch } from '@/context/confirmModal'
 
 interface ConfirmModalState {
-  state: any
+  header: string,
+  onDecline: () => void,
+  onConfirm: () => void,
+  text: string
 }
-const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
-  const navigate = ReactRouter.useNavigate()
-  const dispatchStartGame = useStartGameDispatch()
-  const dispatchConfirmModal = useModalDispatch()
-
-  if (!state) {
-    return null
-  }
-
-  const clear = () => {
-    dispatchConfirmModal({
-      type: 'REMOVE__MODAL',
-    })
-  }
-
-  const confirmAction = () => {
-    clear()
-    dispatchStartGame({
-      type: 'START__GAME',
-      game: 'memo',
-    })
-  }
-
-  const declineAction = () => {
-    clear()
-    navigate(pathLobby())
-  }
-
+const ConfirmModal: React.FC<ConfirmModalState> = (props) => {
+  
   return (
     <ModalWrapper>
       <Modal>
         <Box position="fixed" top="76px" fd="column">
-          <Header3 size="2.1rem">{state.name}</Header3>
+          <Header3 size="2.1rem">{props.header}</Header3>
         </Box>
         <Box>
           <Paragraph size="1.7rem" bright>
-            {state.message}
+            {props.text || ''}
           </Paragraph>
         </Box>
         <Box mt={30} disp="flex">
           <Box mr="50">
-            <ConfirmButton onClick={() => confirmAction()}>
+            <ConfirmButton onClick={() => props.onDecline()}>
               <ButtonText>Yes</ButtonText>
             </ConfirmButton>
           </Box>
           <Box>
-            <DeclineButton onClick={() => declineAction()}>
+            <DeclineButton onClick={() => props.onConfirm()}>
               <ButtonText>No</ButtonText>
             </DeclineButton>
           </Box>
