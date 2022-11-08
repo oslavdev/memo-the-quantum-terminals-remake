@@ -1,6 +1,6 @@
 import * as React from 'react'
+import * as UI from "@/components/UI"
 
-import { Box } from "@/components/UI/box";
 import LazyImage from "@/components/lazy-image";
 
 export default function Logo() {
@@ -26,13 +26,13 @@ export default function Logo() {
   }, [])
 
   return (
-    <Box w="100%" h="150px" id="logo" disp="flex" jc="center" ai='center'>
-      <Box ref={ref} position="absolute" w="300px" h="150px" mr={30}>
+    <UI.Box w="100%" h="150px" id="logo" disp="flex" jc="center" ai='center'>
+      <UI.Box ref={ref} position="absolute" w="300px" h="150px" mr={30}>
        <LazyImage  src="/public/images/menu/Logo-1.png" alt="Logo"  />
-      </Box>
-      <Box ref={ref2} position="absolute" w="300px" h="150px" mr={30}>
+      </UI.Box>
+      <UI.Box ref={ref2} position="absolute" w="300px" h="150px" mr={30}>
         <LazyImage  src="/public/images/menu/Logo-2.png" alt="Logo" />
-     </Box>
-    </Box>
+     </UI.Box>
+    </UI.Box>
   )
 }

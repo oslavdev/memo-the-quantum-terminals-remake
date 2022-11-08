@@ -1,20 +1,19 @@
 import * as React from 'react'
+import * as UI from "@/components/UI"
 
-import { Box } from '@/components/UI/box'
-import { Paragraph } from '@/components/UI/text'
 import { Timer } from '@/components/UI/terminals/terminal-one/timer'
 
 export default function StopWatch({ dialogueStatus, time }) {
   return (
-    <Box h="100px">
-      <Box blur={dialogueStatus} mb={5}>
-        <Paragraph size="2.4rem" center>
+    <UI.Box h="100px">
+      <UI.Box blur={dialogueStatus} mb={5}>
+        <UI.Paragraph size="2.4rem" center>
           Time Left
-        </Paragraph>
-      </Box>
-      <Box blur={dialogueStatus}>
+        </UI.Paragraph>
+      </UI.Box>
+      <UI.Box blur={dialogueStatus}>
         <Timer>00:00:00</Timer>
-      </Box>
-    </Box>
+      </UI.Box>
+    </UI.Box>
   )
 }

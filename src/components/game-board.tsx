@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as UI from "@/components/UI"
 
 import {
   Board,
@@ -10,7 +11,6 @@ import {
   DecoratorCenter,
 } from '@/components/UI/terminals/terminal-one/game-board'
 
-import { Box } from '@/components/UI/box'
 import Offline from '@/components/offline'
 import StandBy from '@/components/stand-by'
 
@@ -35,12 +35,12 @@ const CellGen = () => {
 
 export default function GameBoard({ dialogueStatus, gameStatus }) {
   return (
-    <Box blur={dialogueStatus} mt={20}>
+    <UI.Box blur={dialogueStatus} mt={20}>
       <Board>
         {gameStatus === 'offline' ? <Offline /> : null}
         {gameStatus === 'stand by' ? <StandBy /> : null}
         {CellGen().map((el) => el)}
       </Board>
-    </Box>
+    </UI.Box>
   )
 }

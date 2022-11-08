@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as UI from '@/components/UI/box'
 
-import { Input, Label } from '@/components/UI/inputs/from-input'
+import { Input, Label } from '@/components/UI/inputs/form-input'
 
 import { Button } from '@/components/UI/buttons/primary'
 

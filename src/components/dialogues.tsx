@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as UI from '@/components/UI'
 
 import {
   DialogueButton,
@@ -8,7 +9,6 @@ import {
   DialogueText,
 } from '@/components/UI/terminals/shared/dialogues'
 
-import { Box } from '@/components/UI/box'
 import Typewriter from 'typewriter-effect'
 
 export default function Dialogues({ dialogue, character, _finishDialogue }) {
@@ -37,7 +37,7 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
   }
 
   return (
-    <Box
+    <UI.Box
       transform="translate(-50%, -50%)"
       center
       disp="flex"
@@ -86,6 +86,6 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
           </DialogueButton>
         ) : null}
       </DialoguePlaceholder>
-    </Box>
+    </UI.Box>
   )
 }

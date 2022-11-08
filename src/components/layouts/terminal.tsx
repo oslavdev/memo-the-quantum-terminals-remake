@@ -1,6 +1,6 @@
 import * as React from 'react'
+import * as UI from "@/components/UI"
 
-import { Box } from '@/components/UI/box'
 import LogoMinified from '@/components/logo-mobile'
 import Snow from '@/components/falling-snow'
 
@@ -12,7 +12,7 @@ export default function TerminalOne({
   logo?: boolean
 }) {
   return (
-    <Box
+    <UI.Box
       position="fixed"
       w="100%"
       h="100%"
@@ -21,7 +21,7 @@ export default function TerminalOne({
       backgroundRepeat="no-repeat"
       backgroundSize="28%"
     >
-      <Box
+      <UI.Box
         zIndex={10}
         overflow="hidden"
         disp="flex"
@@ -34,8 +34,8 @@ export default function TerminalOne({
       >
         {logo ? <LogoMinified /> : null}
         {children}
-      </Box>
+      </UI.Box>
       <Snow />
-    </Box>
+    </UI.Box>
   )
 }

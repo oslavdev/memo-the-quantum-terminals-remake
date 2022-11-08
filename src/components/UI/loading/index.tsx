@@ -1,8 +1,7 @@
 import * as React from 'react';
+import * as UI from "@/components/UI"
 
 import styled, { keyframes } from 'styled-components';
-
-import { Box } from "@/components/UI/box";
 
 export const loading = keyframes`
   0%{
@@ -64,21 +63,21 @@ export const Text = styled.div`
 
 export default function Loading() {
   return (
-    <Box center>
+    <UI.Box center>
      <Wrapper>
       <Square />
       <Square delay="0.7s" />
       <Square delay="1s" />
       <Square delay="1.5s" />
       </Wrapper>
-      <Box>
+      <UI.Box>
         <Text>
           <h3>
             Loading... 
           </h3>
       </Text>
-      </Box>
-    </Box>
+      </UI.Box>
+    </UI.Box>
   
   )
 }

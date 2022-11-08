@@ -1,12 +1,11 @@
 import * as Apollo from "@apollo/client";
 import * as React from 'react'
 import * as ReactRouter from 'react-router-dom';
-import * as UI from '@/components/UI/box';
+import * as UI from '@/components/UI';
 
 import Auth from '@/components/forms/auth-form';
 import { INITIAL_REGISTER_FORM_STATE } from "@/types";
 import LayoutMenu from "@/components/layouts/layout-menu";
-import { Paragraph } from '@/components/UI/text';
 import { inputs } from "@/components/forms/inputs/register";
 import { pathActivationSent } from '@/app/config/paths';
 import { registerMutation } from "@/app/graphql/mutations/register";
@@ -70,9 +69,9 @@ export default function Register() {
         type="Register"
       />
       <UI.Box mt={ 10 }>
-        <Paragraph>
+        <UI.Paragraph>
           Already has an account?
-        </Paragraph>
+        </UI.Paragraph>
       </UI.Box>
     </LayoutMenu>
   )

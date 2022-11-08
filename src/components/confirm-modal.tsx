@@ -1,18 +1,22 @@
 import * as React from 'react'
 import * as ReactRouter from 'react-router-dom';
+import * as UI from '@/components/UI'
 
 import { ButtonText, ConfirmButton, DeclineButton } from '@/components/UI/buttons/modal'
-import { Header3, Paragraph } from '@/components/UI/text'
-import { Modal, ModalWrapper } from '@/components/UI/modals/confirm-modal'
 
-import { Box } from '@/components/UI/box'
 import { pathLobby } from '@/app/config/paths'
 import { useModalDispatch } from '@/context/confirm-modal'
 import { useStartGameDispatch } from '@/context/start-game'
 
-interface ConfirmModalState {
-  state: any
+type stateType = {
+  name: string
+  message: string
 }
+
+interface ConfirmModalState {
+  state: stateType
+}
+
 const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
   const navigate = ReactRouter.useNavigate()
   const dispatchStartGame = useStartGameDispatch()
@@ -42,30 +46,30 @@ const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
   }
 
   return (
-    <ModalWrapper>
-      <Modal>
-        <Box position="fixed" top="76px" fd="column">
-          <Header3 size="2.1rem">{state.name}</Header3>
-        </Box>
-        <Box>
-          <Paragraph size="1.7rem" bright>
+    <UI.ModalWrapper>
+      <UI.Modal>
+        <UI.Box position="fixed" top="76px" fd="column">
+          <UI.Header3 size="2.1rem">{state.name}</UI.Header3>
+        </UI.Box>
+        <UI.Box>
+          <UI.Paragraph size="1.7rem" bright>
             {state.message}
-          </Paragraph>
-        </Box>
-        <Box mt={30} disp="flex">
-          <Box mr="50">
+          </UI.Paragraph>
+        </UI.Box>
+        <UI.Box mt={30} disp="flex">
+          <UI.Box mr="50">
             <ConfirmButton onClick={() => confirmAction()}>
               <ButtonText>Yes</ButtonText>
             </ConfirmButton>
-          </Box>
-          <Box>
+          </UI.Box>
+          <UI.Box>
             <DeclineButton onClick={() => declineAction()}>
               <ButtonText>No</ButtonText>
             </DeclineButton>
-          </Box>
-        </Box>
-      </Modal>
-    </ModalWrapper>
+          </UI.Box>
+        </UI.Box>
+      </UI.Modal>
+    </UI.ModalWrapper>
   )
 }
 

@@ -1,11 +1,11 @@
 import * as React from 'react'
+import * as UI from "@/components/UI"
 
-import { Box } from '@/components/UI/box'
 import { Circle } from '@/components/warning-circle'
 
 export default function StandBy() {
   return (
-    <Box
+    <UI.Box
       disp="flex"
       jc="center"
       ai="center"
@@ -18,6 +18,6 @@ export default function StandBy() {
       zIndex="999"
     >
       <Circle type="standby">Stand By</Circle>
-    </Box>
+    </UI.Box>
   )
 }

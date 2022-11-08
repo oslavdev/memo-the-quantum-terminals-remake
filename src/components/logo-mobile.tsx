@@ -1,6 +1,6 @@
 import * as React from 'react'
+import * as UI from "@/components/UI"
 
-import { Box } from '@/components/UI/box'
 import LazyImage from '@/components/lazy-image'
 
 export default function LogoMinified() {
@@ -26,7 +26,7 @@ export default function LogoMinified() {
   }, [])
 
   return (
-    <Box
+    <UI.Box
       position="fixed"
       top="0%"
       left="8%"
@@ -36,12 +36,12 @@ export default function LogoMinified() {
       jc="center"
       ai="center"
     >
-      <Box ref={ref} position="absolute" w="150px" h="70px" mr={30}>
+      <UI.Box ref={ref} position="absolute" w="150px" h="70px" mr={30}>
         <LazyImage src="/public/images/menu/Logo-1.png" alt="Logo" />
-      </Box>
-      <Box ref={ref2} position="absolute" w="150px" h="70px" mr={30}>
+      </UI.Box>
+      <UI.Box ref={ref2} position="absolute" w="150px" h="70px" mr={30}>
         <LazyImage src="/public/images/menu/Logo-2.png" alt="Logo" />
-      </Box>
-    </Box>
+      </UI.Box>
+    </UI.Box>
   )
 }

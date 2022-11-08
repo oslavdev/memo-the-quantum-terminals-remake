@@ -1,6 +1,6 @@
 import * as React from 'react'
+import * as UI from "@/components/UI"
 
-import { Box } from '@/components/UI/box'
 import Logo from '@/components/logo-mobile'
 import Snow from '@/components/falling-snow'
 
@@ -17,7 +17,7 @@ export default function LayoutMenu({
 
   return (
     <>
-    <Box
+    <UI.Box
       position="fixed"
       w="100%"
       h="100%"
@@ -26,7 +26,7 @@ export default function LayoutMenu({
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
     >
-      <Box
+      <UI.Box
         zIndex={10}
         overflow="hidden"
         disp="flex"
@@ -40,10 +40,10 @@ export default function LayoutMenu({
         {logo ? <Logo /> : null}
         {children}
 
-      </Box>
+      </UI.Box>
       <Snow />
 
-    </Box>
+    </UI.Box>
     </>
   )
 }
