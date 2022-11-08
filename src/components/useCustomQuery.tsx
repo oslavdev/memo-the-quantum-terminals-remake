@@ -7,12 +7,6 @@ export const useCustomQuery = (name: string, query: any) => {
   const { dispatch } = React.useContext(State)
   const { loading, error, data } = useQuery(query)
 
-  // Dispatch errors
-  React.useEffect(() => {
-    if (error) {
-      dispatch({ type: 'QUERY_ERROR', payload: data })
-    }
-  }, [error])
 
   // Dispatch data
   React.useEffect(() => {
