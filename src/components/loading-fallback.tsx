@@ -1,14 +1,15 @@
 import * as React from 'react'
-import Loading from '@/UI/Loading/Loading'
-import LayoutMenu from '@/components/Layout/Layout_menu'
-import { Box } from '@/UI/Boxes/Box'
+import * as UI from "@/components/UI"
+
+import LayoutMenu from '@/components/layouts/layout-menu'
+import Loading from '@/components/UI/loading'
 
 export function LoadingFallback(){
     return(
       <LayoutMenu logo={false}>
-       <Box position="absolute" top="50%" center>
+       <UI.Box position="absolute" top="50%" center>
         <Loading />
-      </Box>
+      </UI.Box>
     </LayoutMenu>
     )
   }

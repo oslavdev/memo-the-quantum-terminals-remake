@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 /* Declare Context */
 const MusicManagerContextState = React.createContext(null)

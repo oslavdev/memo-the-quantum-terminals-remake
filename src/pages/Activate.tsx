@@ -1,12 +1,12 @@
-import React from 'react'
-import * as ReactRouter from 'react-router-dom';
 import * as Apollo from '@apollo/client'
-import LayoutMenu from '@/components/Layout/Layout_menu'
-import { Header2, Paragraph } from '@/UI/Text/Text'
-import { Box } from '@/UI/Boxes/Box'
-import { Button } from '@/UI/Buttons/Primary'
-import { pathLogin } from '@/app/config/paths'
+import * as React from 'react'
+import * as ReactRouter from 'react-router-dom';
+import * as UI from '@/components/UI'
+
+import { Button } from '@/components/UI/buttons/primary'
+import LayoutMenu from '@/components/layouts/layout-menu'
 import { confirmQuery } from '@/app/graphql/mutations/confirm'
+import { pathLogin } from '@/app/config/paths'
 
 export default function Activation() {
   const [activated, setActivated] = React.useState<boolean>(false)
@@ -39,21 +39,21 @@ export default function Activation() {
   return (
     <LayoutMenu logo>
       {!location.search ? (
-        <Paragraph>No activation code found</Paragraph>
+        <UI.Paragraph>No activation code found</UI.Paragraph>
       ) : activated ? (
-        <Box>
-          <Box>
-            <Header2>Congratulations!</Header2>
-          </Box>
-          <Box mt={20}>
-            <Paragraph>Your account has been activated</Paragraph>
-          </Box>
-          <Box mt={30}>
+        <UI.Box>
+          <UI.Box>
+            <UI.Header2>Congratulations!</UI.Header2>
+          </UI.Box>
+          <UI.Box mt={20}>
+            <UI.Paragraph>Your account has been activated</UI.Paragraph>
+          </UI.Box>
+          <UI.Box mt={30}>
             <Button text="Login" onClick={() => navigate(pathLogin())} />
-          </Box>
-        </Box>
+          </UI.Box>
+        </UI.Box>
       ) : (
-        <Paragraph>Checking activation code. Please wait.</Paragraph>
+        <UI.Paragraph>Checking activation code. Please wait.</UI.Paragraph>
       )}
     </LayoutMenu>
   )

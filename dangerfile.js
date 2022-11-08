@@ -1,5 +1,5 @@
 // Import the feedback functions
-import { message, warn, fail } from 'danger'
+import { fail, message, warn } from 'danger'
 
 /**
  * Setup
@@ -47,7 +47,7 @@ if (packageChanged && !lockfileChanged) {
 
 /** Doesnt match format */
 danger.git.commits.forEach((commit) => {
-  if (!commit.message.match(/^(feat:)|(fix:)|(major:)|(chore:)/g)) {
+  if (!commit.message.match(/^(feat:)|(fix:)|(major:)|(chore:)|(refactor:)|(perf:)/g)) {
     fail(`Commit message '${commit.message}' does match the correct format`)
   }
 })

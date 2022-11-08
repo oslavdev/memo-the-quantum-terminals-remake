@@ -1,12 +1,11 @@
-import React from 'react'
-import { useMutation } from "@apollo/client";
+import * as React from 'react'
 import * as ReactRouter from 'react-router-dom';
-import LayoutMenu from "@/components/Layout/Layout_menu";
-import Auth from '@/components/Forms/Auth';
-import State from "@/app/context/state/State";
+
+import Auth from '@/components/forms/auth-form';
+import LayoutMenu from "@/components/layouts/layout-menu";
 import { loginMutation } from "@/app/graphql/mutations/login";
-import { QUERY_ERROR } from '@/app/reducers/root';
 import { pathLobby } from '@/app/config/paths';
+import { useMutation } from "@apollo/client";
 
 const INITIAL_STATE = {
   email: "",
@@ -17,18 +16,16 @@ function Login() {
 
   const navigate = ReactRouter.useNavigate();
   const [formData, setFormData] = React.useState(INITIAL_STATE);
-  const { _, dispatch } = React.useContext(State);
   
   const [login, { loading, data }] = useMutation(loginMutation);
 
   React.useEffect(() => {
     if (data && data.login) {
       if (data.login.user) {
-        navigate(pathLobby()) //activation sent page
-        setFormData(INITIAL_STATE); //reset formdata
+        navigate(pathLobby()) 
+        setFormData(INITIAL_STATE); 
       }
       else if (data.login.error) {
-        dispatch({ type: QUERY_ERROR, payload: data.error }); //dispatch error
         setFormData(INITIAL_STATE)
       }
     }
@@ -38,20 +35,20 @@ function Login() {
     }
   }, [data])
 
-  const onSubmit = async (): Promise<any> => {
+  function onSubmit() {
     login({
       variables: {
         ...formData
       }
-    });
-  };
+    })
+  }
 
-  const onChange = (name: string, e: any) => {
+  function onChange (name: string, e: React.ChangeEvent<HTMLInputElement>) {
     setFormData({
       ...formData,
       [name]: e.target.value
     })
-  };
+  }
 
   const inputs = [
     {
@@ -68,7 +65,7 @@ function Login() {
       value: formData.password,
       placeholder: "Password"
     }
-  ];
+  ]
 
   return (
     <LayoutMenu logo>
@@ -83,4 +80,4 @@ function Login() {
   )
 }
 
-export default Login;
+export default Login

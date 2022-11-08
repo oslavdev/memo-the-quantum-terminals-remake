@@ -1,18 +1,18 @@
-import React from 'react'
-import LayoutMenu from "@/components/Layout/Layout_menu";
-import { Box } from '@/UI/Boxes/Box'
-import { Header } from '@/UI/Text/Text';
-import { Button } from '@/UI/Buttons/Primary';
+import * as React from 'react'
+import * as UI from "@/components/UI"
+
+import { Button } from '@/components/UI/buttons/primary';
+import LayoutMenu from "@/components/layouts/layout-menu";
 
 export default function Wrong() {
     return (
         <LayoutMenu logo>
-            <Box>
-                <Header>Something went wrong</Header>
-            </Box>
-            <Box mt={30}>
+            <UI.Box>
+                <UI.Header>Something went wrong</UI.Header>
+            </UI.Box>
+            <UI.Box mt={30}>
                 <Button onClick={() => location.reload()} text={"Try again"}/>
-            </Box>
+            </UI.Box>
         </LayoutMenu>
     )
 }

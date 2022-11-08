@@ -1,15 +1,12 @@
-import React from 'react'
+import * as React from 'react'
 import * as ReactRouter from 'react-router-dom';
+import * as UI from '@/components/UI'
 
-import LayoutMenu from '@/components/Layout/Layout_menu'
-import { Box } from '@/UI/Boxes/Box'
-import { Button } from '@/UI/Buttons/Primary'
-import { pathLogin, pathRegister, pathLobby } from '@/app/config/paths'
-import Loading from '@/UI/Loading/Loading'
-import createAnonimUser from '@/utils/offline_auth/createAnonimUser'
-import { Header } from '@/UI/Text/Text'
-import { Input } from '@/UI/Inputs/FormInput'
-import State from "@/app/context/state/State";
+import { pathLobby, pathLogin, pathRegister } from '@/app/config/paths'
+
+import LayoutMenu from '@/components/layouts/layout-menu'
+import State from "@/context/state";
+import createAnonimUser from '@/utils/create-anonim-user'
 
 export default function Menu() {
 
@@ -34,15 +31,15 @@ export default function Menu() {
   if(anonim && !loggin){
     return(
       <LayoutMenu logo={false}>
-        <Box>
-          <Header>Choose username</Header>
-        </Box>
-        <Box mt={20}>
-          <Input value={userName} onChange={(e) => setUserName(e.target.value)}></Input>
-        </Box>
-        <Box mt={20}>
-          <Button text={"Confirm"} onClick={()=>loginAsAnonimUser()} />
-        </Box>
+        <UI.Box>
+          <UI.Header>Choose username</UI.Header>
+        </UI.Box>
+        <UI.Box mt={20}>
+          <UI.FormInputs.Input value={userName} onChange={(e) => setUserName(e.target.value)}></UI.FormInputs.Input>
+        </UI.Box>
+        <UI.Box mt={20}>
+          <UI.PrimaryButton.Button text={"Confirm"} onClick={()=>loginAsAnonimUser()} />
+        </UI.Box>
       </LayoutMenu>
     )
   }
@@ -50,27 +47,27 @@ export default function Menu() {
   if (loggin) {
     return (
       <LayoutMenu logo={false}>
-        <Loading />
+        <UI.loading />
       </LayoutMenu>
     )
   }
 
   return (
     <LayoutMenu logo>
-      <Box disp="flex" fd="column">
-        <Box mb={20}>
-          <Button text="Login" onClick={() => navigate(pathLogin())} />
-        </Box>
-        <Box mb={20}>
-          <Button
+      <UI.Box disp="flex" fd="column">
+        <UI.Box mb={20}>
+          <UI.PrimaryButton.Button text="Login" onClick={() => navigate(pathLogin())} />
+        </UI.Box>
+        <UI.Box mb={20}>
+          <UI.PrimaryButton.Button
             text="Register"
             onClick={() => navigate(pathRegister())}
           />
-        </Box>
-        <Box>
-          <Button text="Go anonim" onClick={() => setAnonim(true)} />
-        </Box>
-      </Box>
+        </UI.Box>
+        <UI.Box>
+          <UI.PrimaryButton.Button text="Go anonim" onClick={() => setAnonim(true)} />
+        </UI.Box>
+      </UI.Box>
     </LayoutMenu>
   )
 }

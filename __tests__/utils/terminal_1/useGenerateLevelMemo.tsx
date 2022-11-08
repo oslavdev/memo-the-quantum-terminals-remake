@@ -1,8 +1,8 @@
 import useGenerateLevelMemo, {
   generateNext,
-  isStartOfTheRow,
   isEndOfTheRow,
-} from '@/utils/terminal_1/useGenerateLevelMemo'
+  isStartOfTheRow,
+} from '@/components/useGenerateLevelMemo'
 
 // describe("Test level generator", () => {
 
