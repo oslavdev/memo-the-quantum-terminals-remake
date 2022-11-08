@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/oslavdev/memo-the-quantum-terminals-client/compare/v1.3.0...v1.3.1) (2022-11-08)
+
+
+### Bug Fixes
+
+* remove obsolete dispatch ([1f3c229](https://github.com/oslavdev/memo-the-quantum-terminals-client/commit/1f3c22989f4d214bf3179aead683f7d6976d1eff))
+
 # [1.3.0](https://github.com/oslavdev/memo-the-quantum-terminals-client/compare/v1.2.0...v1.3.0) (2022-11-08)
 
 
