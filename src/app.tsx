@@ -1,7 +1,6 @@
 import * as React from 'react'
+import * as ReactRouter from 'react-router-dom'
 import * as path from '@/app/config/paths'
-
-import {Route, Routes} from 'react-router-dom'
 
 import Activation from '@/pages/activate'
 import ActivationSent from '@/pages/activation-sent'
@@ -33,32 +32,32 @@ const App = () => {
               <StartGameProvider>
                 <MusicManagerContextProvider>
                 <Modals>
-                  <Routes>
-                    <Route path={path.pathLobby()} element={<PrivateRoute/>}>
-                          <Route path={path.pathLobby()} element={<Lobby/>}/>
-                    </Route>
-                    <Route path={path.pathMemo()} element={<PrivateRoute/>}>
-                          <Route path={path.pathMemo()} element={<Memo/>}/>
-                    </Route>
-                    <Route path={path.pathRegister()} element={<PublicRoute/>}>
-                          <Route path={path.pathRegister()} element={<Register/>}/>
-                    </Route>
-                    <Route path={path.pathLogin()} element={<PublicRoute/>}>
-                          <Route path={path.pathLogin()} element={<Login/>}/>
-                    </Route>
-                    <Route path={path.pathHome()} element={<PublicRoute/>}>
-                          <Route path={path.pathHome()} element={<Menu/>}/>
-                    </Route>
-                    <Route path={path.pathActivationSent()} element={<PublicRoute/>}>
-                          <Route path={path.pathActivationSent()} element={<ActivationSent/>}/>
-                    </Route>
-                    <Route path={path.pathActivation()} element={<PublicRoute/>}>
-                          <Route path={path.pathActivation()} element={<Activation/>}/>
-                    </Route>
-                    <Route path={'/unknown-error'} element={<Wrong/>}/>
-                    <Route path={'/not-found'} element={<NotFoundPage/>}/>
-                    <Route path="*" element={<NotFoundPage/>} />
-                  </Routes>
+                  <ReactRouter.Routes>
+                    <ReactRouter.Route path={path.pathLobby()} element={<PrivateRoute/>}>
+                          <ReactRouter.Route path={path.pathLobby()} element={<Lobby/>}/>
+                    </ReactRouter.Route>
+                    <ReactRouter.Route path={path.pathMemo()} element={<PrivateRoute/>}>
+                          <ReactRouter.Route path={path.pathMemo()} element={<Memo/>}/>
+                    </ReactRouter.Route>
+                    <ReactRouter.Route path={path.pathRegister()} element={<PublicRoute/>}>
+                          <ReactRouter.Route path={path.pathRegister()} element={<Register/>}/>
+                    </ReactRouter.Route>
+                    <ReactRouter.Route path={path.pathLogin()} element={<PublicRoute/>}>
+                          <ReactRouter.Route path={path.pathLogin()} element={<Login/>}/>
+                    </ReactRouter.Route>
+                    <ReactRouter.Route path={path.pathHome()} element={<PublicRoute/>}>
+                          <ReactRouter.Route path={path.pathHome()} element={<Menu/>}/>
+                    </ReactRouter.Route>
+                    <ReactRouter.Route path={path.pathActivationSent()} element={<PublicRoute/>}>
+                          <ReactRouter.Route path={path.pathActivationSent()} element={<ActivationSent/>}/>
+                    </ReactRouter.Route>
+                    <ReactRouter.Route path={path.pathActivation()} element={<PublicRoute/>}>
+                          <ReactRouter.Route path={path.pathActivation()} element={<Activation/>}/>
+                    </ReactRouter.Route>
+                    <ReactRouter.Route path={'/unknown-error'} element={<Wrong/>}/>
+                    <ReactRouter.Route path={'/not-found'} element={<NotFoundPage/>}/>
+                    <ReactRouter.Route path="*" element={<NotFoundPage/>} />
+                  </ReactRouter.Routes>
                 </Modals>
                 </MusicManagerContextProvider>
               </StartGameProvider>
