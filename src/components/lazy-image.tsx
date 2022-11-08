@@ -1,6 +1,7 @@
-import React from 'react';
+import * as React from 'react';
+
+import { Image } from "@/components/UI/shared/image";
 import LazyLoad from "react-lazyload";
-import { Image } from "@/UI/Shared/Image";
 
 /**
  * Return Lazy loaded image. You can pass one image source as a string
@@ -22,7 +23,7 @@ import { Image } from "@/UI/Shared/Image";
 interface LazyProps {
   src: string | string[],
   alt: string,
-  parentRef?: any
+  parentRef?: ChildNode
 }
 
 const LazyImage: React.FC<LazyProps> = ({

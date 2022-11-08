@@ -1,15 +1,16 @@
-import React from 'react'
+import * as React from 'react'
 import * as ReactRouter from 'react-router-dom';
 
-import LayoutMenu from '@/components/Layout/Layout_menu'
-import { Box } from '@/UI/Boxes/Box'
-import { Button } from '@/UI/Buttons/Primary'
-import { pathLogin, pathRegister, pathLobby } from '@/app/config/paths'
-import Loading from '@/UI/Loading/Loading'
-import createAnonimUser from '@/utils/offline_auth/createAnonimUser'
-import { Header } from '@/UI/Text/Text'
-import { Input } from '@/UI/Inputs/FormInput'
-import State from "@/app/context/state/State";
+import { pathLobby, pathLogin, pathRegister } from '@/app/config/paths'
+
+import { Box } from '@/components/UI/box'
+import { Button } from '@/components/UI/buttons/primary'
+import { Header } from '@/components/UI/text'
+import { Input } from '@/components/UI/inputs/from-input'
+import LayoutMenu from '@/components/layouts/layout-menu'
+import Loading from '@/components/UI/loading'
+import State from "@/context/state";
+import createAnonimUser from '@/utils/create-anonim-user'
 
 export default function Menu() {
 

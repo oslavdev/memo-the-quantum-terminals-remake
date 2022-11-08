@@ -1,21 +1,22 @@
+import { MockedProvider, MockedResponse } from '@apollo/react-testing'
+
 import { ApolloProvider } from '@apollo/client'
-import { client } from '@/app/config/apollo'
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
-import { theme } from '@/UI/config/theme'
-import { ModalProvider } from '@/context/confirmModal'
 import { ErrorhandleProvider } from '@/context/error'
-import { StartGameProvider } from '@/context/startGame'
+import { ModalProvider } from '@/context/confirm-modal'
+import Modals from '@/components/modals-context'
 import { MusicManagerContextProvider } from '@/context/music'
-import State from '@/app/context/state/State'
-import Modals from '@/fragments/Modals'
-import { MockedProvider } from '@apollo/react-testing'
+import { StartGameProvider } from '@/context/start-game'
+import State from '@/context/state'
+import { ThemeProvider } from 'styled-components'
+import { client } from '@/app/config/apollo'
+import { theme } from '@/components/UI/config/theme'
 
 interface MountProps {
   children: React.ReactNode
-  state: any
-  dispatch: any
-  mocks: any[]
+  state: object
+  dispatch: object
+  mocks: ReadonlyArray<MockedResponse>
 }
 
 const Mount: React.FC<MountProps> = ({ children, state, dispatch, mocks }) => {

@@ -1,17 +1,15 @@
-import React from 'react'
-import * as ReactRouter from 'react-router-dom';
 import * as Apollo from "@apollo/client";
+import * as React from 'react'
+import * as ReactRouter from 'react-router-dom';
+import * as UI from '@/components/UI/box';
 
-import LayoutMenu from "@/components/Layout/Layout_menu";
-import { inputs } from "@/components/Forms/inputs/register";
-import Auth from '@/components/Forms/Auth';
-import { registerMutation } from "@/app/graphql/mutations/register";
-import { INITIAL_REGISTER_FORM_STATE } from "./types";
-import State from '@/app/context/state/State';
-import { QUERY_ERROR } from '@/app/reducers/root';
-import { Box } from '@/UI/Boxes/Box';
-import { Paragraph } from '@/UI/Text/Text';
+import Auth from '@/components/forms/auth-form';
+import { INITIAL_REGISTER_FORM_STATE } from "@/types";
+import LayoutMenu from "@/components/layouts/layout-menu";
+import { Paragraph } from '@/components/UI/text';
+import { inputs } from "@/components/forms/inputs/register";
 import { pathActivationSent } from '@/app/config/paths';
+import { registerMutation } from "@/app/graphql/mutations/register";
 
 const INITIAL_STATE = {
   email: "",
@@ -22,7 +20,6 @@ const INITIAL_STATE = {
 
 export default function Register() {
   
-  const {_, dispatch} = React.useContext(State);
   const [formData, setFormData] = React.useState<INITIAL_REGISTER_FORM_STATE>(INITIAL_STATE);
   const [register, { loading, data }] = Apollo.useMutation(registerMutation);
   const navigate = ReactRouter.useNavigate();
@@ -34,7 +31,7 @@ export default function Register() {
         setFormData(INITIAL_STATE); //reset formdata
       }
       else if (data.register.error) {
-        dispatch({ type: QUERY_ERROR, payload: data.error }); //dispatch error
+      
         setFormData(INITIAL_STATE)
       }
     }
@@ -54,7 +51,7 @@ export default function Register() {
   };
 
   /* Get input values */
-  const onChange = (name: string, e: any): void => {
+  const onChange = (name: string, e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
     setFormData({
       ...formData,
@@ -72,11 +69,11 @@ export default function Register() {
         inputs={inputs(formData)}
         type="Register"
       />
-      <Box mt={ 10 }>
+      <UI.Box mt={ 10 }>
         <Paragraph>
           Already has an account?
         </Paragraph>
-      </Box>
+      </UI.Box>
     </LayoutMenu>
   )
 }

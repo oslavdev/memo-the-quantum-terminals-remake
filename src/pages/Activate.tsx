@@ -1,12 +1,14 @@
-import React from 'react'
-import * as ReactRouter from 'react-router-dom';
 import * as Apollo from '@apollo/client'
-import LayoutMenu from '@/components/Layout/Layout_menu'
-import { Header2, Paragraph } from '@/UI/Text/Text'
-import { Box } from '@/UI/Boxes/Box'
-import { Button } from '@/UI/Buttons/Primary'
-import { pathLogin } from '@/app/config/paths'
+import * as React from 'react'
+import * as ReactRouter from 'react-router-dom';
+
+import { Header2, Paragraph } from '@/components/UI/text'
+
+import { Box } from '@/components/UI/box'
+import { Button } from '@/components/UI/buttons/primary'
+import LayoutMenu from '@/components/layouts/layout-menu'
 import { confirmQuery } from '@/app/graphql/mutations/confirm'
+import { pathLogin } from '@/app/config/paths'
 
 export default function Activation() {
   const [activated, setActivated] = React.useState<boolean>(false)

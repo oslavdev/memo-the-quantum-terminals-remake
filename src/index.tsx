@@ -1,8 +1,9 @@
-import ReactDOM from 'react-dom'
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+
 import { ApolloProvider } from '@apollo/client'
 import App from '@/app'
+import { BrowserRouter } from 'react-router-dom'
 import { client } from '@/app/config/apollo'
 
 const rootNode = document.getElementById('root')

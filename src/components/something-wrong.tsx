@@ -1,8 +1,9 @@
-import React from 'react'
-import LayoutMenu from "@/components/Layout/Layout_menu";
-import { Box } from '@/UI/Boxes/Box'
-import { Header } from '@/UI/Text/Text';
-import { Button } from '@/UI/Buttons/Primary';
+import * as React from 'react'
+
+import { Box } from '@/components/UI/box'
+import { Button } from '@/components/UI/buttons/primary';
+import { Header } from '@/components/UI/text';
+import LayoutMenu from "@/components/layouts/layout-menu";
 
 export default function Wrong() {
     return (

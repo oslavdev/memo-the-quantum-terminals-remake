@@ -1,46 +1,33 @@
-import React, { Suspense, useContext, useReducer } from 'react'
-import {Routes, Route} from 'react-router-dom'
-import {ThemeProvider} from 'styled-components'
-import PrivateRoute from '@/HOC/Routes/PrivateRoute'
-import PublicRoute from '@/HOC/Routes/PublicRoute'
+import * as React from 'react'
 import * as path from '@/app/config/paths'
-import State from '@/app/context/state/State'
-import reducer from '@/app/reducers/root'
-import { theme } from '@/UI/config/theme'
 
-/* Games */
-import Memo from '@/pages/Memo'
+import {Route, Routes} from 'react-router-dom'
 
-/* Pages */
-import Login from '@/pages/Login'
-import Menu from '@/pages/Menu'
-import Register from '@/pages/Register'
-import Lobby from '@/pages/Lobby'
-import NotFoundPage from '@/pages/NotFoundPage'
-import ActivationSent from '@/pages/ActivationSent'
-import Activation from '@/pages/Activate'
-
-/* Context */
-import { ModalProvider } from '@/context/confirmModal'
+import Activation from '@/pages/activate'
+import ActivationSent from '@/pages/activation-sent'
 import { ErrorhandleProvider } from '@/context/error'
-import { StartGameProvider } from '@/context/startGame'
-import { MusicManagerContextProvider } from '@/context/music'
-
-/* Fragments */
-import Modals from '@/fragments/Modals'
-
-/** Pages */
-import Wrong from '@/components/something-wrong'
 import { LoadingFallback } from '@/components/loading-fallback'
+import Lobby from '@/pages/lobby'
+import Login from '@/pages/login'
+import Memo from '@/pages/memo'
+import Menu from '@/pages/menu'
+import { ModalProvider } from '@/context/confirm-modal'
+import Modals from '@/components/modals-context'
+import { MusicManagerContextProvider } from '@/context/music'
+import NotFoundPage from '@/pages/not-found'
+import PrivateRoute from '@/components/private-route'
+import PublicRoute from '@/components/public-route'
+import Register from '@/pages/register'
+import { StartGameProvider } from '@/context/start-game'
+import {ThemeProvider} from 'styled-components'
+import Wrong from '@/components/something-wrong'
+import { theme } from '@/components/UI/config/theme'
 
 const App = () => {
-  const initialState = useContext(State)
-  const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
     <ThemeProvider theme={theme}>
-    <Suspense fallback={<LoadingFallback/>}>
-        <State.Provider value={{ state, dispatch }}>
+    <React.Suspense fallback={<LoadingFallback/>}>
           <ModalProvider>
             <ErrorhandleProvider>
               <StartGameProvider>
@@ -77,8 +64,7 @@ const App = () => {
               </StartGameProvider>
             </ErrorhandleProvider>
           </ModalProvider>
-        </State.Provider>
-      </Suspense>
+      </React.Suspense>
      </ThemeProvider>
   )
 }

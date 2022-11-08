@@ -1,14 +1,15 @@
-import React from 'react'
+import * as React from 'react'
 import * as ReactRouter from 'react-router-dom'
 
-import LayoutMenu from '@/components/Layout/Layout_menu'
-import { Box } from '@/UI/Boxes/Box'
-import { Button } from '@/UI/Buttons/Primary'
-import { pathRegister, pathMemo } from '@/app/config/paths'
-import { meQuery, ME_QUERY } from '@/app/graphql/user'
-import { useCustomQuery } from '@/app/hooks/graphql/query'
-import Loading from '@/UI/Loading/Loading'
-import { Paragraph } from '@/UI/Text/Text'
+import { ME_QUERY, meQuery } from '@/app/graphql/user'
+import { pathMemo, pathRegister } from '@/app/config/paths'
+
+import { Box } from '@/components/UI/box'
+import { Button } from '@/components/UI/buttons/primary'
+import LayoutMenu from '@/components/layouts/layout-menu'
+import Loading from '@/components/UI/loading'
+import { Paragraph } from '@/components/UI/text'
+import { useCustomQuery } from '@/components/useCustomQuery'
 
 export default function Lobby() {
   

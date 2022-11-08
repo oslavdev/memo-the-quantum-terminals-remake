@@ -1,5 +1,6 @@
 import {
   ApolloClient,
+  ApolloLink,
   InMemoryCache,
   NormalizedCacheObject,
   createHttpLink,
@@ -36,6 +37,6 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
  */
 export const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   credentials: 'include',
-  link: errorLink.concat(httpLink) as any,
+  link: errorLink.concat(httpLink) as ApolloLink,
   cache: new InMemoryCache(),
 })
