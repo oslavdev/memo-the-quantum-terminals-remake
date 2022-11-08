@@ -41,3 +41,7 @@ export const pathActivationSent = (): string => {
 export const pathActivation = (): string => {
   return `/user/confirm`
 }
+
+export const pathUnknownError = (): string => {
+  return `/unknown-error`
+}
