@@ -1,10 +1,10 @@
 import { GameMemoType, UserType } from '@/types/index'
 
-// Create anonimouse user without registration
+// Create anonim user without registration
 
-export default function createAnonimUser(ip: string, username = 'anonim') {
+export default function createAnonimUser(username = 'anonim') {
   const User: UserType = {
-    id: '1',
+    id: '19hfbsm@dhfs73jvbfs',
     username,
     created_at: new Date(),
     email: 'info@info.com',
@@ -14,8 +14,9 @@ export default function createAnonimUser(ip: string, username = 'anonim') {
     score: 0,
     mistakes: 0,
     strike: 0,
-    userId: '1',
-    id: '1',
+    userId: User.id,
+    level: 1,
+    id: '13bfhgy3i2r$#hjsvy3vfsd',
   }
 
   localStorage.setItem('user', JSON.stringify(User))

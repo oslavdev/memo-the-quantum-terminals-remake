@@ -14,6 +14,10 @@ export const Cell = styled.div`
   font-size: 20px;
   position: relative;
   border: 1px solid ${(props) => props.theme.colors.borderBoardgame};
+
+  cursor: ${(props) => props.isDisabled ? "initial" : 'pointer'};
+  pointer-events:  ${(props) => props.isDisabled ? "none" : 'initial'};
+
 `
 
 export const Decorator = styled.div`

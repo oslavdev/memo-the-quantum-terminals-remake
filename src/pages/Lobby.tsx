@@ -1,19 +1,19 @@
+import * as ApolloClient from '@apollo/client'
 import * as React from 'react'
 import * as ReactRouter from 'react-router-dom'
 import * as UI from "@/components/UI"
 
-import { ME_QUERY, meQuery } from '@/app/graphql/user'
 import { pathMemo, pathRegister } from '@/app/config/paths'
 
 import { Button } from '@/components/UI/buttons/primary'
 import LayoutMenu from '@/components/layouts/layout-menu'
 import Loading from '@/components/UI/loading'
-import { useCustomQuery } from '@/components/useCustomQuery'
+import { meQuery } from '@/app/graphql/user'
 
 export default function Lobby() {
   
   const navigate = ReactRouter.useNavigate()
-  const { loading } = useCustomQuery(ME_QUERY, meQuery)
+  const response = ApolloClient.useQuery(meQuery)
 
   const mockedGame = JSON.parse(localStorage.getItem('game'))
 
@@ -21,7 +21,7 @@ export default function Lobby() {
     alert("Logout")
   }
 
-  if (loading || !mockedGame) {
+  if (response.loading || !mockedGame) {
     return (
       <LayoutMenu logo={false}>
         <UI.Box position="absolute" top="50%" center>

@@ -3,10 +3,8 @@ import { MockedProvider, MockedResponse } from '@apollo/react-testing'
 import { ApolloProvider } from '@apollo/client'
 import { BrowserRouter } from 'react-router-dom'
 import { ErrorhandleProvider } from '@/context/error'
-import { ModalProvider } from '@/context/confirm-modal'
 import Modals from '@/components/modals-context'
 import { MusicManagerContextProvider } from '@/context/music'
-import { StartGameProvider } from '@/context/start-game'
 import State from '@/context/state'
 import { ThemeProvider } from 'styled-components'
 import { client } from '@/app/config/apollo'
@@ -26,15 +24,11 @@ const Mount: React.FC<MountProps> = ({ children, state, dispatch, mocks }) => {
         <BrowserRouter>
           <ThemeProvider theme={theme}>
             <State.Provider value={{ state, dispatch }}>
-              <ModalProvider>
                 <ErrorhandleProvider>
-                  <StartGameProvider>
                     <MusicManagerContextProvider>
                       <Modals>{children}</Modals>
                     </MusicManagerContextProvider>
-                  </StartGameProvider>
                 </ErrorhandleProvider>
-              </ModalProvider>
             </State.Provider>
           </ThemeProvider>
         </BrowserRouter>

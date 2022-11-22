@@ -8,35 +8,25 @@ import Header from '@/components/stopwatch'
 import LayoutTerminalOne from '@/components/layouts/terminal'
 import { LoadingFallback } from '@/components/loading-fallback'
 import useGenerateLevelMemo from '@/components/useGenerateLevelMemo'
-import { useModalDispatch } from '@/context/confirm-modal'
-import { useStartGameState } from '@/context/start-game'
 
-const Memo = () => {
+// import ConfirmModal from '@/components/confirm-modal'
+
+function Memo() {
   
-  const CURRENT__GAME = 'MEMO_GAME'
-
-  const [loading, setLoading] = React.useState<boolean>(true) // page loading
+  const [loading, setLoading] = React.useState<boolean>(true) 
+  // TODO: refactor to use hook with paused state
   const [level, setLevel] = React.useState<number[]|null>(null) // generated level
   const [gameStatus, setGameStatus] = React.useState<"offline"|"stand by"|"play">('offline') 
-  const [dialogueStatus, setDialogueStatus] = React.useState<null | DialogueType>(null)
+  const [dialogueStatus, setDialogueStatus] = React.useState<DialogueType | null>(null)
 
   const mockedGame = JSON.parse(localStorage.getItem('game'))
 
-  const dispatchConfirmModal = useModalDispatch()
-
-  const stateStartGame = useStartGameState()
-
   React.useEffect(() => {
-    if (stateStartGame && mockedGame && mockedGame.length > 0) {
-      setGameStatus('stand by')
-      /* Generate level */
+    // Generate level
+    if (gameStatus === "stand by" && mockedGame) {
       let result = [undefined]
-      const currentGame = mockedGame.find(
-        (game) => game.title === CURRENT__GAME,
-      )
-
       do {
-        const level_get = useGenerateLevelMemo(currentGame.level)
+        const level_get = useGenerateLevelMemo(mockedGame.level)
         result = [...level_get]
 
         if (!level_get.includes(undefined)) {
@@ -45,34 +35,31 @@ const Memo = () => {
         }
       } while (result.includes(undefined))
     }
-  }, [stateStartGame])
+  }, [gameStatus])
 
   React.useEffect(() => {
-    if (mockedGame && mockedGame.length > 0) {
-      /* Get anonim user level */
-      const currentGame = mockedGame.find(
-        (game) => game.title === CURRENT__GAME,
+    if (mockedGame) {
+      // Run dialogue
+      const dialogue: DialogueType = DialoguesMemo.find(
+        (dial) => dial.level === mockedGame.level,
       )
 
-      // Get anonim user dialogue
-      const dialogue: DialogueType = DialoguesMemo.find(
-        (dial) => dial.level === currentGame.level,
-      )
       if (dialogue) {
-        setDialogueStatus(dialogue)
+        // setDialogueStatus(dialogue)
+        setGameStatus('stand by')
         setLoading(false)
       }
     }
   }, [])
 
-  const _finishDialogue = () => {
+  function finishDialogue() {
     setDialogueStatus(null)
-    dispatchConfirmModal({
-      type: 'ADD__MODAL',
-      name: 'Are you ready?',
-      message: 'The game is ready to be started',
-      confirm: 'DISPATCH__START__GAME',
-    })
+    // TODO: implement confirmation modal
+    setGameStatus('stand by')
+  }
+
+  function onClickCell(item: number){
+    console.log("Cell is clicked", item)
   }
 
   if (loading) {
@@ -83,16 +70,19 @@ const Memo = () => {
     <LayoutTerminalOne logo>
       <Header dialogueStatus={dialogueStatus} time="00:00:00" />
       <GameBoard
-        dialogueStatus={dialogueStatus}
+        dialogueStatus={Boolean(dialogueStatus)}
+        onClickCell={onClickCell}
         gameStatus={gameStatus}
+        level={level}
       />
       {dialogueStatus && (
         <Dialogues
           dialogue={dialogueStatus.text}
           character={dialogueStatus.character}
-          _finishDialogue={_finishDialogue}
+          finishDialogue={finishDialogue}
         />
       )}
+      
     </LayoutTerminalOne>
   )
 }

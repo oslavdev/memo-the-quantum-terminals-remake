@@ -7,4 +7,6 @@ export * from "@/components/UI/shared"
 export * from "@/components/UI/modals"
 export * from "@/components/UI/intro"
 export * from "@/components/UI/buttons"
+export * from "@/components/UI/toast"
+export * from "@/components/UI/anchor"
 

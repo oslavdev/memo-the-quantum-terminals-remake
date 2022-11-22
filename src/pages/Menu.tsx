@@ -5,46 +5,48 @@ import * as UI from '@/components/UI'
 import { pathLobby, pathLogin, pathRegister } from '@/app/config/paths'
 
 import LayoutMenu from '@/components/layouts/layout-menu'
-import State from "@/context/state";
 import createAnonimUser from '@/utils/create-anonim-user'
 
 export default function Menu() {
 
-  const { dispatch } = React.useContext(State);
   const navigate = ReactRouter.useNavigate()
 
-  const [loggin, setLoggin] = React.useState<boolean>(false)
+  const [login, setLogin] = React.useState<boolean>(false)
   const [anonim, setAnonim] = React.useState<boolean>(false);
   const [userName, setUserName] = React.useState<string>("anonim");
 
-  const loginAsAnonimUser = () => {
-    setLoggin(true)
+  function loginAsAnonimUser () {
 
-    createAnonimUser("1", userName);
-    dispatch({ type:"ADD_ERROR",  payload: "User created" })
+    setLogin(true)
 
+    createAnonimUser(userName);
+   
     setTimeout(() => {
       navigate(pathLobby())
     }, 1000)
   }
 
-  if(anonim && !loggin){
+  function handleUserName(e: React.ChangeEvent<HTMLInputElement>){
+    setUserName(e.target.value)
+  }
+
+  if(anonim && !login){
     return(
       <LayoutMenu logo={false}>
         <UI.Box>
           <UI.Header>Choose username</UI.Header>
         </UI.Box>
         <UI.Box mt={20}>
-          <UI.FormInputs.Input value={userName} onChange={(e) => setUserName(e.target.value)}></UI.FormInputs.Input>
+          <UI.FormInputs.Input value={userName} onChange={(e) => handleUserName(e)}></UI.FormInputs.Input>
         </UI.Box>
         <UI.Box mt={20}>
-          <UI.PrimaryButton.Button text={"Confirm"} onClick={()=>loginAsAnonimUser()} />
+          <UI.PrimaryButton.Button text={"Confirm"} onClick={loginAsAnonimUser} />
         </UI.Box>
       </LayoutMenu>
     )
   }
 
-  if (loggin) {
+  if (login) {
     return (
       <LayoutMenu logo={false}>
         <UI.loading />
