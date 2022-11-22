@@ -8,6 +8,8 @@ import LayoutMenu from '@/components/layouts/layout-menu'
 import { confirmQuery } from '@/app/graphql/mutations/confirm'
 import { pathLogin } from '@/app/config/paths'
 
+
+
 export default function Activation() {
   const [activated, setActivated] = React.useState<boolean>(false)
   const [confirmUser, { data }] = Apollo.useMutation(confirmQuery)
