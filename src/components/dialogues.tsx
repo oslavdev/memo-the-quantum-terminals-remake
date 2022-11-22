@@ -11,7 +11,13 @@ import {
 
 import Typewriter from 'typewriter-effect'
 
-export default function Dialogues({ dialogue, character, _finishDialogue }) {
+interface DialoguesPropsType {
+  character: string
+  finishDialogue: () => void
+  dialogue: string[]
+}
+
+export default function Dialogues(props:DialoguesPropsType) {
   const [start, setStart] = React.useState<boolean>(false)
   const [iteration, setIteration] = React.useState<number>(0)
   const [finishedTyping, setFinished] = React.useState<boolean>(false)
@@ -20,7 +26,7 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
   React.useEffect(() => {
     setCurrentLine(null)
     setTimeout(() => {
-      setCurrentLine(dialogue[iteration])
+      setCurrentLine(props.dialogue[iteration])
     }, 300)
   }, [iteration])
 
@@ -32,8 +38,8 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
     return null
   }
 
-  const _nextLine = () => {
-    setIteration(iteration + 1)
+  function _nextLine(){
+    setIteration((prevIteration) => prevIteration + 1)
   }
 
   return (
@@ -47,13 +53,13 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
       bottom="0"
       right="50%"
       left="50%"
-      w="800px"
+      w="600px"
       h="350px"
       zIndex="999"
     >
       <DialogueLasleyCharacter />
       <DialoguePlaceholder>
-        <DialogueName>{character}</DialogueName>
+        <DialogueName>{props.character}</DialogueName>
         {currentLine ? (
           <DialogueText>
             <Typewriter
@@ -77,8 +83,8 @@ export default function Dialogues({ dialogue, character, _finishDialogue }) {
         {finishedTyping ? (
           <DialogueButton
             onClick={() =>
-              iteration === dialogue.length - 1
-                ? _finishDialogue()
+              iteration === props.dialogue.length - 1
+                ? props.finishDialogue()
                 : _nextLine()
             }
           >

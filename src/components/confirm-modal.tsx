@@ -6,7 +6,6 @@ import { ButtonText, ConfirmButton, DeclineButton } from '@/components/UI/button
 
 import { pathLobby } from '@/app/config/paths'
 import { useModalDispatch } from '@/context/confirm-modal'
-import { useStartGameDispatch } from '@/context/start-game'
 
 type stateType = {
   name: string
@@ -19,7 +18,6 @@ interface ConfirmModalState {
 
 const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
   const navigate = ReactRouter.useNavigate()
-  const dispatchStartGame = useStartGameDispatch()
   const dispatchConfirmModal = useModalDispatch()
 
   if (!state) {
@@ -34,10 +32,6 @@ const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
 
   const confirmAction = () => {
     clear()
-    dispatchStartGame({
-      type: 'START__GAME',
-      game: 'memo',
-    })
   }
 
   const declineAction = () => {

@@ -1,4 +1,5 @@
 export type GameMemoType = {
+  level: number
   score: number
   strike: number
   mistakes: number

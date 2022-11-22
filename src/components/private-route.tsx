@@ -1,24 +1,29 @@
+import * as ApolloClient from '@apollo/client'
+import * as Paths from '@/app/config/paths'
 import * as React from 'react'
+import * as ReactRouter from 'react-router-dom'
 
-import { ME_QUERY, meQuery } from '@/app/graphql/user'
-import {Navigate, Outlet} from 'react-router-dom'
+import { meQuery } from '@/app/graphql/user'
 
-import { pathHome } from '@/app/config/paths'
-import { useCustomQuery } from '@/components/useCustomQuery'
+interface RouteProps {
+  children: React.ReactElement
+}
 
-const PrivateRoute = () => {
-  const { data, error } = useCustomQuery(ME_QUERY, meQuery)
+const PrivateRoute = (props: RouteProps) => {
+
+  const response = ApolloClient.useQuery(meQuery)
   const mockedUser: string = localStorage.getItem('user')
 
-  if(error){
-    return <Navigate to="/unknown-error" />
+
+  if(response.error){
+    return <ReactRouter.Navigate to="/unknown-error" />
   }
 
-  if (data?.me != null || mockedUser) {
-    return <Outlet />
+  if (response?.data?.me != null || mockedUser) {
+    return props.children
   }
 
-  return <Navigate to={pathHome()} />
+  return <ReactRouter.Navigate to={Paths.pathHome()} />
 }
 
 export default PrivateRoute
