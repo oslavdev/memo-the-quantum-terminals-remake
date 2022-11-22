@@ -1,11 +1,12 @@
 import { boardRules } from '@/utils/board-rules'
 import { getRandomIntInclusive } from '@/utils/get-random'
 
-const size = 30
+const BOARD_SIZE = 30
 
 export const isStartOfTheRow = (number: number): boolean => {
   return (number - 1) % 5 === 0
 }
+
 export const isEndOfTheRow = (number: number): boolean => {
   return number % 5 === 0
 }
@@ -48,7 +49,7 @@ export const filterPossibilities = (
   possibilities: number[],
   avoid: number[],
 ): number[] => {
-  const filter_range = possibilities.filter((el) => el > 0 && el < size) // our of range
+  const filter_range = possibilities.filter((el) => el > 0 && el < BOARD_SIZE) // our of range
   const filter_avoid = filter_range.filter((val) => !avoid.includes(val)) // not in avoid list
 
   return filter_avoid
@@ -63,25 +64,38 @@ export const generateNext = (number: number, avoid: number[]): number => {
   return selected_possibility
 }
 
-const generateLevelMemo = (player_level: number | string) => {
-  /* Variables */
+/**
+ * @name generateLevelMemo
+ * 
+ * This functions generates array of numbers
+ * representing the sequence of the path on the game 
+ * board.
+ *  
+ * (!) There is a minor chance of a combination
+ * that will not allow to construct the full path
+ * of required number of tiles. In this case it is 
+ * recommended to re-run function.
+ * 
+ * @param player_level {number|string}
+ * @returns {number[]}
+ */
+
+function generateLevelMemo (player_level: number | string):number[]  {
+
   const current_rule = boardRules.find((el) => el.level === player_level)
   const level_arr: number[] = []
   const avoid: number[] = []
   const number_of_tiles: number = current_rule.level
 
-  /** @LevelGenerator */
-
-  /* Previous Step */
   let previous_step: number | null = null
 
-  /* Get First Tile */
-  const first_tile = getRandomIntInclusive(1, 30)
+  // get first tile
+  const first_tile = getRandomIntInclusive(1, BOARD_SIZE)
   level_arr.push(first_tile)
   avoid.push(first_tile)
   previous_step = first_tile
 
-  /* Get the next step */
+  // get the next step
   for (let i = 0; i <= number_of_tiles; i++) {
     const next = generateNext(previous_step, avoid)
 

@@ -4,7 +4,9 @@ export type DialogueType = {
   character: string
 }
 
-// TODO: keep dialogues on the back end side
+/**
+ * @TODO store dialogues in back end
+ */
 export const DialoguesMemo: DialogueType[] = [
   {
     level: 1,

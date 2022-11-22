@@ -1,20 +1,35 @@
-import {  gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
-export const REGISTER_MUTATION = "REGISTER_MUTATION";
+export const REGISTER_MUTATION = 'REGISTER_MUTATION'
 export const registerMutation = gql`
-  mutation Register($email: String!, $password: String!, $confirm_password: String!, $username: String!) {
-    register(email: $email, password: $password, confirm_password: $confirm_password, username: $username) {
-      user{
-        username
-        email
-        id
-        createdAt
-        updatedAt
-    }
-     error{
-       field,
-       message
-     }
+  mutation Mutation(
+    $username: String!
+    $email: String!
+    $password: String!
+    $confirmPassword: String!
+  ) {
+    createUser(
+      username: $username
+      email: $email
+      password: $password
+      confirmPassword: $confirmPassword
+    ) {
+      ... on FieldError {
+        success
+        error {
+          field
+          message
+          status
+        }
+      }
+      ... on SuccessResponse {
+        success
+        user {
+          username
+          id
+          email
+        }
+      }
     }
   }
-`;
+`

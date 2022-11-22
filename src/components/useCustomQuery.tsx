@@ -1,14 +1,16 @@
+import * as Apollo from '@apollo/client'
 import * as React from 'react'
 
 import State from '@/context/state'
-import { useQuery } from '@apollo/client'
 
-export const useCustomQuery = (name: string, query: any) => {
+export const useCustomQuery = (
+  name: string, 
+  query: Apollo.DocumentNode
+) => {
+  
   const { dispatch } = React.useContext(State)
-  const { loading, error, data } = useQuery(query)
+  const { loading, error, data } = Apollo.useQuery(query)
 
-
-  // Dispatch data
   React.useEffect(() => {
     if (data) {
       dispatch({ type: name, payload: data })
