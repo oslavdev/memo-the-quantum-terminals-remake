@@ -4,7 +4,6 @@ import * as UI from '@/components/UI'
 
 import { ButtonText, ConfirmButton, DeclineButton } from '@/components/UI/buttons/modal'
 
-import { pathLobby } from '@/app/config/paths'
 import { useModalDispatch } from '@/context/confirm-modal'
 import { useStartGameDispatch } from '@/context/start-game'
 
@@ -42,7 +41,6 @@ const ConfirmModal: React.FC<ConfirmModalState> = ({ state }) => {
 
   const declineAction = () => {
     clear()
-    navigate(pathLobby())
   }
 
   return (
