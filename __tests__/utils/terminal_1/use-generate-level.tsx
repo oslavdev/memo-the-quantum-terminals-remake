@@ -2,7 +2,7 @@ import useGenerateLevelMemo, {
   generateNext,
   isEndOfTheRow,
   isStartOfTheRow,
-} from '@/components/useGenerateLevelMemo'
+} from '@/components/use-generate-level'
 
 // describe("Test level generator", () => {
 
